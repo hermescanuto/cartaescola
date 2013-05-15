@@ -132,8 +132,8 @@ aside{
 	display: block;
 	float: left;
 	margin-left: 24px;
+	margin-left: 0px;
 	margin-bottom: 21px;
-	width: 252px;
 }
 
 .text-posts .heading{

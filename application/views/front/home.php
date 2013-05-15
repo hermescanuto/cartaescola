@@ -83,9 +83,13 @@
 				<!-- ENDS slider holder -->
 
 				<!-- home-block -->
-				<div class="home-block" >
+				
+               
+                
+                <div class="home-block" >
 					<h2 class="home-block-heading"><span>Atualidades em sala de aula</span></h2>
 					<div class="one-third-thumbs clearfix" >
+                    
 						<figure>
 							<figcaption>
 								<strong>{sub0}</strong>
@@ -118,6 +122,7 @@
 
 							<a href="{base_url}single/show/{id2}"  class="thumb"><img src="{base_url}upload/{imagem2}" alt="Alt text" /></a>
 						</figure>
+                         
 
 						<figure>
 							<figcaption>
@@ -214,46 +219,26 @@
 
 			</div>
             
+            <div>
+                
+                <ul class="text-posts">
+	        		<li>
+	        			<a href="single.html" class="heading">Get more freebies!</a>
+	        			visit <a href="http://www.luiszuno.com" >luiszuno.com</a> and get more free items to help you create awesome sites. 
+	        		</li>
+	        		
+	        		<li>
+	        			<a href="single.html" class="heading">Buy Premium themes</a>
+	        			Check my portfolio and buy outstanding WordPress Themes. Visit my <a href="http://www.luiszuno.com/blog/work" >Online Portfolio</a> to learn more.
+	        		</li>
+	        		
+	        		<li>
+	        			<a href="single.html" class="heading">Themeforest Themes</a>
+	        			Visit  <a href="http://themeforest.net/?ref=ansimuz" >themeforest</a> and grab great themes at a great price!
+	        		</li>
+                    </ul>
+                    </div>
             
-
-			<!-- text-posts -->
-	        	<h1 class="home-block-heading">From the blog</h1>
-	        	<ul class="text-posts">
-	        		<li>
-	        			<a href="single.html" class="heading">Get more freebies!</a>
-	        			visit <a href="http://www.luiszuno.com" >luiszuno.com</a> and get more free items to help you create awesome sites. 
-	        		</li>
-	        		
-	        		<li>
-	        			<a href="single.html" class="heading">Buy Premium themes</a>
-	        			Check my portfolio and buy outstanding WordPress Themes. Visit my <a href="http://www.luiszuno.com/blog/work" >Online Portfolio</a> to learn more.
-	        		</li>
-	        		
-	        		<li>
-	        			<a href="single.html" class="heading">Themeforest Themes</a>
-	        			Visit  <a href="http://themeforest.net/?ref=ansimuz" >themeforest</a> and grab great themes at a great price!
-	        		</li>
-	        		
-	        		<li>
-	        			<a href="single.html" class="heading">Get more freebies!</a>
-	        			visit <a href="http://www.luiszuno.com" >luiszuno.com</a> and get more free items to help you create awesome sites. 
-	        		</li>
-	        		
-	        		<li>
-	        			<a href="single.html" class="heading">Buy Premium themes</a>
-	        			Check my portfolio and buy outstanding WordPress Themes. Visit my <a href="http://www.luiszuno.com/blog/work" >Online Portfolio</a> to learn more.
-	        		</li>
-	        		
-	        		<li>
-	        			<a href="single.html" class="heading">Themeforest Themes</a>
-	        			Visit  <a href="http://themeforest.net/?ref=ansimuz" >themeforest</a> and grab great themes at a great price!
-	        		</li>
-	        		
-	        	</ul>
-	        	<!-- ENDS text-posts -->
-
-		
-        
 		<!-- ENDS MAIN -->
 
 		<!-- Anúncio Adsense -->
