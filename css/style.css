@@ -121,39 +121,6 @@ aside{
 	margin-left: 20px;
 }
 
-/* TEXT POSTS ------------------------------------------------------------*/
-
-.text-posts{
-	overflow: hidden;
-	padding-bottom: 70px;
-}
-
-.text-posts li{
-	display: block;
-	float: left;
-	margin-left: 24px;
-	margin-left: 0px;
-	margin-bottom: 21px;
-}
-
-.text-posts .heading{
-	display: block;
-	font-weight: bold;
-	font-size: 13px;
-	color: #444;
-	text-decoration: none;
-	
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-}
-
-.text-posts .heading:hover{
-	color: #fe8300; 
-}
-
-
 
 /* WIDGETS------------------------------------------------*/
 
@@ -1055,4 +1022,34 @@ footer .wrapper,
 	float: right;
 }
 
+/* TEXT POSTS ------------------------------------------------------------*/
 
+.text-posts{
+	overflow: hidden;
+	padding-bottom: 70px;
+}
+
+.text-posts li{
+	display: block;
+	float: left;
+	margin-left: 24px;
+	margin-bottom: 21px;
+	width: 252px;
+}
+
+.text-posts .heading{
+	display: block;
+	font-weight: bold;
+	font-size: 13px;
+	color: #444;
+	text-decoration: none;
+	
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.text-posts .heading:hover{
+	color: #fe8300; 
+}
