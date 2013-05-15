@@ -3,7 +3,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 /*
  *
- * Gerador de thumbs, ele cria o thumb, uma vez criado não cria mais.
+ * Gerador de thumbs, ele cria o thumb, uma vez criado não cria mais. teste
  *
  */
 
@@ -37,3 +37,5 @@ class Thumbs extends Controller {
     }
 
 }
+
+
