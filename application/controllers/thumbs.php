@@ -3,7 +3,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 /*
  *
- * Gerador de thumbs, ele cria o thumb, uma vez criado não cria mais. teste
+ * Gerador de thumbs, ele cria o thumb, uma vez criado não cria mais.
  *
  */
 
