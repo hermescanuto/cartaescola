@@ -153,7 +153,7 @@
 						</figure>
 
 					</div>
-				</div>
+				
 				<!-- ENDS home-block -->
 
 				<!-- home-block -->
@@ -213,24 +213,46 @@
 				<!-- ENDS home-block -->
 
 			</div>
+            
+            
 
-			<div id="anuncio" style="height: 60px; width: 468px">
+			<!-- text-posts -->
+	        	<h1 class="home-block-heading">From the blog</h1>
+	        	<ul class="text-posts">
+	        		<li>
+	        			<a href="single.html" class="heading">Get more freebies!</a>
+	        			visit <a href="http://www.luiszuno.com" >luiszuno.com</a> and get more free items to help you create awesome sites. 
+	        		</li>
+	        		
+	        		<li>
+	        			<a href="single.html" class="heading">Buy Premium themes</a>
+	        			Check my portfolio and buy outstanding WordPress Themes. Visit my <a href="http://www.luiszuno.com/blog/work" >Online Portfolio</a> to learn more.
+	        		</li>
+	        		
+	        		<li>
+	        			<a href="single.html" class="heading">Themeforest Themes</a>
+	        			Visit  <a href="http://themeforest.net/?ref=ansimuz" >themeforest</a> and grab great themes at a great price!
+	        		</li>
+	        		
+	        		<li>
+	        			<a href="single.html" class="heading">Get more freebies!</a>
+	        			visit <a href="http://www.luiszuno.com" >luiszuno.com</a> and get more free items to help you create awesome sites. 
+	        		</li>
+	        		
+	        		<li>
+	        			<a href="single.html" class="heading">Buy Premium themes</a>
+	        			Check my portfolio and buy outstanding WordPress Themes. Visit my <a href="http://www.luiszuno.com/blog/work" >Online Portfolio</a> to learn more.
+	        		</li>
+	        		
+	        		<li>
+	        			<a href="single.html" class="heading">Themeforest Themes</a>
+	        			Visit  <a href="http://themeforest.net/?ref=ansimuz" >themeforest</a> and grab great themes at a great price!
+	        		</li>
+	        		
+	        	</ul>
+	        	<!-- ENDS text-posts -->
 
-				<script type="text/javascript">
-					<!--
-					google_ad_client ="ca-pub-0841098346112026";
-					/* 468X60_Home_FullBanner */
-					google_ad_slot = "8251327369";
-					google_ad_width = 468;
-					google_ad_height = 60;
-					//-->
-				</script>
-				<script type="text/javascript"
-				src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-			
-            </div>
-
-		</div>
+		
         
 		<!-- ENDS MAIN -->
 
