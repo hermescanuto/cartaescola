@@ -12,6 +12,7 @@ class Home extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+
         $this -> load -> library('util');
         $this -> load -> library('mobile_detect');
         $this -> load -> library('twitter');
@@ -32,8 +33,8 @@ class Home extends CI_Controller {
     }
 
     public function index() {
+       
 
-        
         // busca a capa 
         
         $recordset = $this->Model_util->getCapa();

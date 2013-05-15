@@ -3,6 +3,7 @@
 	<name>Carta_Escola</name>
 	<comment></comment>
 	<projects>
+		<project>CI_2.3.1</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

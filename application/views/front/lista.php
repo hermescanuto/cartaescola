@@ -8,7 +8,6 @@
 		<?php
         include 'script_css.php';
 		?>
-
 	</head>
 
 	<body lang="en">
@@ -37,26 +36,21 @@
 			<div class="wrapper">
 			    
 				<div class="container-fluid">
-               
-                    <h2 class="page-heading" ><span>{lista_legenda}</span></h2>
-                    <br>
+                    <h4 class="post-heading" >{lista_legenda}</h4>
 					{recordset}
 					<div class="row">
 					    
 						<div class="span10" >
-							<div class="span2" style="padding: 0px">
+							<div class="span2" style="padding: 5px">
 
 								<img src="{base_url}/upload/{imagem_fundo}"  alt="{titulo}" title="{titulo}" />
 							</div>
 
 							<div class="span7" >
-                            
-	
 								
-								    <span style="font-size: 15px">Edição: {edicao} </span >
-                                    <p></p>
-									<h3 class="post-heading" >{titulo} </h3><br>
-									<span style="font-size: 16px">{descricao} <a href="{base_url}single/show/{id}" > leia mais...</a></span>
+								    <span style="font-size: 10px">Edição : {edicao} </span >
+									<h4 class="post-heading" >{titulo} </h4>
+									<span >{descricao} <a href="{base_url}single/show/{id}" > leia mais...</a></span>
 								
 							</div>
 						</div>

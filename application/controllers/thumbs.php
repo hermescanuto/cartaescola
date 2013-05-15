@@ -12,6 +12,7 @@ class Thumbs extends Controller {
     public function __construct() {
         parent::Controller();
         $this -> load -> library('image_lib');
+        
     }
 
     public function products($width, $height, $img) {
@@ -30,6 +31,8 @@ class Thumbs extends Controller {
 
             $this -> image_lib -> initialize($config);
             $this -> image_lib -> resize_crop();
+            
+      
         }
 
         header('Content-Type: image/jpg');
