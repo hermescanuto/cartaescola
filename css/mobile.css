@@ -1,0 +1,22 @@
+body {
+	background-color: #FFFFFF;
+}
+
+#logo {
+
+	background-color: #444;
+}
+
+
+
+
+.home-block-heading {
+	#color: #444444;
+	text-align: center;
+	margin-bottom: 40px;
+	
+}
+
+.home-block-heading span{
+	padding: 0px 20px; font-size: 10px
+}

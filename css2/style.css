@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #1a1a1a;
+	font-size: 10px ;
+	margin: 0px;
+}
+
+
+.ui-datepicker-trigger{
+	
+	margin-bottom: 10px;
+}
