@@ -6,17 +6,12 @@
  * 
  */
 
-
-
-
-function confirma(id,base_url,paging)
-{
+function confirma(id, base_url, paging) {
 	var answer = confirm("Deseja realmete Deletar este registro ?");
-	if (answer){
-		url = base_url+'/DeleteReport/'+id+'/'+paging;
-		
-		window.location.href= url;
-	}	
-	
-		
+	if (answer) {
+		url = base_url + '/DeleteReport/' + id + '/' + paging;
+
+		window.location.href = url;
+	}
+
 }

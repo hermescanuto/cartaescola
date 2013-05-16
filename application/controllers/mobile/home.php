@@ -6,6 +6,8 @@ if (!defined('BASEPATH'))
  * Index Page for this controller.
 */
 
+
+
 class Home extends CI_Controller {
 
 	protected $data = array();
@@ -53,7 +55,7 @@ class Home extends CI_Controller {
 
 
 		$this -> parser -> parse('mobile/home', $this -> data);
-
+	
 	}
 
 }
