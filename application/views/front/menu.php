@@ -1,4 +1,4 @@
-<a href="{base_url}" id="logo"><img  src="{base_url}img/logo.png" alt="Carta Capital" width="312" height="88"></a>
+<a href="{base_url}" id="logo"><img  src="{base_url}img/logo.png" alt="Carta Capital" width="265" height="73"></a>
 
 
 <nav>
@@ -6,13 +6,7 @@
 		<li class="{alvo_home}">
 			<a href="{base_url}">HOME</a>
 		</li>
-		<li class="{alvo_sobre}">
-		  <a href="{base_url}sobre">SOBRE</a>
-			<ul>
-				<li>
-				  <a href="{base_url}expediente">Expediente</a>
-				</li>
-			</ul>
+		
 		</li>
 		<li class="{alvo_portifolio}">
 		  <a href="{base_url}materias">MATÉRIAS</a>
@@ -33,19 +27,21 @@
 				  <a href="{base_url}reportagens">Reportagens</a>
 				</li>
                
-
 			</ul>
 		</li>
+        <li class="{alvo_sobre}">
+		  <a href="{base_url}sobre">SOBRE</a>
+			<ul>
+				<li>
+				  <a href="{base_url}expediente">Expediente</a>
+				</li>
+			</ul>
 		<li class="{alvo_contato}">
 		  <a href="{base_url}contato">CONTATO</a>
       
-        <li>
-		
-		<div id="Buscar">
        
-		<input id="mysearch" type="search" />
-        </li>
-        </div>
+      </li>
+       
         
   </ul>
   

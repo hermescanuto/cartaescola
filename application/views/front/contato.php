@@ -137,11 +137,12 @@
                                     <br/>
                                     Fale Conosco:
                                 </li>
-                                <li>
-                                    <a href="http://www.assinantecartacapital.com.br">www.assinantecartacapital.com.br</a>
+                                <li class="email">
+                                    <a href="http://www.assinantecartacapital.com.br">assinantecartacapital</a>
                                 </li>
 
                             </ul>
+                            <em id="corner"></em>
 
                         </div>
 

@@ -36,28 +36,35 @@
 			<div class="wrapper">
 			    
 				<div class="container-fluid">
-                    <h4 class="post-heading" >{lista_legenda}</h4>
+                    <h2 class="page-heading"><span>{lista_legenda}</span></h2>
+                    <br>
+                    </span><em id="corner"></em>
 					{recordset}
 					<div class="row">
 					    
 						<div class="span10" >
-							<div class="span2" style="padding: 5px">
+							<div class="span2" style="padding: 0px">
 
-								<img src="{base_url}/upload/{imagem_fundo}"  alt="{titulo}" title="{titulo}" />
+							<img src="{base_url}/upload/{imagem_fundo}"  alt="{titulo}" title="{titulo}" />
 							</div>
 
 							<div class="span7" >
 								
-								    <span style="font-size: 10px">Edição : {edicao} </span >
-									<h4 class="post-heading" >{titulo} </h4>
-									<span >{descricao} <a href="{base_url}single/show/{id}" > leia mais...</a></span>
+								    <span style="font-size: 13px">Edição: {edicao} </span >
+									<h3 class="post-heading" >{titulo} </h3>
+									
+                                    <div class="{descricao}" style="font-size: 16px">
+                                    <span >{descricao} <a href="{base_url}single/show/{id}" > leia mais...</a>
+                                    
 								
 							</div>
 						</div>
 					</div>
+                    
 
 					{/recordset}
-
+                      
+                    
 					<div class="row">
 						{paginacao}
 					</div>

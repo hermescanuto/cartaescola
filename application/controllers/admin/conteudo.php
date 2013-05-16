@@ -229,7 +229,7 @@ function save()
 	
 		//print_r ($where);
 			 
-		$result=$this->util->PaginationOn($table,2,base_url().'admin/'.$this->data['local'].'/paging',$fields,$where,$orderby); // cria a paginação			
+		$result=$this->util->PaginationOn($table,20,base_url().'admin/'.$this->data['local'].'/paging',$fields,$where,$orderby); // cria a paginação			
 		$data = $result;
 				
 		$data['base_url']=base_url();

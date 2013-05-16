@@ -84,7 +84,7 @@
 
 				<!-- home-block -->
 				<div class="home-block" >
-					<h2 class="home-block-heading"><span>Atualidades em sala de aula</span></h2>
+					<h2 class="page-heading"><span>Atualidades em sala de aula</span></h2>
 					<div class="one-third-thumbs clearfix" >
 						<figure>
 							<figcaption>
@@ -214,21 +214,7 @@
 
 			</div>
 
-			<div id="anuncio" style="height: 60px; width: 468px">
-
-				<script type="text/javascript">
-					<!--
-					google_ad_client ="ca-pub-0841098346112026";
-					/* 468X60_Home_FullBanner */
-					google_ad_slot = "8251327369";
-					google_ad_width = 468;
-					google_ad_height = 60;
-					//-->
-				</script>
-				<script type="text/javascript"
-				src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 			
-            </div>
 
 		</div>
         
