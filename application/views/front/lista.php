@@ -8,7 +8,7 @@
 <?php
 include 'script_css.php';
 ?>
-</head>
+</head> 
 
 <body lang="en">
 

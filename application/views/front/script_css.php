@@ -1,4 +1,3 @@
-
 <!--[if lt IE 9]>
             <script src="{base_url}http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
