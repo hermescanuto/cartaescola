@@ -6,7 +6,7 @@
 <title>Carta na Escola</title>
 
 <?php
-include 'script_css.php';
+include 'script_css.php'; 
 ?>
 </head> 
 

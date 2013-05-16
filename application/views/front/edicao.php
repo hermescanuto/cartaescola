@@ -6,18 +6,13 @@
 <title>Carta na Escola</title>
 
 <?php
-include 'file:///sites/cartaescola/application/views/front/script_css.php';
+include 'script_css.php';
 ?>
 
-<script
-	src="file:///sites/cartaescola/application/views/front/{base_url}js/bootstrap.js"
-	type="text/javascript"></script>
-<link
-	href="file:///sites/cartaescola/application/views/front/{base_url}css/bootstrap.css"
-	rel="stylesheet" type="text/css" />
-<link
-	href="file:///sites/cartaescola/application/views/front/{base_url}/css/bootstrap-responsive.css"
-	rel="stylesheet">
+<script src="{base_url}js/bootstrap.js" type="text/javascript"></script>
+<link href="{base_url}css/bootstrap.css" rel="stylesheet"
+	type="text/css" />
+<link href="{base_url}/css/bootstrap-responsive.css" rel="stylesheet">
 
 </head>
 
@@ -37,7 +32,7 @@ include 'file:///sites/cartaescola/application/views/front/script_css.php';
 				<div class="wrapper clearfix">
 
 					<?php
-					include 'file:///sites/cartaescola/application/views/front/menu.php';
+					include 'menu.php';
 					?>
 				</div>
 	
@@ -89,28 +84,28 @@ include 'file:///sites/cartaescola/application/views/front/script_css.php';
 
 			<ul class="widget-cols clearfix">
 				<li class="first-col"><?php
-				include 'file:///sites/cartaescola/application/views/front/primeira_coluna.php';
+				include 'primeira_coluna.php';
 				?>
 				</li>
 
 				<li class="second-col"><?php
-				include 'file:///sites/cartaescola/application/views/front/segunda_coluna.php';
+				include 'segunda_coluna.php';
 				?>
 				</li>
 
 				<li class="third-col"><?php
-				include 'file:///sites/cartaescola/application/views/front/terceira_coluna.php';
+				include 'terceira_coluna.php';
 				?>
 				</li>
 
 				<li class="fourth-col"><?php
-				include 'file:///sites/cartaescola/application/views/front/quarta_coluna.php';
+				include 'quarta_coluna.php';
 				?>
 				</li>
 			</ul>
 
 			<?php
-			include 'file:///sites/cartaescola/application/views/front/footer_bottom.php';
+			include 'footer_bottom.php';
 			?>
 
 		</div>
