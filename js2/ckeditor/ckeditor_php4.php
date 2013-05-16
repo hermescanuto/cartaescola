@@ -1,6 +1,6 @@
 <?php
 /*
-* Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
+ * Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
 * For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
@@ -54,7 +54,7 @@ class CKEditor
 	 * A boolean variable indicating whether CKEditor has been initialized.
 	 * Set it to true only if you have already included
 	 * &lt;script&gt; tag loading ckeditor.js in your website.
-	 */
+	*/
 	var $initialized = false;
 	/**
 	 * Boolean variable indicating whether created code should be printed out or returned by a function.
@@ -79,7 +79,7 @@ class CKEditor
 	/**
 	 * A string indicating the creation date of %CKEditor.
 	 * Do not change it unless you want to force browsers to not use previously cached version of %CKEditor.
-	 */
+	*/
 	var $timestamp = "B49E5BQ";
 	/**
 	 * An array that holds event listeners.
@@ -89,14 +89,14 @@ class CKEditor
 	/**
 	 * An array that holds global event listeners.
 	 * \private
-	 */
+	*/
 	var $_globalEvents = array();
 
 	/**
 	 * Main Constructor.
 	 *
 	 *  @param $basePath (string) URL to the %CKEditor installation directory (optional).
-	 */
+	*/
 	function CKEditor($basePath = null) {
 		if (!empty($basePath)) {
 			$this->basePath = $basePath;

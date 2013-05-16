@@ -11,10 +11,11 @@
 <title>Upload Form</title>
 
 <body>
-<p>Sucesso!!! Arquivo</p>
-<p>{arquivo}</p>
-<img src='{base_url}image2/create/{arquivo}/{folder}/100/100' border='0'' />
-<br/>
-<a href="javascript:window.close();" >Fechar a Janela</a>
+	<p>Sucesso!!! Arquivo</p>
+	<p>{arquivo}</p>
+	<img src='{base_url}image2/create/{arquivo}/{folder}/100/100'
+		border='0' ' />
+	<br />
+	<a href="javascript:window.close();">Fechar a Janela</a>
 </body>
 </html>

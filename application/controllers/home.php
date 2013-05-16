@@ -1,108 +1,108 @@
 <?php
 if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+	exit('No direct script access allowed');
 
 /**
  * Index Page for this controller.
- */
+*/
 
 class Home extends CI_Controller {
 
-    protected $data = array();
+	protected $data = array();
 
-    function __construct() {
-        parent::__construct();
+	function __construct() {
+		parent::__construct();
 
-        $this -> load -> library('util');
-        $this -> load -> library('mobile_detect');
-        $this -> load -> library('twitter');
-        $this -> load -> model('Model_util');
-        $this -> data['base_url'] = base_url();
-        
-        $deviceType = ($this->mobile_detect->isMobile() ? ($this->mobile_detect->isTablet() ? 'tablet' : 'phone') : 'computer');
-        
+		$this -> load -> library('util');
+		$this -> load -> library('mobile_detect');
+		$this -> load -> library('twitter');
+		$this -> load -> model('Model_util');
+		$this -> data['base_url'] = base_url();
 
-        
-         if ( $deviceType == 'phone' ){
-             
-            redirect('/mobile/home/', 'refresh');
-    
-         }
-         
-        
-    }
+		$deviceType = ($this->mobile_detect->isMobile() ? ($this->mobile_detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 
-    public function index() {
-       
 
-        // busca a capa 
-        
-        $recordset = $this->Model_util->getCapa();
-        
-        $this->data['edicao_capa'] = $recordset['imagem_capa'];
-        $this->data['edicao_numero'] = $recordset['edicao'];
-        
-        
-        
-        // busca as materias destaque da home
-        $r = $this -> Model_util -> showHome();
 
-        for ($i = 0; $i <= 2; $i++) {
-            $this -> data["desc$i"] = $r[$i]['descricao'];
-            
-            
-            if ( $r[$i]['imagem_home'] == null ){
-                
-                $this -> data["imagem_home$i"] = "970x483.jpg";
-            }else{
-                
-                $this -> data["imagem_home$i"] = $r[$i]['imagem_home'];
-            }
-            
-            
-            $this -> data["titulo$i"] = $r[$i]['titulo'];
-            $this -> data["destaque_id$i"] = $r[$i]['id'];
-        }
+		if ( $deviceType == 'phone' ){
+			 
+			redirect('/mobile/home/', 'refresh');
 
-        // busca as restantes ,por nnao busca as que estao em destaque
-        $recordset = $this -> Model_util -> getatualizades($this -> data["destaque_id0"], $this -> data["destaque_id1"], $this -> data["destaque_id2"]);
+		}
+		 
 
-        for ($i = 0; $i <= 5; $i++) {
-            $this -> data["olho$i"] = $recordset[$i]["descricao"];
-            
-            if ( $recordset[$i]["imagem_fundo"] == null ){
-                
-                 $this -> data["imagem$i"] = "446x283.jpg";
-                
-            }else{
-                
-                $this -> data["imagem$i"] = $recordset[$i]["imagem_fundo"];
-            }
-            
-            
-            
-            
-            $this -> data["id$i"] = $recordset[$i]["id"];
-            $this -> data["data_criacao$i"] = date("d-m-Y", strtotime($recordset[$i]["data_criacao"]));
-            
-            if ( $recordset[$i]["sub_classificacao"].'' == ''   ){
-                
-                $this -> data["sub$i"] = $recordset[$i]["tipo_conteudo"];
-                
-            }else{
-                                
-                 $this -> data["sub$i"] = $recordset[$i]["sub_classificacao"];
-            }
-            
-           
-        }
-        
-        $this->data["lista_Tweeter"] = $this->twitter->getTwitter('cartacapital',3);
-        
-        $this->data["alvo_home"] ='current-menu-item"';
+	}
 
-        $this -> parser -> parse('front/home', $this -> data);
-    }
+	public function index() {
+		 
+
+		// busca a capa
+
+		$recordset = $this->Model_util->getCapa();
+
+		$this->data['edicao_capa'] = $recordset['imagem_capa'];
+		$this->data['edicao_numero'] = $recordset['edicao'];
+
+
+
+		// busca as materias destaque da home
+		$r = $this -> Model_util -> showHome();
+
+		for ($i = 0; $i <= 2; $i++) {
+			$this -> data["desc$i"] = $r[$i]['descricao'];
+
+
+			if ( $r[$i]['imagem_home'] == null ){
+
+				$this -> data["imagem_home$i"] = "970x483.jpg";
+			}else{
+
+				$this -> data["imagem_home$i"] = $r[$i]['imagem_home'];
+			}
+
+
+			$this -> data["titulo$i"] = $r[$i]['titulo'];
+			$this -> data["destaque_id$i"] = $r[$i]['id'];
+		}
+
+		// busca as restantes ,por nnao busca as que estao em destaque
+		$recordset = $this -> Model_util -> getatualizades($this -> data["destaque_id0"], $this -> data["destaque_id1"], $this -> data["destaque_id2"]);
+
+		for ($i = 0; $i <= 5; $i++) {
+			$this -> data["olho$i"] = $recordset[$i]["descricao"];
+
+			if ( $recordset[$i]["imagem_fundo"] == null ){
+
+				$this -> data["imagem$i"] = "446x283.jpg";
+
+			}else{
+
+				$this -> data["imagem$i"] = $recordset[$i]["imagem_fundo"];
+			}
+
+
+
+
+			$this -> data["id$i"] = $recordset[$i]["id"];
+			$this -> data["data_criacao$i"] = date("d-m-Y", strtotime($recordset[$i]["data_criacao"]));
+
+			if ( $recordset[$i]["sub_classificacao"].'' == ''   ){
+
+				$this -> data["sub$i"] = $recordset[$i]["tipo_conteudo"];
+
+			}else{
+
+				$this -> data["sub$i"] = $recordset[$i]["sub_classificacao"];
+			}
+
+			 
+		}
+
+		$this->data["lista_Tweeter"] = $this->twitter->getTwitter('cartacapital',3);
+
+		$this->data["alvo_home"] ='current-menu-item"';
+
+		$this -> parser -> parse('front/home', $this -> data);
+	}
 
 }
 

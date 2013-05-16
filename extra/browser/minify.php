@@ -28,42 +28,42 @@ ini_set('display_errors', 'on');
 // cut and paste from: http://us2.php.net/manual/en/function.sys-get-temp-dir.php
 if ( !function_exists('sys_get_temp_dir') )
 {
-    // Based on http://www.phpit.net/
-    // article/creating-zip-tar-archives-dynamically-php/2/
-    function sys_get_temp_dir()
-    {
-        // Try to get from environment variable
-        if ( !empty($_ENV['TMP']) )
-        {
-            return realpath( $_ENV['TMP'] );
-        }
-        else if ( !empty($_ENV['TMPDIR']) )
-        {
-            return realpath( $_ENV['TMPDIR'] );
-        }
-        else if ( !empty($_ENV['TEMP']) )
-        {
-            return realpath( $_ENV['TEMP'] );
-        }
+	// Based on http://www.phpit.net/
+	// article/creating-zip-tar-archives-dynamically-php/2/
+	function sys_get_temp_dir()
+	{
+		// Try to get from environment variable
+		if ( !empty($_ENV['TMP']) )
+		{
+			return realpath( $_ENV['TMP'] );
+		}
+		else if ( !empty($_ENV['TMPDIR']) )
+		{
+			return realpath( $_ENV['TMPDIR'] );
+		}
+		else if ( !empty($_ENV['TEMP']) )
+		{
+			return realpath( $_ENV['TEMP'] );
+		}
 
-        // Detect by creating a temporary file
-        else
-        {
-            // Try to use system's temporary directory
-            // as random name shouldn't exist
-            $temp_file = tempnam( md5(uniqid(rand(), TRUE)), '' );
-            if ( $temp_file )
-            {
-                $temp_dir = realpath( dirname($temp_file) );
-                unlink( $temp_file );
-                return $temp_dir;
-            }
-            else
-            {
-                return FALSE;
-            }
-        }
-    }
+		// Detect by creating a temporary file
+		else
+		{
+			// Try to use system's temporary directory
+			// as random name shouldn't exist
+			$temp_file = tempnam( md5(uniqid(rand(), TRUE)), '' );
+			if ( $temp_file )
+			{
+				$temp_dir = realpath( dirname($temp_file) );
+				unlink( $temp_file );
+				return $temp_dir;
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+	}
 }
 
 // again, cut and paste from comments for file_put_contents
@@ -71,62 +71,62 @@ if ( !function_exists('file_put_contents') )
 {
 	define('FILE_APPEND', 1);
 	function file_put_contents($n, $d, $flag = false) {
-	    $mode = ($flag == FILE_APPEND || strtoupper($flag) == 'FILE_APPEND') ? 'a' : 'w';
-	    $f = @fopen($n, $mode);
-	    if ($f === false) {
-	        return 0;
-	    } else {
-	        if (is_array($d)) $d = implode($d);
-	        $bytes_written = fwrite($f, $d);
-	        fclose($f);
-	        return $bytes_written;
-	    }
+		$mode = ($flag == FILE_APPEND || strtoupper($flag) == 'FILE_APPEND') ? 'a' : 'w';
+		$f = @fopen($n, $mode);
+		if ($f === false) {
+			return 0;
+		} else {
+			if (is_array($d)) $d = implode($d);
+			$bytes_written = fwrite($f, $d);
+			fclose($f);
+			return $bytes_written;
+		}
 	}
 }
 
 
 if (!defined('MINIFY_BASE_DIR')) {
-  /** 
-   * Base path from which all relative file paths should be resolved. By default
-   * this is set to the document root.
-   */
-  define('MINIFY_BASE_DIR', realpath(dirname(__FILE__)));
+	/**
+	 * Base path from which all relative file paths should be resolved. By default
+	 * this is set to the document root.
+	 */
+	define('MINIFY_BASE_DIR', realpath(dirname(__FILE__)));
 }
 
 if (!defined('MINIFY_CACHE_DIR')) {
-  /** Directory where compressed files will be cached. */
-  define('MINIFY_CACHE_DIR', sys_get_temp_dir());
+	/** Directory where compressed files will be cached. */
+	define('MINIFY_CACHE_DIR', sys_get_temp_dir());
 }
 
 if (!defined('MINIFY_ENCODING')) {
-  /** Character set to use when outputting the minified files. */
-  define('MINIFY_ENCODING', 'utf-8');
+	/** Character set to use when outputting the minified files. */
+	define('MINIFY_ENCODING', 'utf-8');
 }
 
 if (!defined('MINIFY_MAX_FILES')) {
-  /** Maximum number of files to combine in one request. */
-  define('MINIFY_MAX_FILES', 16);
+	/** Maximum number of files to combine in one request. */
+	define('MINIFY_MAX_FILES', 16);
 }
 
 if (!defined('MINIFY_REWRITE_CSS_URLS')) {
-  /** 
-   * Whether or not Minify should attempt to rewrite relative URLs used in CSS
-   * files so that they continue to point to the correct location after the file
-   * is combined and minified.
-   *
-   * Minify is pretty good at getting this right, but occasionally it can make
-   * mistakes. If you find that URL rewriting results in problems, you should
-   * disable it.
-   */
-  define('MINIFY_REWRITE_CSS_URLS', false);
+	/**
+	 * Whether or not Minify should attempt to rewrite relative URLs used in CSS
+	 * files so that they continue to point to the correct location after the file
+	 * is combined and minified.
+	 *
+	 * Minify is pretty good at getting this right, but occasionally it can make
+	 * mistakes. If you find that URL rewriting results in problems, you should
+	 * disable it.
+	 */
+	define('MINIFY_REWRITE_CSS_URLS', false);
 }
 
 if (!defined('MINIFY_USE_CACHE')) {
-  /**
-   * Whether or not Minify should use a disk-based cache to increase
-   * performance.
-   */
-  define('MINIFY_USE_CACHE', true);
+	/**
+	 * Whether or not Minify should use a disk-based cache to increase
+	 * performance.
+	 */
+	define('MINIFY_USE_CACHE', true);
 }
 
 /**
@@ -143,386 +143,386 @@ if (!defined('MINIFY_USE_CACHE')) {
 
 define('TYPE_CSS', 	'text/css');
 define('TYPE_JS', 	'text/javascript');
-	
+
 class Minify {
-  
-  var $files = array();
-  var $type;
 
-  function Minify($type = TYPE_JS) {
-	$this->type = $type;
-  }
-  
+	var $files = array();
+	var $type;
 
-  /**
-   * Combines, minifies, and outputs the requested files.
-   *
-   * Inspects the $_GET array for a 'files' entry containing a comma-separated
-   * list and uses this as the set of files to be combined and minified.
-   */
-  function handleRequest() {
-    // 404 if no files were requested.
-    if (!isset($_GET['files'])) {
-      header('HTTP/1.0 404 Not Found');
-      exit;
-    }
+	function Minify($type = TYPE_JS) {
+		$this->type = $type;
+	}
 
-    $files = array_map('trim', explode(',', $_GET['files'], MINIFY_MAX_FILES));
 
-    // 404 if the $files array is empty for some weird reason.
-    if (!count($files)) {
-      header('HTTP/1.0 404 Not Found');
-      exit;
-    }
+	/**
+	 * Combines, minifies, and outputs the requested files.
+	 *
+	 * Inspects the $_GET array for a 'files' entry containing a comma-separated
+	 * list and uses this as the set of files to be combined and minified.
+	 */
+	function handleRequest() {
+		// 404 if no files were requested.
+		if (!isset($_GET['files'])) {
+			header('HTTP/1.0 404 Not Found');
+			exit;
+		}
 
-    // Determine the content type based on the extension of the first file
-    // requested.
-    $type = preg_match('/\.js$/iD', $files[0]) ? TYPE_JS : TYPE_CSS;
+		$files = array_map('trim', explode(',', $_GET['files'], MINIFY_MAX_FILES));
 
-    // Minify and spit out the result.
-    $minify = new Minify($type);
-	$minify->addFile($files);
-    
-    ob_start("ob_gzhandler");
-    header("Content-Type: $type;charset=".MINIFY_ENCODING);
+		// 404 if the $files array is empty for some weird reason.
+		if (!count($files)) {
+			header('HTTP/1.0 404 Not Found');
+			exit;
+		}
 
-   	$minify->browserCache();
-    echo $minify->combine();
+		// Determine the content type based on the extension of the first file
+		// requested.
+		$type = preg_match('/\.js$/iD', $files[0]) ? TYPE_JS : TYPE_CSS;
 
-  }  
+		// Minify and spit out the result.
+		$minify = new Minify($type);
+		$minify->addFile($files);
 
-  
-  /**
-   * Minifies the specified string and returns it.
-   *
-   * @param string $string JavaScript or CSS string to minify
-   * @param string $type content type of the string (either Minify::TYPE_CSS or
-   *   Minify::TYPE_JS)
-   * @return string minified string
-   */
-  function _minify($string, $type = TYPE_JS) {
-    return $type === TYPE_JS ? Minify::minifyJS($string) :
-        Minify::minifyCSS($string);
-  }
+		ob_start("ob_gzhandler");
+		header("Content-Type: $type;charset=".MINIFY_ENCODING);
 
-  // -- Protected Static Methods -----------------------------------------------
+		$minify->browserCache();
+		echo $minify->combine();
 
-  /**
-   * Minifies the specified CSS string and returns it.
-   *
-   * @param string $css CSS string
-   * @return string minified string
-   * @see minify()
-   * @see minifyJS()
-   */
-  function minifyCSS($css) {
+	}
 
-	// Compress whitespace.
-    $css = preg_replace('/\s+/', ' ', $css);
 
-    // Remove comments.
-    $css = preg_replace('/\/\*.*?\*\//', '', $css);
+	/**
+	 * Minifies the specified string and returns it.
+	 *
+	 * @param string $string JavaScript or CSS string to minify
+	 * @param string $type content type of the string (either Minify::TYPE_CSS or
+	 *   Minify::TYPE_JS)
+	 * @return string minified string
+	 */
+	function _minify($string, $type = TYPE_JS) {
+		return $type === TYPE_JS ? Minify::minifyJS($string) :
+		Minify::minifyCSS($string);
+	}
 
-    return trim($css);
-  }
+	// -- Protected Static Methods -----------------------------------------------
 
-  /**
-   * Minifies the specified JavaScript string and returns it.
-   *
-   * @param string $js JavaScript string
-   * @return string minified string
-   * @see minify()
-   * @see minifyCSS()
-   */
-  function minifyJS($js) {
-    require_once dirname(__FILE__).'/jsmin.php';
-    return JSMin::minify($js);
-  }
+	/**
+	 * Minifies the specified CSS string and returns it.
+	 *
+	 * @param string $css CSS string
+	 * @return string minified string
+	 * @see minify()
+	 * @see minifyJS()
+	 */
+	function minifyCSS($css) {
 
-  /**
-   * Rewrites relative URLs in the specified CSS string to point to the correct
-   * location. URLs are assumed to be relative to the absolute path specified in
-   * the $path parameter.
-   *
-   * @param string $css CSS string
-   * @param string $path absolute path to which URLs are relative (should be a
-   *   directory, not a file)
-   * @return string CSS string with rewritten URLs
-   */
-  function rewriteCSSUrls($css, $path) {
-    /*
-    Parentheses, commas, whitespace chars, single quotes, and double quotes are
-    escaped with a backslash as described in the CSS spec:
-    http://www.w3.org/TR/REC-CSS1#url
-    */
-    $relativePath = preg_replace('/([\(\),\s\'"])/', '\\\$1',
-        str_replace(MINIFY_BASE_DIR, '', $path));
+		// Compress whitespace.
+		$css = preg_replace('/\s+/', ' ', $css);
 
-    return preg_replace('/url\(\s*[\'"]?\/?(.+?)[\'"]?\s*\)/i', 'url('.
-        $relativePath.'/$1)', $css);
-  }
+		// Remove comments.
+		$css = preg_replace('/\/\*.*?\*\//', '', $css);
 
-  // -- Public Instance Methods ------------------------------------------------
+		return trim($css);
+	}
 
-  /**
-   * Instantiates a new Minify object. A filename can be in the form of a
-   * relative path or a URL that resolves to the same site that hosts Minify.
-   *
-   * @param string $type content type of the specified files (either
-   *   Minify::TYPE_CSS or Minify::TYPE_JS)
-   * @param array|string $files filename or array of filenames to be minified
-   */
-  function __construct($type = TYPE_JS, $files = array()) {
-    if ($type !== TYPE_JS && $type !== TYPE_CSS) {
-      die('Invalid argument ($type): '.
-          $type);
-    }
+	/**
+	 * Minifies the specified JavaScript string and returns it.
+	 *
+	 * @param string $js JavaScript string
+	 * @return string minified string
+	 * @see minify()
+	 * @see minifyCSS()
+	 */
+	function minifyJS($js) {
+		require_once dirname(__FILE__).'/jsmin.php';
+		return JSMin::minify($js);
+	}
 
-    $this->type = $type;
+	/**
+	 * Rewrites relative URLs in the specified CSS string to point to the correct
+	 * location. URLs are assumed to be relative to the absolute path specified in
+	 * the $path parameter.
+	 *
+	 * @param string $css CSS string
+	 * @param string $path absolute path to which URLs are relative (should be a
+	 *   directory, not a file)
+	 * @return string CSS string with rewritten URLs
+	 */
+	function rewriteCSSUrls($css, $path) {
+		/*
+		 Parentheses, commas, whitespace chars, single quotes, and double quotes are
+		escaped with a backslash as described in the CSS spec:
+		http://www.w3.org/TR/REC-CSS1#url
+		*/
+		$relativePath = preg_replace('/([\(\),\s\'"])/', '\\\$1',
+				str_replace(MINIFY_BASE_DIR, '', $path));
 
-    if (count((array) $files)) {
-      $this->addFile($files);
-    }
-  }
+		return preg_replace('/url\(\s*[\'"]?\/?(.+?)[\'"]?\s*\)/i', 'url('.
+				$relativePath.'/$1)', $css);
+	}
 
-  /**
-   * Adds the specified filename or array of filenames to the list of files to
-   * be minified. A filename can be in the form of a relative path or a URL
-   * that resolves to the same site that hosts Minify.
-   *
-   * @param array|string $files filename or array of filenames
-   * @see getFiles()
-   * @see removeFile()
-   */
-  function addFile($files) {
-    $files = array_map(array($this, 'resolveFilePath'), (array) $files);
-    $this->files = array_unique(array_merge($this->files, $files));
-  }
+	// -- Public Instance Methods ------------------------------------------------
 
-  /**
-   * Attempts to serve the combined, minified files from the cache if possible.
-   *
-   * This method first checks the ETag value and If-Modified-Since timestamp
-   * sent by the browser and exits with an HTTP "304 Not Modified" response if
-   * the requested files haven't changed since they were last sent to the
-   * client.
-   *
-   * If the browser hasn't cached the content, we check to see if it's been
-   * cached on the server and, if so, we send the cached content and exit.
-   *
-   * If neither the client nor the server has the content in its cache, we don't
-   * do anything.
-   *
-   * @return bool
-   */
-  function browserCache() {
-    $hash         = $this->getHash();
-    $lastModified = $this->getLastModified();
+	/**
+	 * Instantiates a new Minify object. A filename can be in the form of a
+	 * relative path or a URL that resolves to the same site that hosts Minify.
+	 *
+	 * @param string $type content type of the specified files (either
+	 *   Minify::TYPE_CSS or Minify::TYPE_JS)
+	 * @param array|string $files filename or array of filenames to be minified
+	 */
+	function __construct($type = TYPE_JS, $files = array()) {
+		if ($type !== TYPE_JS && $type !== TYPE_CSS) {
+			die('Invalid argument ($type): '.
+					$type);
+		}
 
-    $lastModifiedGMT = gmdate('D, d M Y H:i:s', $lastModified).' GMT';
+		$this->type = $type;
 
-    // Check/set the ETag.
-    $etag = $hash.'_'.$lastModified;
+		if (count((array) $files)) {
+			$this->addFile($files);
+		}
+	}
 
-    if (isset($_SERVER['HTTP_IF_NONE_MATCH'])) {
-      if (strpos($_SERVER['HTTP_IF_NONE_MATCH'], $etag) !== false) {
-        header("Last-Modified: $lastModifiedGMT", true, 304);
-        exit;
-      }
-    }
+	/**
+	 * Adds the specified filename or array of filenames to the list of files to
+	 * be minified. A filename can be in the form of a relative path or a URL
+	 * that resolves to the same site that hosts Minify.
+	 *
+	 * @param array|string $files filename or array of filenames
+	 * @see getFiles()
+	 * @see removeFile()
+	 */
+	function addFile($files) {
+		$files = array_map(array($this, 'resolveFilePath'), (array) $files);
+		$this->files = array_unique(array_merge($this->files, $files));
+	}
 
-    header('ETag: "'.$etag.'"');
+	/**
+	 * Attempts to serve the combined, minified files from the cache if possible.
+	 *
+	 * This method first checks the ETag value and If-Modified-Since timestamp
+	 * sent by the browser and exits with an HTTP "304 Not Modified" response if
+	 * the requested files haven't changed since they were last sent to the
+	 * client.
+	 *
+	 * If the browser hasn't cached the content, we check to see if it's been
+	 * cached on the server and, if so, we send the cached content and exit.
+	 *
+	 * If neither the client nor the server has the content in its cache, we don't
+	 * do anything.
+	 *
+	 * @return bool
+	 */
+	function browserCache() {
+		$hash         = $this->getHash();
+		$lastModified = $this->getLastModified();
 
-    // Check If-Modified-Since.
-    if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
-      if ($lastModified <= strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
-        header("Last-Modified: $lastModifiedGMT", true, 304);
-        exit;
-      }
-    }
+		$lastModifiedGMT = gmdate('D, d M Y H:i:s', $lastModified).' GMT';
 
-    header("Last-Modified: $lastModifiedGMT");
+		// Check/set the ETag.
+		$etag = $hash.'_'.$lastModified;
 
-    return false;
-  }
+		if (isset($_SERVER['HTTP_IF_NONE_MATCH'])) {
+			if (strpos($_SERVER['HTTP_IF_NONE_MATCH'], $etag) !== false) {
+				header("Last-Modified: $lastModifiedGMT", true, 304);
+				exit;
+			}
+		}
 
-  /**
-   * Combines and returns the contents of all files that have been added with
-   * addFile() or via this class's constructor.
-   *
-   * If MINIFY_USE_CACHE is true, the content will be returned from the server's
-   * cache if the cache is up to date; otherwise the new content will be saved
-   * to the cache for future use.
-   *
-   * @param bool $minify minify the combined contents before returning them
-   * @return string combined file contents
-   */
-  function combine($minify = true) {
+		header('ETag: "'.$etag.'"');
 
-    // Return contents from server cache if possible.
-    if (MINIFY_USE_CACHE) {
-      if ($cacheResult = $this->serverCache(true)) {
-        return $cacheResult;
-      }
-    }
+		// Check If-Modified-Since.
+		if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
+			if ($lastModified <= strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
+				header("Last-Modified: $lastModifiedGMT", true, 304);
+				exit;
+			}
+		}
 
-    // Combine contents.
-    $combined = array();
+		header("Last-Modified: $lastModifiedGMT");
 
-    foreach($this->files as $file) {
-      if ($this->type === TYPE_CSS && MINIFY_REWRITE_CSS_URLS) {
-        // Rewrite relative CSS URLs.
-        $combined[] = Minify::rewriteCSSUrls(file_get_contents($file),
-            dirname($file));
-      }
-      else {
-        $combined[] = file_get_contents($file);
-      }
-    }
-    
-    $combined = $minify ? Minify::_minify(implode("\n", $combined), $this->type) :
-        implode("\n", $combined);
+		return false;
+	}
 
-    // Save combined contents to the cache.
-    if (MINIFY_USE_CACHE) {
-      $cacheFile = MINIFY_CACHE_DIR.'/minify_'.$this->getHash();
-      file_put_contents($cacheFile, $combined, LOCK_EX);
-    }
+	/**
+	 * Combines and returns the contents of all files that have been added with
+	 * addFile() or via this class's constructor.
+	 *
+	 * If MINIFY_USE_CACHE is true, the content will be returned from the server's
+	 * cache if the cache is up to date; otherwise the new content will be saved
+	 * to the cache for future use.
+	 *
+	 * @param bool $minify minify the combined contents before returning them
+	 * @return string combined file contents
+	 */
+	function combine($minify = true) {
 
-    return $combined;
-  }
+		// Return contents from server cache if possible.
+		if (MINIFY_USE_CACHE) {
+			if ($cacheResult = $this->serverCache(true)) {
+				return $cacheResult;
+			}
+		}
 
-  /**
-   * Gets an array of absolute pathnames of all files that have been added with
-   * addFile() or via this class's constructor.
-   *
-   * @return array array of absolute pathnames
-   * @see addFile()
-   * @see removeFile()
-   */
-  function getFiles() {
-    return $this->files;
-  }
+		// Combine contents.
+		$combined = array();
 
-  /**
-   * Gets the MD5 hash of the concatenated filenames from the list of files to
-   * be minified.
-   */
-  function getHash() {
-    return md5(implode('', $this->files));
-  }
-  
-  /**
-   * Gets the timestamp of the most recently modified file.
-   *
-   * @return int timestamp
-   */
-  function getLastModified() {
-    $lastModified = 0;
+		foreach($this->files as $file) {
+			if ($this->type === TYPE_CSS && MINIFY_REWRITE_CSS_URLS) {
+				// Rewrite relative CSS URLs.
+				$combined[] = Minify::rewriteCSSUrls(file_get_contents($file),
+						dirname($file));
+			}
+			else {
+				$combined[] = file_get_contents($file);
+			}
+		}
 
-    // Get the timestamp of the most recently modified file.
-    foreach($this->files as $file) {
-      $modified = filemtime($file);
-      
-      if ($modified !== false && $modified > $lastModified) {
-        $lastModified = $modified;
-      }
-    }
+		$combined = $minify ? Minify::_minify(implode("\n", $combined), $this->type) :
+		implode("\n", $combined);
 
-    return $lastModified;
-  }
+		// Save combined contents to the cache.
+		if (MINIFY_USE_CACHE) {
+			$cacheFile = MINIFY_CACHE_DIR.'/minify_'.$this->getHash();
+			file_put_contents($cacheFile, $combined, LOCK_EX);
+		}
 
-  /**
-   * Removes the specified filename or array of filenames from the list of files
-   * to be minified.
-   *
-   * @param array|string $files filename or array of filenames
-   * @see addFile()
-   * @see getFiles()
-   */
-  function removeFile($files) {
-    $files = array_map(array($this, 'resolveFilePath'), (array) $files);
-    $this->files = array_diff($this->files, $files);
-  }
+		return $combined;
+	}
 
-  /**
-   * Attempts to serve the combined, minified files from the server's disk-based
-   * cache if possible.
-   *
-   * @param bool $return return cached content as a string instead of outputting
-   *   it to the client
-   * @return bool|string
-   */
-  function serverCache($return = false) {
-    $cacheFile    = MINIFY_CACHE_DIR.'/minify_'.$this->getHash();
-    $lastModified = $this->getLastModified();
+	/**
+	 * Gets an array of absolute pathnames of all files that have been added with
+	 * addFile() or via this class's constructor.
+	 *
+	 * @return array array of absolute pathnames
+	 * @see addFile()
+	 * @see removeFile()
+	 */
+	function getFiles() {
+		return $this->files;
+	}
 
-    if (is_file($cacheFile) && $lastModified <= filemtime($cacheFile)) {
-      if ($return) {
-        return file_get_contents($cacheFile);
-      }
-      else {
-        echo file_get_contents($cacheFile);
-        exit;
-      }
-    }
+	/**
+	 * Gets the MD5 hash of the concatenated filenames from the list of files to
+	 * be minified.
+	 */
+	function getHash() {
+		return md5(implode('', $this->files));
+	}
 
-    return false;
-  }
+	/**
+	 * Gets the timestamp of the most recently modified file.
+	 *
+	 * @return int timestamp
+	 */
+	function getLastModified() {
+		$lastModified = 0;
 
-  // -- Protected Instance Methods ---------------------------------------------
+		// Get the timestamp of the most recently modified file.
+		foreach($this->files as $file) {
+			$modified = filemtime($file);
 
-  /**
-   * Returns the canonicalized absolute pathname to the specified file or local
-   * URL.
-   *
-   * @param string $file relative file path
-   * @return string canonicalized absolute pathname
-   */
-  function resolveFilePath($file) {
-    // Is this a URL?
-    if (preg_match('/^https?:\/\//i', $file)) {
-      if (!$parsedUrl = parse_url($file)) {
-        die("Invalid URL: $file");
-      }
+			if ($modified !== false && $modified > $lastModified) {
+				$lastModified = $modified;
+			}
+		}
 
-      // Does the server name match the local server name?
-      if (!isset($parsedUrl['host']) ||
-          $parsedUrl['host'] != $_SERVER['SERVER_NAME']) {
-        die('Non-local URL not supported: '.
-            $file);
-      }
+		return $lastModified;
+	}
 
-      // Get the file's absolute path.
-      $filepath = realpath(MINIFY_BASE_DIR.$parsedUrl['path']);
-    }
-    else {
-      // Get the file's absolute path.
-      $filepath = realpath(MINIFY_BASE_DIR.'/'.$file);
-    }
+	/**
+	 * Removes the specified filename or array of filenames from the list of files
+	 * to be minified.
+	 *
+	 * @param array|string $files filename or array of filenames
+	 * @see addFile()
+	 * @see getFiles()
+	 */
+	function removeFile($files) {
+		$files = array_map(array($this, 'resolveFilePath'), (array) $files);
+		$this->files = array_diff($this->files, $files);
+	}
 
-    // Ensure that the file exists, that the path is under the base directory,
-    // that the file's extension is either '.css' or '.js', and that the file is
-    // actually readable.
-    if (!$filepath ||
-        !is_file($filepath) ||
-        !is_readable($filepath) ||
-        !preg_match('/^'.preg_quote(MINIFY_BASE_DIR, '/').'/', $filepath) ||
-        !preg_match('/\.(?:css|js)$/iD', $filepath)) {
+	/**
+	 * Attempts to serve the combined, minified files from the server's disk-based
+	 * cache if possible.
+	 *
+	 * @param bool $return return cached content as a string instead of outputting
+	 *   it to the client
+	 * @return bool|string
+	 */
+	function serverCache($return = false) {
+		$cacheFile    = MINIFY_CACHE_DIR.'/minify_'.$this->getHash();
+		$lastModified = $this->getLastModified();
 
-      // Even when the file exists, we still throw a
-      // MinifyFileNotFoundException in order to try to prevent an information
-      // disclosure vulnerability.
-      die("File not found: $file");
-    }
+		if (is_file($cacheFile) && $lastModified <= filemtime($cacheFile)) {
+			if ($return) {
+				return file_get_contents($cacheFile);
+			}
+			else {
+				echo file_get_contents($cacheFile);
+				exit;
+			}
+		}
 
-    return $filepath;
-  }
+		return false;
+	}
+
+	// -- Protected Instance Methods ---------------------------------------------
+
+	/**
+	 * Returns the canonicalized absolute pathname to the specified file or local
+	 * URL.
+	 *
+	 * @param string $file relative file path
+	 * @return string canonicalized absolute pathname
+	 */
+	function resolveFilePath($file) {
+		// Is this a URL?
+		if (preg_match('/^https?:\/\//i', $file)) {
+			if (!$parsedUrl = parse_url($file)) {
+				die("Invalid URL: $file");
+			}
+
+			// Does the server name match the local server name?
+			if (!isset($parsedUrl['host']) ||
+			$parsedUrl['host'] != $_SERVER['SERVER_NAME']) {
+				die('Non-local URL not supported: '.
+						$file);
+			}
+
+			// Get the file's absolute path.
+			$filepath = realpath(MINIFY_BASE_DIR.$parsedUrl['path']);
+		}
+		else {
+			// Get the file's absolute path.
+			$filepath = realpath(MINIFY_BASE_DIR.'/'.$file);
+		}
+
+		// Ensure that the file exists, that the path is under the base directory,
+		// that the file's extension is either '.css' or '.js', and that the file is
+		// actually readable.
+		if (!$filepath ||
+		!is_file($filepath) ||
+		!is_readable($filepath) ||
+		!preg_match('/^'.preg_quote(MINIFY_BASE_DIR, '/').'/', $filepath) ||
+		!preg_match('/\.(?:css|js)$/iD', $filepath)) {
+
+			// Even when the file exists, we still throw a
+			// MinifyFileNotFoundException in order to try to prevent an information
+			// disclosure vulnerability.
+			die("File not found: $file");
+		}
+
+		return $filepath;
+	}
 }
 
 // -- Global Scope -------------------------------------------------------------
 if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
-  Minify::handleRequest();
+	Minify::handleRequest();
 }
 
 ?>

@@ -11,7 +11,7 @@
  * @link		http://codeigniter.com
  * @since		Version 1.0
  * @filesource
- */
+*/
 
 // ------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@
  * @category	Database
  * @author		Esen Sagynov
  * @link		http://codeigniter.com/user_guide/database/
- */
+*/
 class CI_DB_cubrid_utility extends CI_DB_utility {
 
 	/**
@@ -89,12 +89,12 @@ class CI_DB_cubrid_utility extends CI_DB_utility {
 
 	// --------------------------------------------------------------------
 	/**
-	 * CUBRID Export
-	 *
-	 * @access	private
-	 * @param	array	Preferences
-	 * @return	mixed
-	 */
+	* CUBRID Export
+	*
+	* @access	private
+	* @param	array	Preferences
+	* @return	mixed
+	*/
 	function _backup($params = array())
 	{
 		// No SQL based support in CUBRID as of version 8.4.0. Database or

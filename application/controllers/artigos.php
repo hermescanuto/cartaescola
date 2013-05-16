@@ -1,77 +1,78 @@
 <?php
 if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+	exit('No direct script access allowed');
 
 class artigos extends CI_Controller {
 
-    protected $data = array();
-    protected $tabela = 'tb_conteudo';
-    protected $view = 'vw_conteudo';
+	protected $data = array();
+	protected $tabela = 'tb_conteudo';
+	protected $view = 'vw_conteudo';
 
-    function __construct() {
-        parent::__construct();
-        $this -> load -> library('util');
-        $this -> load -> model('Model_util');
-        $this -> data['base_url'] = base_url();
-        $this -> data['local'] = $this -> uri -> segment("2");
-        $this -> data['tipo_busca'] = 5;
-        $this -> data['lista_legenda'] = "Artigos";
-    }
+	function __construct() {
+		parent::__construct();
+		$this -> load -> library('util');
+		$this -> load -> model('Model_util');
+		$this -> data['base_url'] = base_url();
+		$this -> data['local'] = $this -> uri -> segment("2");
+		$this -> data['tipo_busca'] = 5;
+		$this -> data['lista_legenda'] = "Artigos";
 
-    public function index() {
-        $this -> paging();
-        // paginacao
-    }
+	}
 
-    /*
-     *
-     * @autor   Hermes Canuto de Souza
-     * paginação
-     *
-     */
+	public function index() {
+		$this -> paging();
+		// paginacao
+	}
 
-    function paging() {
+	/*
+	 *
+	* @autor   Hermes Canuto de Souza
+	* paginação
+	*
+	*/
 
-        // Cria a busca
-        $data['new_record'] = base_url() . $this -> data['local'] . '/novo';
-        $data['search'] = base_url() . $this -> data['local'] . '/paging/0/';
-        $data['view'] = 'util/painel_busca';
+	function paging() {
 
-        //$data['tag']=$this->Model_localevento->localevento_autocomplete(); // autocomplete dos locais
-        
-        // Cria a busca
+		// Cria a busca
+		$data['new_record'] = base_url() . $this -> data['local'] . '/novo';
+		$data['search'] = base_url() . $this -> data['local'] . '/paging/0/';
+		$data['view'] = 'util/painel_busca';
 
-        $table = $this -> view;
-        $fields = "*";
-        $orderby = 'id desc';
+		//$data['tag']=$this->Model_localevento->localevento_autocomplete(); // autocomplete dos locais
 
-        $busca = $this -> uri -> segment("5");
-        if (is_numeric($busca)) {
-            $campo_busca = 'edicao';
-        } else {
+		// Cria a busca
 
-            $campo_busca = 'titulo';
-        }
+		$table = $this -> view;
+		$fields = "*";
+		$orderby = 'id desc';
 
-        if ($busca != null) {
+		$busca = $this -> uri -> segment("5");
+		if (is_numeric($busca)) {
+			$campo_busca = 'edicao';
+		} else {
 
-            $where = array($campo_busca => urldecode($busca) , 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] );
-        } else {
-            $where = array( 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] );
-        }
+			$campo_busca = 'titulo';
+		}
 
-        
+		if ($busca != null) {
 
-        $result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"4","5");
-        // cria a paginação
-        $data = $result;
+			$where = array($campo_busca => urldecode($busca) , 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] );
+		} else {
+			$where = array( 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] );
+		}
 
-        $data['base_url'] = base_url();
-        $data['local'] = $this -> data['local'];
-        $data['lista_legenda'] = $this -> data['lista_legenda'] ;
-        $this -> parser -> parse('front/lista', $data);
-        // Carrega o view de listagem de materia
 
-    }
+
+		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"4","5");
+		// cria a paginação
+		$data = $result;
+
+		$data['base_url'] = base_url();
+		$data['local'] = $this -> data['local'];
+		$data['lista_legenda'] = $this -> data['lista_legenda'] ;
+		$this -> parser -> parse('front/lista', $data);
+		// Carrega o view de listagem de materia
+
+	}
 
 }

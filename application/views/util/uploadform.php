@@ -9,13 +9,16 @@
 <title>Upload Form</title>
 </head>
 {error}
-<form method="post" action="{base_url}admin/upload/do_upload/{id}/{option}" enctype="multipart/form-data" />
+<form method="post"
+	action="{base_url}admin/upload/do_upload/{id}/{option}"
+	enctype="multipart/form-data" />
 
-<input type="hidden" id='id' name='id'  value='{id}'/>
-<input type="hidden" id='option' name='option'  value='{option}'/>
+<input type="hidden" id='id' name='id' value='{id}' />
+<input type="hidden" id='option' name='option' value='{option}' />
 
 <input type="file" name="userfile" size="20" />
 
-<br /><br />
+<br />
+<br />
 <input type="submit" value="upload" />
 </form>

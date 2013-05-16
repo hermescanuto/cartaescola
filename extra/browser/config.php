@@ -1,6 +1,6 @@
 <?php
 /*
-PDW File Browser v1.3 beta
+ PDW File Browser v1.3 beta
 Date: October 19, 2010
 Url: http://www.neele.name
 
@@ -25,21 +25,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-if(!isset($_SESSION)){ session_start();}  
+if(!isset($_SESSION)){
+	session_start();
+}
 
 /*
  * Uncomment lines below to enable PHP error reporting and displaying PHP errors.
- * Do not do this on a production server. Might be helpful when debugging why PDW File Browser
- * does not work as expected.
- */
+* Do not do this on a production server. Might be helpful when debugging why PDW File Browser
+* does not work as expected.
+*/
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
 
 
 /**
- * WARNING: You should do your authorization checking right here. config.php is included 
- * in every file so checking it here is securing the whole plug-in. By not checking for 
- * authorization you are allowing "anyone" to upload and list the files in your server. 
+ * WARNING: You should do your authorization checking right here. config.php is included
+ * in every file so checking it here is securing the whole plug-in. By not checking for
+ * authorization you are allowing "anyone" to upload and list the files in your server.
  * You must implement some kind of session validation here. You could do something like...
  *
  * if (!(isset($_SESSION['IsAuthorized']) && $_SESSION['IsAuthorized'])){
@@ -47,78 +49,78 @@ if(!isset($_SESSION)){ session_start();}
  * }
  *
  * ... where $_SESSION['IsAuthorized'] is set to "true" as soon as the user logs in to your system.
-**/
+ **/
 
 /*
  * UPLOAD PATH
- * 
- * absolute path from root to upload folder (DON'T FORGET SLASHES)
- *
- * Example 
- * ---------------------------------------
- * http://www.domain.com/images/upload/
- * $uploadpath = '/images/upload/';
- *
- */
+*
+* absolute path from root to upload folder (DON'T FORGET SLASHES)
+*
+* Example
+* ---------------------------------------
+* http://www.domain.com/images/upload/
+* $uploadpath = '/images/upload/';
+*
+*/
 $uploadpath = "/sites/cartaescola/upload2/"; // absolute path from root to upload folder (DON'T FORGET SLASHES)
 
 /*
  * DEFAULT TIMEZONE
- * 
- * If you use PHP 5 then set default timezone to avoid any date errors. 
- * 
- * Select the timezone you are in.
- *
- * Timezones to select from are http://nl3.php.net/manual/en/timezones.php
- *
- */
+*
+* If you use PHP 5 then set default timezone to avoid any date errors.
+*
+* Select the timezone you are in.
+*
+* Timezones to select from are http://nl3.php.net/manual/en/timezones.php
+*
+*/
 //date_default_timezone_set('Europe/Amsterdam');
 
 /*
  * VIEW LAYOUT
- *
- * Set the default view layout when the file browser is first loaded
- *
- * Your options are: 'large_images', 'small_images', 'list', 'content', 'tiles' and 'details'
- *
- */
+*
+* Set the default view layout when the file browser is first loaded
+*
+* Your options are: 'large_images', 'small_images', 'list', 'content', 'tiles' and 'details'
+*
+*/
 $viewLayout = 'list';
 
 /*
  * DEFAULT LANGUAGE
- * 
- * Set default language to load when &language=? is not included in url
- *
- * See lang directory for included languages. For now your options are 'en' and 'nl'
- * But you are free to translate the language files in the /lang/ directory. Copy the
- * en.php file and translate the lines after the =>
- *
- */
+*
+* Set default language to load when &language=? is not included in url
+*
+* See lang directory for included languages. For now your options are 'en' and 'nl'
+* But you are free to translate the language files in the /lang/ directory. Copy the
+* en.php file and translate the lines after the =>
+*
+*/
 $defaultLanguage = 'en';
 
 /*
  * ALLOWED ACTIONS
- * 
- * Set an action to FALSE to prevent execution.
- * Buttons will be removed from UI when an action is set to FALSE.
- * 
- */
+*
+* Set an action to FALSE to prevent execution.
+* Buttons will be removed from UI when an action is set to FALSE.
+*
+*/
 $allowedActions = array(
-    'upload' => TRUE,
-	'settings' => TRUE,
-    'cut_paste' => TRUE,
-	'copy_paste' => TRUE,
-	'rename' => TRUE,
-	'delete' => TRUE,
-	'create_folder' => TRUE
-); 
+		'upload' => TRUE,
+		'settings' => TRUE,
+		'cut_paste' => TRUE,
+		'copy_paste' => TRUE,
+		'rename' => TRUE,
+		'delete' => TRUE,
+		'create_folder' => TRUE
+);
 
 /*
  * PDW File Browser depends on $_SERVER['DOCUMENT_ROOT'] to resolve path/filenames. This value is usually
- * correct, but has been known to be broken on some servers. This value allows you to override the default
- * value.
- * Do not modify from the auto-detect default value unless you are having problems.
- */
+* correct, but has been known to be broken on some servers. This value allows you to override the default
+* value.
+* Do not modify from the auto-detect default value unless you are having problems.
+*/
 //define('DOCUMENTROOT', '/home/httpd/httpdocs');
 //define('DOCUMENTROOT', 'c:\\webroot\\example.com\\www');
 //define('DOCUMENTROOT', $_SERVER['DOCUMENT_ROOT']);
@@ -127,10 +129,10 @@ define('DOCUMENTROOT', realpath((getenv('DOCUMENT_ROOT') && preg_match('#^'.preg
 
 /*
  * CUSTOM FILTERS
- * 
- * If you like to use custom filters then remove "//" to add your own filters.
- * "name of filter" => ".extension1|.extension2"
- */
+*
+* If you like to use custom filters then remove "//" to add your own filters.
+* "name of filter" => ".extension1|.extension2"
+*/
 //$customFilters = array(
 //    "MS Office Documents (Custom filter)" => ".doc|.docx|.xsl|.xlsx|.ppt|.pptx",
 //    "PDF-Documents (Custom filter)" => ".pdf"
@@ -138,19 +140,19 @@ define('DOCUMENTROOT', realpath((getenv('DOCUMENT_ROOT') && preg_match('#^'.preg
 
 /*
  * DEFAULT SKIN
- * 
- * Take a look inside the /skin/ folder to see which skins are available. If you leave the "//"
- * then redmond (Windows 7 like) will be the default theme.
- */
+*
+* Take a look inside the /skin/ folder to see which skins are available. If you leave the "//"
+* then redmond (Windows 7 like) will be the default theme.
+*/
 //$defaultSkin="mountainview";
 
 
 
 /*
  * EDITOR
- * 
- * Which editor are we dealing with? PDW File Browser can be used with TinyMCE and CKEditor.
- */
+*
+* Which editor are we dealing with? PDW File Browser can be used with TinyMCE and CKEditor.
+*/
 $editor = isset($_GET["editor"]) ? $_GET["editor"] : ''; // If you want to use the file browser for both editors and/or standalone
 //$editor="tinymce";
 $editor="ckeditor";
@@ -159,12 +161,12 @@ $editor="ckeditor";
 
 /*
  * UPLOAD SETTINGS
- * 
- */
+*
+*/
 // Maximum file size
 $max_file_size_in_bytes = 1048576; // 1MB in bytes
 
-// Characters allowed in the file name (in a Regular Expression format)               
+// Characters allowed in the file name (in a Regular Expression format)
 $valid_chars_regex = '.A-Z0-9_ !@#$%^&()+={}\[\]\',~`-';
 
 // Allowed file extensions
@@ -175,9 +177,9 @@ $extension_whitelist = "asf,avi,bmp,fla,flv,gif,jpeg,jpg,mov,mpeg,mpg,png,tif,ti
 
 /*
  * RETURN LINKS AS ABSOLUTE OR ABSOLUTE WITHOUT HOSTNAME
- *
- * Ex. http://www.example.com/upload/file.jpg instead of /upload/file.jpg 
- */
+*
+* Ex. http://www.example.com/upload/file.jpg instead of /upload/file.jpg
+*/
 $absolute_url = FALSE; // When FALSE url will be returned absolute without hostname, like /upload/file.jpg.
 $absolute_url_disabled = FALSE; // When TRUE changing from absolute to relative is not possible.
 
@@ -225,22 +227,22 @@ $thousands_separator = $lang["thousands separator"];	// character between every 
 
 // Check post_max_size (http://us3.php.net/manual/en/features.file-upload.php#73762)
 function let_to_num($v){ //This function transforms the php.ini notation for numbers (like '2M') to an integer (2*1024*1024 in this case)
-    $l = substr($v, -1);
-    $ret = substr($v, 0, -1);
-    switch(strtoupper($l)){
-        case 'P': $ret *= 1024;
-        case 'T': $ret *= 1024;
-        case 'G': $ret *= 1024;
-        case 'M': $ret *= 1024;
-        case 'K': $ret *= 1024;
-        break;
-    }
-    return $ret;
+	$l = substr($v, -1);
+	$ret = substr($v, 0, -1);
+	switch(strtoupper($l)){
+		case 'P': $ret *= 1024;
+		case 'T': $ret *= 1024;
+		case 'G': $ret *= 1024;
+		case 'M': $ret *= 1024;
+		case 'K': $ret *= 1024;
+		break;
+	}
+	return $ret;
 }
 
 $max_upload_size = min(let_to_num(ini_get('post_max_size')), let_to_num(ini_get('upload_max_filesize')));
 
 if ($max_file_size_in_bytes > $max_upload_size) {
-    $max_file_size_in_bytes = $max_upload_size;
+	$max_file_size_in_bytes = $max_upload_size;
 }
 ?>

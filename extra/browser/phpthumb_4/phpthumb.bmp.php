@@ -85,11 +85,11 @@ class phpthumb_bmp {
 
 	function getid3_bmp(&$BMPdata, &$ThisFileInfo, $ExtractPalette=false, $ExtractData=false) {
 
-	    // shortcuts
-	    $ThisFileInfo['bmp']['header']['raw'] = array();
-	    $thisfile_bmp                         = &$ThisFileInfo['bmp'];
-	    $thisfile_bmp_header                  = &$thisfile_bmp['header'];
-	    $thisfile_bmp_header_raw              = &$thisfile_bmp_header['raw'];
+		// shortcuts
+		$ThisFileInfo['bmp']['header']['raw'] = array();
+		$thisfile_bmp                         = &$ThisFileInfo['bmp'];
+		$thisfile_bmp_header                  = &$thisfile_bmp['header'];
+		$thisfile_bmp_header_raw              = &$thisfile_bmp_header['raw'];
 
 		// BITMAPFILEHEADER [14 bytes] - http://msdn.microsoft.com/library/en-us/gdi/bitmaps_62uq.asp
 		// all versions
@@ -775,23 +775,23 @@ class phpthumb_bmp {
 
 	function BMPcompressionWindowsLookup($compressionid) {
 		static $BMPcompressionWindowsLookup = array(
-			0 => 'BI_RGB',
-			1 => 'BI_RLE8',
-			2 => 'BI_RLE4',
-			3 => 'BI_BITFIELDS',
-			4 => 'BI_JPEG',
-			5 => 'BI_PNG'
+				0 => 'BI_RGB',
+				1 => 'BI_RLE8',
+				2 => 'BI_RLE4',
+				3 => 'BI_BITFIELDS',
+				4 => 'BI_JPEG',
+				5 => 'BI_PNG'
 		);
 		return (isset($BMPcompressionWindowsLookup[$compressionid]) ? $BMPcompressionWindowsLookup[$compressionid] : 'invalid');
 	}
 
 	function BMPcompressionOS2Lookup($compressionid) {
 		static $BMPcompressionOS2Lookup = array(
-			0 => 'BI_RGB',
-			1 => 'BI_RLE8',
-			2 => 'BI_RLE4',
-			3 => 'Huffman 1D',
-			4 => 'BI_RLE24',
+				0 => 'BI_RGB',
+				1 => 'BI_RLE8',
+				2 => 'BI_RLE4',
+				3 => 'Huffman 1D',
+				4 => 'BI_RLE24',
 		);
 		return (isset($BMPcompressionOS2Lookup[$compressionid]) ? $BMPcompressionOS2Lookup[$compressionid] : 'invalid');
 	}

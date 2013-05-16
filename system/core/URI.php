@@ -11,7 +11,7 @@
  * @link		http://codeigniter.com
  * @since		Version 1.0
  * @filesource
- */
+*/
 
 // ------------------------------------------------------------------------
 
@@ -25,7 +25,7 @@
  * @category	URI
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/uri.html
- */
+*/
 class CI_URI {
 
 	/**
@@ -40,7 +40,7 @@ class CI_URI {
 	 *
 	 * @var string
 	 * @access public
-	 */
+	*/
 	var $uri_string;
 	/**
 	 * List of uri segments
@@ -55,7 +55,7 @@ class CI_URI {
 	 *
 	 * @var array
 	 * @access public
-	 */
+	*/
 	var $rsegments		= array();
 
 	/**
@@ -66,7 +66,7 @@ class CI_URI {
 	 * normally as other classes are.
 	 *
 	 * @access	public
-	 */
+	*/
 	function __construct()
 	{
 		$this->config =& load_class('Config', 'core');
@@ -308,16 +308,16 @@ class CI_URI {
 
 	// --------------------------------------------------------------------
 	/**
-	 * Re-index Segments
-	 *
-	 * This function re-indexes the $this->segment array so that it
-	 * starts at 1 rather than 0.  Doing so makes it simpler to
-	 * use functions like $this->uri->segment(n) since there is
-	 * a 1:1 relationship between the segment array and the actual segments.
-	 *
-	 * @access	private
-	 * @return	void
-	 */
+	* Re-index Segments
+	*
+	* This function re-indexes the $this->segment array so that it
+	* starts at 1 rather than 0.  Doing so makes it simpler to
+	* use functions like $this->uri->segment(n) since there is
+	* a 1:1 relationship between the segment array and the actual segments.
+	*
+	* @access	private
+	* @return	void
+	*/
 	function _reindex_segments()
 	{
 		array_unshift($this->segments, NULL);

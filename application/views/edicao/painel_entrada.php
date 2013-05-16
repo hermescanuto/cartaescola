@@ -1,38 +1,38 @@
-<div id='painel_campos'  style="padding-left: 5px">
+<div id='painel_campos' style="padding-left: 5px">
 
 
-	<form name = "form1" id="form1" action="{save}" method="post" enctype="multipart/form-data" >
-		<b>->Edição</b>
-		<br/>
-
-	
-
-					<div class="control-group">
-					       <label class="control-label"> ID: {id}</label>
-                            <input      type="hidden" name='id' id='id' value="{id}"/>
-			
-
-						<label class="control-label"  for="edicao">Edicao:</label>
-						<input type="text" name="edicao"   id="edicao"     size="10" maxlength="10" value="{edicao}" placeholder="Edição" />
-						<input type="text" name="geral"   id="geral"     size="10" maxlength="10" style="display:none"/>
-						
-						<label class="control-label"  for="sub_classificacao">Mês:</label>
-                        <input type="text" name="mes"   id="mes"     size="10" maxlength="10" value="{mes}" placeholder="Mês" />
-                        
-                        <label class="control-label"  for="sub_classificacao">Ano:</label>
-                        <input type="text" name="ano"   id="ano"     size="10" maxlength="10" value="{ano}" placeholder="ano" />
-
-					</div>
+	<form name="form1" id="form1" action="{save}" method="post"
+		enctype="multipart/form-data">
+		<b>->Edição</b> <br />
 
 
 
-			{up_imagem_capa} : <img src="{imagem_capa}" class="img-polaroid"/>
-			</p>
+		<div class="control-group">
+			<label class="control-label"> ID: {id}</label> <input type="hidden"
+				name='id' id='id' value="{id}" /> <label class="control-label"
+				for="edicao">Edicao:</label> <input type="text" name="edicao"
+				id="edicao" size="10" maxlength="10" value="{edicao}"
+				placeholder="Edição" /> <input type="text" name="geral" id="geral"
+				size="10" maxlength="10" style="display: none" /> <label
+				class="control-label" for="sub_classificacao">Mês:</label> <input
+				type="text" name="mes" id="mes" size="10" maxlength="10"
+				value="{mes}" placeholder="Mês" /> <label class="control-label"
+				for="sub_classificacao">Ano:</label> <input type="text" name="ano"
+				id="ano" size="10" maxlength="10" value="{ano}" placeholder="ano" />
+
 		</div>
-	</form>
+
+
+
+		{up_imagem_capa} : <img src="{imagem_capa}" class="img-polaroid" />
+		</p>
+
 </div>
-<hr/>
-<input type="button" value="Salvar" id="salvar" class="btn btn-mini" />
+</form>
+</div>
+<hr />
+<input
+	type="button" value="Salvar" id="salvar" class="btn btn-mini" />
 
 <script>
 	$(document).ready(function() {

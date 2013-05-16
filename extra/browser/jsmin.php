@@ -12,7 +12,7 @@
  * Permission is hereby granted to use this version of the library under the
  * same terms as jsmin.c, which has the following license:
  *
- * -- 
+ * --
  * Copyright (c) 2002 Douglas Crockford  (www.crockford.com)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -20,7 +20,7 @@
  * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
  * of the Software, and to permit persons to whom the Software is furnished to do
- * so, subject to the following conditions:
+ 	* so, subject to the following conditions:
  *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
@@ -34,7 +34,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * -- 
+ * --
  *
  * @package JSMin
  * @author Ryan Grove <ryan@wonko.com>
@@ -50,245 +50,245 @@ define('ORD_SPACE', 32);
 
 class JSMin {
 
-  var $a           = '';
-  var $b           = '';
-  var $input       = '';
-  var $inputIndex  = 0;
-  var $inputLength = 0;
-  var $lookAhead   = null;
-  var $output      = array();
+	var $a           = '';
+	var $b           = '';
+	var $input       = '';
+	var $inputIndex  = 0;
+	var $inputLength = 0;
+	var $lookAhead   = null;
+	var $output      = array();
 
-  // -- Public Static Methods --------------------------------------------------
-  
-  function minify($js) {
-    $jsmin = new JSMin($js);
-    return $jsmin->jsminify();
-  }
+	// -- Public Static Methods --------------------------------------------------
 
-  // -- Public Instance Methods ------------------------------------------------
+	function minify($js) {
+		$jsmin = new JSMin($js);
+		return $jsmin->jsminify();
+	}
 
-  function JSMin($input) {
-    $this->input       = $input;
-    $this->inputLength = strlen($input);
-  }
+	// -- Public Instance Methods ------------------------------------------------
 
-  // -- Protected Instance Methods ---------------------------------------------
+	function JSMin($input) {
+		$this->input       = $input;
+		$this->inputLength = strlen($input);
+	}
 
-  function action($d) {
-    switch($d) {
-      case 1:
-        $this->output[] = $this->a;
+	// -- Protected Instance Methods ---------------------------------------------
 
-      case 2:
-        $this->a = $this->b;
+	function action($d) {
+		switch($d) {
+			case 1:
+				$this->output[] = $this->a;
 
-        if ($this->a === "'" || $this->a === '"') {
-          for (;;) {
-            $this->output[] = $this->a;
-            $this->a        = $this->get();
+			case 2:
+				$this->a = $this->b;
 
-            if ($this->a === $this->b) {
-              break;
-            }
+				if ($this->a === "'" || $this->a === '"') {
+					for (;;) {
+						$this->output[] = $this->a;
+						$this->a        = $this->get();
 
-            if (ord($this->a) <= ORD_LF) {
-              die('Unterminated string literal.');
-            }
+						if ($this->a === $this->b) {
+							break;
+						}
 
-            if ($this->a === '\\') {
-              $this->output[] = $this->a;
-              $this->a        = $this->get();
-            }
-          }
-        }
+						if (ord($this->a) <= ORD_LF) {
+							die('Unterminated string literal.');
+						}
 
-      case 3:
-        $this->b = $this->next();
+						if ($this->a === '\\') {
+							$this->output[] = $this->a;
+							$this->a        = $this->get();
+						}
+					}
+				}
 
-        if ($this->b === '/' && (
-            $this->a === '(' || $this->a === ',' || $this->a === '=' ||
-            $this->a === ':' || $this->a === '[' || $this->a === '!' ||
-            $this->a === '&' || $this->a === '|' || $this->a === '?')) {
+			case 3:
+				$this->b = $this->next();
 
-          $this->output[] = $this->a;
-          $this->output[] = $this->b;
+				if ($this->b === '/' && (
+						$this->a === '(' || $this->a === ',' || $this->a === '=' ||
+						$this->a === ':' || $this->a === '[' || $this->a === '!' ||
+						$this->a === '&' || $this->a === '|' || $this->a === '?')) {
 
-          for (;;) {
-            $this->a = $this->get();
+					$this->output[] = $this->a;
+					$this->output[] = $this->b;
 
-            if ($this->a === '/') {
-              break;
-            }
-            elseif ($this->a === '\\') {
-              $this->output[] = $this->a;
-              $this->a        = $this->get();
-            }
-            elseif (ord($this->a) <= ORD_LF) {
-              die('Unterminated regular expression literal.');
-            }
+					for (;;) {
+						$this->a = $this->get();
 
-            $this->output[] = $this->a;
-          }
+						if ($this->a === '/') {
+							break;
+						}
+						elseif ($this->a === '\\') {
+							$this->output[] = $this->a;
+							$this->a        = $this->get();
+						}
+						elseif (ord($this->a) <= ORD_LF) {
+							die('Unterminated regular expression literal.');
+						}
 
-          $this->b = $this->next();
-        }
-    }
-  }
+						$this->output[] = $this->a;
+					}
 
-  function get() {
-    $c = $this->lookAhead;
-    $this->lookAhead = null;
+					$this->b = $this->next();
+				}
+		}
+	}
 
-    if ($c === null) {
-      if ($this->inputIndex < $this->inputLength) {
-        $c = $this->input[$this->inputIndex];
-        $this->inputIndex += 1;
-      }
-      else {
-        $c = null;
-      }
-    }
+	function get() {
+		$c = $this->lookAhead;
+		$this->lookAhead = null;
 
-    if ($c === "\r") {
-      return "\n";
-    }
+		if ($c === null) {
+			if ($this->inputIndex < $this->inputLength) {
+				$c = $this->input[$this->inputIndex];
+				$this->inputIndex += 1;
+			}
+			else {
+				$c = null;
+			}
+		}
 
-    if ($c === null || $c === "\n" || ord($c) >= ORD_SPACE) {
-      return $c;
-    }
+		if ($c === "\r") {
+			return "\n";
+		}
 
-    return ' ';
-  }
+		if ($c === null || $c === "\n" || ord($c) >= ORD_SPACE) {
+			return $c;
+		}
 
-  function isAlphaNum($c) {
-    return ord($c) > 126 || $c === '\\' || preg_match('/^[\w\$]$/', $c) === 1;
-  }
+		return ' ';
+	}
 
-  function jsminify() {
-    $this->a = "\n";
-    $this->action(3);
+	function isAlphaNum($c) {
+		return ord($c) > 126 || $c === '\\' || preg_match('/^[\w\$]$/', $c) === 1;
+	}
 
-    while ($this->a !== null) {
-      switch ($this->a) {
-        case ' ':
-          if ($this->isAlphaNum($this->b)) {
-            $this->action(1);
-          }
-          else {
-            $this->action(2);
-          }
-          break;
+	function jsminify() {
+		$this->a = "\n";
+		$this->action(3);
 
-        case "\n":
-          switch ($this->b) {
-            case '{':
-            case '[':
-            case '(':
-            case '+':
-            case '-':
-              $this->action(1);
-              break;
+		while ($this->a !== null) {
+			switch ($this->a) {
+				case ' ':
+					if ($this->isAlphaNum($this->b)) {
+						$this->action(1);
+					}
+					else {
+						$this->action(2);
+					}
+					break;
 
-            case ' ':
-              $this->action(3);
-              break;
+				case "\n":
+					switch ($this->b) {
+						case '{':
+						case '[':
+						case '(':
+						case '+':
+						case '-':
+							$this->action(1);
+							break;
 
-            default:
-              if ($this->isAlphaNum($this->b)) {
-                $this->action(1);
-              }
-              else {
-                $this->action(2);
-              }
-          }
-          break;
+						case ' ':
+							$this->action(3);
+							break;
 
-        default:
-          switch ($this->b) {
-            case ' ':
-              if ($this->isAlphaNum($this->a)) {
-                $this->action(1);
-                break;
-              }
+						default:
+							if ($this->isAlphaNum($this->b)) {
+								$this->action(1);
+							}
+							else {
+								$this->action(2);
+							}
+					}
+					break;
 
-              $this->action(3);
-              break;
+				default:
+					switch ($this->b) {
+						case ' ':
+							if ($this->isAlphaNum($this->a)) {
+								$this->action(1);
+								break;
+							}
 
-            case "\n":
-              switch ($this->a) {
-                case '}':
-                case ']':
-                case ')':
-                case '+':
-                case '-':
-                case '"':
-                case "'":
-                  $this->action(1);
-                  break;
+							$this->action(3);
+							break;
 
-                default:
-                  if ($this->isAlphaNum($this->a)) {
-                    $this->action(1);
-                  }
-                  else {
-                    $this->action(3);
-                  }
-              }
-              break;
+						case "\n":
+							switch ($this->a) {
+								case '}':
+								case ']':
+								case ')':
+								case '+':
+								case '-':
+								case '"':
+								case "'":
+									$this->action(1);
+									break;
 
-            default:
-              $this->action(1);
-              break;
-          }
-      }
-    }
+								default:
+									if ($this->isAlphaNum($this->a)) {
+										$this->action(1);
+									}
+									else {
+										$this->action(3);
+									}
+							}
+							break;
 
-    return implode('', $this->output);
-  }
+						default:
+							$this->action(1);
+							break;
+					}
+			}
+		}
 
-  function next() {
-    $c = $this->get();
+		return implode('', $this->output);
+	}
 
-    if ($c === '/') {
-      switch($this->peek()) {
-        case '/':
-          for (;;) {
-            $c = $this->get();
+	function next() {
+		$c = $this->get();
 
-            if (ord($c) <= ORD_LF) {
-              return $c;
-            }
-          }
+		if ($c === '/') {
+			switch($this->peek()) {
+				case '/':
+					for (;;) {
+						$c = $this->get();
 
-        case '*':
-          $this->get();
+						if (ord($c) <= ORD_LF) {
+							return $c;
+						}
+					}
 
-          for (;;) {
-            switch($this->get()) {
-              case '*':
-                if ($this->peek() === '/') {
-                  $this->get();
-                  return ' ';
-                }
-                break;
+				case '*':
+					$this->get();
 
-              case null:
-               die('Unterminated comment.');
-            }
-          }
+					for (;;) {
+						switch($this->get()) {
+							case '*':
+								if ($this->peek() === '/') {
+									$this->get();
+									return ' ';
+								}
+								break;
 
-        default:
-          return $c;
-      }
-    }
+							case null:
+								die('Unterminated comment.');
+						}
+					}
 
-    return $c;
-  }
+				default:
+					return $c;
+			}
+		}
 
-  function peek() {
-    $this->lookAhead = $this->get();
-    return $this->lookAhead;
-  }
+		return $c;
+	}
+
+	function peek() {
+		$this->lookAhead = $this->get();
+		return $this->lookAhead;
+	}
 }
 
 ?>

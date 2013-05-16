@@ -1,201 +1,163 @@
 <!doctype html>
 <html class="no-js">
 
-    <head>
-        <meta charset="utf-8"/>
-        <title>Carta na Escola</title>
+<head>
+<meta charset="utf-8" />
+<title>Carta na Escola</title>
 
-        <?php
-        include 'script_css.php'
-        ?>
+<?php
+include 'script_css.php'
+		?>
 
-    </head>
+</head>
 
-    <body lang="en">
+<body lang="en">
 
-        <header class="clearfix">
+	<header class="clearfix">
 
-            <!-- top widget -->
-          
-                    <div id="top-widget">
-                        <div class="padding"></div>
-                    </div>
+		<!-- top widget -->
 
-                    <!-- ENDS top-widget -->
+		<div id="top-widget">
+			<div class="padding"></div>
+		</div>
 
-                    <div class="wrapper clearfix">
+		<!-- ENDS top-widget -->
 
-                        <?php
-    include 'menu.php';
- ?>
-                    </div>
-        </header>
+		<div class="wrapper clearfix">
 
-        <!-- MAIN -->
-        <div id="main">
-            <div class="wrapper clearfix">
+			<?php
+			include 'menu.php';
+			?>
+		</div>
+	</header>
 
-                <div id="posts-list" class="single-post">
+	<!-- MAIN -->
+	<div id="main">
+		<div class="wrapper clearfix">
 
-                    <!-- floated content -->
-                    <div class="floated-content">
+			<div id="posts-list" class="single-post">
 
-                        <h2 class="page-heading"><span>Contato</span></h2>
+				<!-- floated content -->
+				<div class="floated-content">
 
-                        <form id="contactForm" action="{base_url}contato/enviar" method="post">
+					<h2 class="page-heading">
+						<span>Contato</span>
+					</h2>
 
-                        <fieldset>
-                            <div>
-                                <input name="name"  id="name" type="text" class="form-poshytip" title="Entre com o seu nome completo" />
-                                <label>Nome</label>
-                            </div>
-                            <div>
-                                <input name="email"  id="email" type="text" class="form-poshytip" title="Entre com o seu e-mail" />
-                                <label>Email</label>
-                            </div>
+					<form id="contactForm" action="{base_url}contato/enviar"
+						method="post">
 
-                            <div>
-                                <textarea  name="comments"  id="comments" rows="5" cols="20" class="form-poshytip" title="Poste seus comentário"></textarea>
-                            </div>
+						<fieldset>
+							<div>
+								<input name="name" id="name" type="text" class="form-poshytip"
+									title="Entre com o seu nome completo" /> <label>Nome</label>
+							</div>
+							<div>
+								<input name="email" id="email" type="text" class="form-poshytip"
+									title="Entre com o seu e-mail" /> <label>Email</label>
+							</div>
 
-                            <!-- send mail configuration -->
-                            <input type="hidden" value="email@yourserver.com" name="to" id="to" />
-                            <input type="hidden" value="Enter the subject here" name="subject" id="subject" />
-                            <input type="hidden" value="send-mail.php" name="sendMailUrl" id="sendMailUrl" />
-                            <!-- ENDS send mail configuration -->
+							<div>
+								<textarea name="comments" id="comments" rows="5" cols="20"
+									class="form-poshytip" title="Poste seus comentário"></textarea>
+							</div>
 
-                            <p>
-                                <input type="submit" value="Enviar" name="submit" id="submit" />
-                                <span id="error" class="warning">Mensagem</span>
-                            </p>
-                        </fieldset>
+							<!-- send mail configuration -->
+							<input type="hidden" value="email@yourserver.com" name="to"
+								id="to" /> <input type="hidden" value="Enter the subject here"
+								name="subject" id="subject" /> <input type="hidden"
+								value="send-mail.php" name="sendMailUrl" id="sendMailUrl" />
+							<!-- ENDS send mail configuration -->
 
-                    </form>
-                     
+							<p>
+								<input type="submit" value="Enviar" name="submit" id="submit" />
+								<span id="error" class="warning">Mensagem</span>
+							</p>
+						</fieldset>
 
-                    </div>
+					</form>
 
-        </div>
-        <!-- ENDS posts list -->
 
-        <!-- sidebar -->
-        <aside id="sidebar">
-<div class="block">
-                            <h4>Central de atendimento</h4>
-                            <p>
-                                Assinaturas, sugestões
-                                <br>
-                                e reclamações
-                            </p>
+				</div>
 
-                            <ul class="address-block">
-                                <!-- <li class="address">Address line, city, state ZIP</li> -->
-                                <li class="phone">
-                                    São Paulo
-                                </li>
-                                <li>
-                                    (11) 3512-9486
-                                    <br>
-                                    <br>
-                                </li>
-                                <li class="phone">
-                                    Rio de Janeiro
-                                </li>
-                                <li>
-                                    (21) 4062-7183
-                                    <br>
-                                    <br>
-                                </li>
-                                <li class="phone">
-                                    Belo Horizonte
-                                </li>
-                                <li>
-                                    (31) 4062-7183
-                                    <br>
-                                    <br>
-                                </li>
-                                <li class="phone">
-                                    Distrito Federal
-                                </li>
-                                <li>
-                                    (61) 4063-7183
-                                </li>
-                                <li >
-                                    <br/>
-                                    De segunda a sexta, das 9
-                                    <br>
-                                    às 18 horas exceto feriados
-                                </li>
-                                <li >
-                                    <br/>
-                                    Números atrasados:
-                                </li>
-                                <li class="email">
-                                    <a href="mailto:avulsas@cartacapital.com.br">avulsas@cartacapital.com.br</a>
-                                </li>
-                                <li >
-                                    <br/>
-                                    Fale Conosco:
-                                </li>
-                                <li class="email">
-                                    <a href="http://www.assinantecartacapital.com.br">assinantecartacapital</a>
-                                </li>
+			</div>
+			<!-- ENDS posts list -->
 
-                            </ul>
-                            <em id="corner"></em>
+			<!-- sidebar -->
+			<aside id="sidebar">
+				<div class="block">
+					<h4>Central de atendimento</h4>
+					<p>
+						Assinaturas, sugestões <br> e reclamações
+					</p>
 
-                        </div>
+					<ul class="address-block">
+						<!-- <li class="address">Address line, city, state ZIP</li> -->
+						<li class="phone">São Paulo</li>
+						<li>(11) 3512-9486 <br> <br>
+						</li>
+						<li class="phone">Rio de Janeiro</li>
+						<li>(21) 4062-7183 <br> <br>
+						</li>
+						<li class="phone">Belo Horizonte</li>
+						<li>(31) 4062-7183 <br> <br>
+						</li>
+						<li class="phone">Distrito Federal</li>
+						<li>(61) 4063-7183</li>
+						<li><br /> De segunda a sexta, das 9 <br> às 18 horas exceto
+							feriados</li>
+						<li><br /> Números atrasados:</li>
+						<li class="email"><a href="mailto:avulsas@cartacapital.com.br">avulsas@cartacapital.com.br</a>
+						</li>
+						<li><br /> Fale Conosco:</li>
+						<li class="email"><a
+							href="http://www.assinantecartacapital.com.br">assinantecartacapital</a>
+						</li>
 
-        </aside>
-        <!-- ENDS sidebar -->
+					</ul>
+					<em id="corner"></em>
 
-        </div>
-        </div>
-        <!-- ENDS MAIN -->
+				</div>
 
-        <footer>
-            <div class="wrapper">
+			</aside>
+			<!-- ENDS sidebar -->
 
-                <ul  class="widget-cols clearfix">
-                    <li class="first-col">
+		</div>
+	</div>
+	<!-- ENDS MAIN -->
 
-                        <?php
-                        include 'primeira_coluna.php'
-                        ?>
-                    </li>
+	<footer>
+		<div class="wrapper">
 
-                    <li class="second-col">
+			<ul class="widget-cols clearfix">
+				<li class="first-col"><?php
+				include 'primeira_coluna.php'
+		?>
+				</li>
 
-                        <?php
-                        include 'segunda_coluna.php'
-                        ?>
+				<li class="second-col"><?php
+				include 'segunda_coluna.php'
+		?>
+				</li>
 
-                    </li>
+				<li class="third-col"><?php
+				include 'terceira_coluna.php'
+		?>
+				</li>
 
-                    <li class="third-col">
+				<li class="fourth-col"><?php
+				include 'quarta_coluna.php'
+		?>
+				</li>
+			</ul>
 
-                        <?php
-                        include 'terceira_coluna.php'
-                        ?>
+			<?php
+			include 'footer_bottom.php'
+		?>
 
-                    </li>
+		</div>
+	</footer>
 
-                    <li class="fourth-col">
-
-                        <?php
-                        include 'quarta_coluna.php'
-                        ?>
-
-                    </li>
-                </ul>
-
-                <?php
-                include 'footer_bottom.php'
-                ?>
-
-            </div>
-        </footer>
-
-    </body>
+</body>
 
 </html>

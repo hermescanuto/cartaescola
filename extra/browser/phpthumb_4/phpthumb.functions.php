@@ -141,10 +141,10 @@ class phpthumb_functions {
 			// based on code by johnschaefer at gmx dot de
 			// from PHP help on gd_info()
 			$exif_info = array(
-				'EXIF Support'           => '',
-				'EXIF Version'           => '',
-				'Supported EXIF Version' => '',
-				'Supported filetypes'    => ''
+					'EXIF Support'           => '',
+					'EXIF Version'           => '',
+					'Supported EXIF Version' => '',
+					'Supported filetypes'    => ''
 			);
 			$phpinfo_array = phpthumb_functions::phpinfo_array();
 			foreach ($phpinfo_array as $line) {
@@ -167,29 +167,29 @@ class phpthumb_functions {
 			return image_type_to_mime_type($imagetype);
 		}
 		static $image_type_to_mime_type = array(
-			1  => 'image/gif',                     // IMAGETYPE_GIF
-			2  => 'image/jpeg',                    // IMAGETYPE_JPEG
-			3  => 'image/png',                     // IMAGETYPE_PNG
-			4  => 'application/x-shockwave-flash', // IMAGETYPE_SWF
-			5  => 'image/psd',                     // IMAGETYPE_PSD
-			6  => 'image/bmp',                     // IMAGETYPE_BMP
-			7  => 'image/tiff',                    // IMAGETYPE_TIFF_II (intel byte order)
-			8  => 'image/tiff',                    // IMAGETYPE_TIFF_MM (motorola byte order)
-			9  => 'application/octet-stream',      // IMAGETYPE_JPC
-			10 => 'image/jp2',                     // IMAGETYPE_JP2
-			11 => 'application/octet-stream',      // IMAGETYPE_JPX
-			12 => 'application/octet-stream',      // IMAGETYPE_JB2
-			13 => 'application/x-shockwave-flash', // IMAGETYPE_SWC
-			14 => 'image/iff',                     // IMAGETYPE_IFF
-			15 => 'image/vnd.wap.wbmp',            // IMAGETYPE_WBMP
-			16 => 'image/xbm',                     // IMAGETYPE_XBM
+				1  => 'image/gif',                     // IMAGETYPE_GIF
+				2  => 'image/jpeg',                    // IMAGETYPE_JPEG
+				3  => 'image/png',                     // IMAGETYPE_PNG
+				4  => 'application/x-shockwave-flash', // IMAGETYPE_SWF
+				5  => 'image/psd',                     // IMAGETYPE_PSD
+				6  => 'image/bmp',                     // IMAGETYPE_BMP
+				7  => 'image/tiff',                    // IMAGETYPE_TIFF_II (intel byte order)
+				8  => 'image/tiff',                    // IMAGETYPE_TIFF_MM (motorola byte order)
+				9  => 'application/octet-stream',      // IMAGETYPE_JPC
+				10 => 'image/jp2',                     // IMAGETYPE_JP2
+				11 => 'application/octet-stream',      // IMAGETYPE_JPX
+				12 => 'application/octet-stream',      // IMAGETYPE_JB2
+				13 => 'application/x-shockwave-flash', // IMAGETYPE_SWC
+				14 => 'image/iff',                     // IMAGETYPE_IFF
+				15 => 'image/vnd.wap.wbmp',            // IMAGETYPE_WBMP
+				16 => 'image/xbm',                     // IMAGETYPE_XBM
 
-			'gif'  => 'image/gif',                 // IMAGETYPE_GIF
-			'jpg'  => 'image/jpeg',                // IMAGETYPE_JPEG
-			'jpeg' => 'image/jpeg',                // IMAGETYPE_JPEG
-			'png'  => 'image/png',                 // IMAGETYPE_PNG
-			'bmp'  => 'image/bmp',                 // IMAGETYPE_BMP
-			'ico'  => 'image/x-icon',
+				'gif'  => 'image/gif',                 // IMAGETYPE_GIF
+				'jpg'  => 'image/jpeg',                // IMAGETYPE_JPEG
+				'jpeg' => 'image/jpeg',                // IMAGETYPE_JPEG
+				'png'  => 'image/png',                 // IMAGETYPE_PNG
+				'bmp'  => 'image/bmp',                 // IMAGETYPE_BMP
+				'ico'  => 'image/x-icon',
 		);
 
 		return (isset($image_type_to_mime_type[$imagetype]) ? $image_type_to_mime_type[$imagetype] : false);
@@ -383,12 +383,12 @@ class phpthumb_functions {
 				$overlaypct = (1 - $alphapct) * $opacipct;
 
 				$newcolor = phpthumb_functions::ImageColorAllocateAlphaSafe(
-					$dst_im,
-					round($RealPixel['red']   * (1 - $overlaypct)) + ($OverlayPixel['red']   * $overlaypct),
-					round($RealPixel['green'] * (1 - $overlaypct)) + ($OverlayPixel['green'] * $overlaypct),
-					round($RealPixel['blue']  * (1 - $overlaypct)) + ($OverlayPixel['blue']  * $overlaypct),
-					//$RealPixel['alpha']);
-					0);
+						$dst_im,
+						round($RealPixel['red']   * (1 - $overlaypct)) + ($OverlayPixel['red']   * $overlaypct),
+						round($RealPixel['green'] * (1 - $overlaypct)) + ($OverlayPixel['green'] * $overlaypct),
+						round($RealPixel['blue']  * (1 - $overlaypct)) + ($OverlayPixel['blue']  * $overlaypct),
+						//$RealPixel['alpha']);
+						0);
 
 				ImageSetPixel($dst_im, $dst_x + $x, $dst_y + $y, $newcolor);
 			}
@@ -904,16 +904,16 @@ if (!function_exists('gd_info')) {
 			// based on code by johnschaefer at gmx dot de
 			// from PHP help on gd_info()
 			$gd_info = array(
-				'GD Version'         => '',
-				'FreeType Support'   => false,
-				'FreeType Linkage'   => '',
-				'T1Lib Support'      => false,
-				'GIF Read Support'   => false,
-				'GIF Create Support' => false,
-				'JPG Support'        => false,
-				'PNG Support'        => false,
-				'WBMP Support'       => false,
-				'XBM Support'        => false
+					'GD Version'         => '',
+					'FreeType Support'   => false,
+					'FreeType Linkage'   => '',
+					'T1Lib Support'      => false,
+					'GIF Read Support'   => false,
+					'GIF Create Support' => false,
+					'JPG Support'        => false,
+					'PNG Support'        => false,
+					'WBMP Support'       => false,
+					'XBM Support'        => false
 			);
 			$phpinfo_array = phpthumb_functions::phpinfo_array();
 			foreach ($phpinfo_array as $line) {
