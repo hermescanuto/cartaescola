@@ -6,9 +6,15 @@
 <title>Carta na Escola</title>
 
 <?php
-include 'script_css.php'; 
+include 'script_css.php';
 ?>
-</head> 
+
+<script src="{base_url}js/bootstrap.js" type="text/javascript"></script>
+<link href="{base_url}css/bootstrap.css" rel="stylesheet"
+	type="text/css" />
+<link href="{base_url}/css/bootstrap-responsive.css" rel="stylesheet">
+
+</head>
 
 <body lang="en">
 
@@ -37,14 +43,12 @@ include 'script_css.php';
 		<div class="wrapper">
 
 			<div class="container-fluid">
-				<h2 class="page-heading">
-					<span>{lista_legenda}</span>
-				</h2>
-				<br> </span><em id="corner"></em> {recordset}
+				<h4 class="post-heading">{lista_legenda}</h4>
+				{recordset}
 				<div class="row">
 
 					<div class="span10">
-						<div class="span2" style="padding: 0px">
+						<div class="span2" style="padding: 5px">
 
 							<img src="{base_url}/upload/{imagem_fundo}" alt="{titulo}"
 								title="{titulo}" />
@@ -52,60 +56,57 @@ include 'script_css.php';
 
 						<div class="span7">
 
-							<span style="font-size: 13px">Edição: {edicao} </span>
-							<h3 class="post-heading">{titulo}</h3>
+							<span style="font-size: 10px">Edição : {edicao} </span>
+							<h4 class="post-heading">{titulo}</h4>
+							<span>{descricao} <a href="{base_url}single/show/{id}"> leia
+									mais...</a>
+							</span>
 
-							<div class="{descricao}" style="font-size: 16px">
-								<span>{descricao} <a href="{base_url}single/show/{id}"> leia
-										mais...</a>
-							
-							</div>
 						</div>
 					</div>
-
-
-					{/recordset}
-
-
-					<div class="row">{paginacao}</div>
-
 				</div>
 
+				{/recordset}
+
+				<div class="row">{paginacao}</div>
+
 			</div>
+
 		</div>
+	</div>
 
-		<footer>
+	<footer>
 
-			<div class="wrapper">
+		<div class="wrapper">
 
-				<ul class="widget-cols clearfix">
-					<li class="first-col"><?php
-					include 'primeira_coluna.php';
-					?>
-					</li>
-
-					<li class="second-col"><?php
-					include 'segunda_coluna.php';
-					?>
-					</li>
-
-					<li class="third-col"><?php
-					include 'terceira_coluna.php';
-					?>
-					</li>
-
-					<li class="fourth-col"><?php
-					include 'quarta_coluna.php';
-					?>
-					</li>
-				</ul>
-
-				<?php
-				include 'footer_bottom.php';
+			<ul class="widget-cols clearfix">
+				<li class="first-col"><?php
+				include 'primeira_coluna.php';
 				?>
+				</li>
 
-			</div>
-		</footer>
+				<li class="second-col"><?php
+				include 'segunda_coluna.php';
+				?>
+				</li>
+
+				<li class="third-col"><?php
+				include 'terceira_coluna.php';
+				?>
+				</li>
+
+				<li class="fourth-col"><?php
+				include 'quarta_coluna.php';
+				?>
+				</li>
+			</ul>
+
+			<?php
+			include 'footer_bottom.php';
+			?>
+
+		</div>
+	</footer>
 
 </body>
 </html>
