@@ -69,9 +69,14 @@ class Conteudo extends CI_Controller {
 		$this->util->ShowADMMenu(0) ; // carrega o menu adm
 
 		$data = $this->model_util->FieldTemplateNull($this->tabela);
+		
+		$data['autocomplete']=$this->Model_util->conteudo_sub_classificacao();
 
 		$data['edicao_lista']=$this->Model_util->tipo('vw_edicao','edicao as id , edicao descricao');
 		$data['area']=$this->Model_util->tipo('tipo_conteudo','id as id , tipo_conteudo as descricao');
+		
+		
+		
 		//$data['galeria_id']=$this->Model_util->tipo('tb_galeria','id as id , titulo as descricao');
 		$data["imagem_home"] = "http://placehold.it/970x483";
 		$data["imagem_fundo"] = "http://placehold.it/446x283";
@@ -97,6 +102,9 @@ class Conteudo extends CI_Controller {
 		// carrega o menu adm
 
 		$data = $this -> Model_util -> ByIDtoTemplate($this -> tabela, $idx);
+		
+		$data['autocomplete']=$this->Model_util->conteudo_sub_classificacao();
+		
 		$data['area'] = $this -> Model_util -> tipo('tipo_conteudo', 'id as id , tipo_conteudo as descricao', $data['tb_tipo_conteudo_id']);
 		$data['edicao_lista']=$this->Model_util->tipo('vw_edicao','edicao as id , edicao descricao', $data['edicao'] );
 
@@ -128,6 +136,8 @@ class Conteudo extends CI_Controller {
 			$data["up_imagem_fundo"]="<a href='".base_url()."admin/upload_imagem/prepara/$idx/2'  title='Upload da imagem Painel Menor'  data-toggle='tooltip' data-placement='top' rel='tooltip'><i class='icon-th'></i></a>";
 		}
 		 
+		
+
 
 		//$data['galeria_id'] = $this->Model_util->tipo('tb_galeria','id as id , titulo as descricao',$data['galeria']);
 

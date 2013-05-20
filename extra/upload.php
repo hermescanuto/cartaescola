@@ -17,7 +17,7 @@ if (($_FILES['upload'] == "none") OR (empty($_FILES['upload']['name']))) {
 		$message = "Error moving uploaded file. Check the script is granted Read/Write/Modify permissions.";
 	}
 
-	$url = "http://www.cartanaescola.com.br/upload2/" . str_replace('../upload2/', '', $url);
+	$url = "http://cn.cartacapital.com.br//upload2/" . str_replace('../upload2/', '', $url);
 	;
 }
 

@@ -1,9 +1,12 @@
 <div id='painel_campos'>
 
 	<ul>
-		<li><a href="#tabs-1">Principal</a></li>
-		<li><a href="#tabs-2">Secundaria</a></li>
-		<li><a href="#tabs-3">Imagens</a></li>
+		<li><a href="#tabs-1">Principal</a>
+		</li>
+		<li><a href="#tabs-2">Secundaria</a>
+		</li>
+		<li><a href="#tabs-3">Imagens</a>
+		</li>
 	</ul>
 
 	<form name="form1" id="form1" action="{save}" method="post"
@@ -27,7 +30,7 @@
 							Classificacao:</label> <input type="text"
 							name="sub_classificacao" id="sub_classificacao" size="100"
 							maxlength="100" value="{sub_classificacao}"
-							placeholder="Sub Classificação" />
+							placeholder="Sub Classificação" style="width: 400px"/>
 
 					</div>
 
@@ -109,6 +112,18 @@
 
 <script>
 	$(document).ready(function() {
+
+		
+
+
+		 var availableTags = [ {autocomplete} "{autocomplete_sub_classificacao}",  {/autocomplete} 
+		   
+		                    ];
+		                    $( "#sub_classificacao" ).autocomplete({
+		                      source: availableTags
+		                    });
+
+		
 
 		$("#painel_campos").tabs();
 

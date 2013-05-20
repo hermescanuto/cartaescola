@@ -10,6 +10,7 @@ if (!defined('BASEPATH'))
 *
 */
 
+
 class Model_util extends MY_Model {
 
 	function __construct() {
@@ -245,6 +246,19 @@ class Model_util extends MY_Model {
 		 
 		return  $recordset[0];
 
+	}
+	
+	/**
+	 * @author hermes
+	 *  retorna o autocomplete do conteudo sub_classificacao
+	 */
+	
+	function conteudo_sub_classificacao(){
+		
+		$query = $this->db->get("vw_sub_classificacao");
+		$recorset = $query -> result_array();
+		return $recorset;
+		
 	}
 
 }
