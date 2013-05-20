@@ -5,14 +5,18 @@
 <meta charset="utf-8" />
 <title>Carta na Escola</title>
 
-<?php
-include 'script_css.php';
-?>
 
 <script src="{base_url}js/bootstrap.js" type="text/javascript"></script>
 <link href="{base_url}css/bootstrap.css" rel="stylesheet"
 	type="text/css" />
 <link href="{base_url}/css/bootstrap-responsive.css" rel="stylesheet">
+
+
+<?php
+include 'script_css.php';
+?>
+
+
 
 </head>
 

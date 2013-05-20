@@ -121,7 +121,7 @@
 			
 			language : 'pt_br',
 			toolbar : 'Full',
-			filebrowserUploadUrl : 'http://192.168.1.147/sites/cartaescola/extra/upload.php',
+			filebrowserUploadUrl : '{base_url}extra/upload.php',
 			// filebrowserImageBrowseUrl : 'http://192.168.1.147/sites/cartaescola/extra/browser/index.php?editor=ckeditor&filter=image',
 
 		};
@@ -132,7 +132,7 @@
 			height : '300px',
 			language : 'pt_br',
 			toolbar : 'Full',
-			filebrowserUploadUrl : 'http://192.168.1.147/sites/cartaescola/extra/upload.php',
+			filebrowserUploadUrl : '{base_url}extra/upload.php',
 			// filebrowserImageBrowseUrl : 'http://192.168.1.147/sites/cartaescola/extra/browser/index.php?editor=ckeditor&filter=image',
 
 		};

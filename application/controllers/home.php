@@ -24,16 +24,16 @@ class Home extends CI_Controller {
 
 
 		if ( $deviceType == 'phone' ){
-			 
+
 			redirect('/mobile/home/', 'refresh');
 
 		}
-		 
+			
 
 	}
 
 	public function index() {
-		 
+			
 
 		// busca a capa
 
@@ -64,12 +64,24 @@ class Home extends CI_Controller {
 			$this -> data["destaque_id$i"] = $r[$i]['id'];
 		}
 
-		// busca as restantes ,por nnao busca as que estao em destaque
+		// busca as restantes ,por nao busca as que estao em destaque
 		$recordset = $this -> Model_util -> getatualizades($this -> data["destaque_id0"], $this -> data["destaque_id1"], $this -> data["destaque_id2"]);
 
 		for ($i = 0; $i <= 5; $i++) {
-			$this -> data["olho$i"] = $recordset[$i]["descricao"];
 
+			$this -> data["id$i"] = $recordset[$i]["id"];
+			$this -> data["data_criacao$i"] = date("d-m-Y", strtotime($recordset[$i]["data_criacao"]));
+
+			if ( strlen ( $recordset[$i]["descricao"] ) < 100 ){
+				$this -> data["olho$i"] = $recordset[$i]["descricao"];
+			}else{
+				
+				$this -> data["olho$i"] =  substr($recordset[$i]["descricao"],0 , 100 ) . "..."; 
+			}
+		
+			
+			
+			
 			if ( $recordset[$i]["imagem_fundo"] == null ){
 
 				$this -> data["imagem$i"] = "446x283.jpg";
@@ -80,11 +92,6 @@ class Home extends CI_Controller {
 			}
 
 
-
-
-			$this -> data["id$i"] = $recordset[$i]["id"];
-			$this -> data["data_criacao$i"] = date("d-m-Y", strtotime($recordset[$i]["data_criacao"]));
-
 			if ( $recordset[$i]["sub_classificacao"].'' == ''   ){
 
 				$this -> data["sub$i"] = $recordset[$i]["tipo_conteudo"];
@@ -94,7 +101,7 @@ class Home extends CI_Controller {
 				$this -> data["sub$i"] = $recordset[$i]["sub_classificacao"];
 			}
 
-			 
+
 		}
 
 		$this->data["lista_Tweeter"] = $this->twitter->getTwitter('cartacapital',3);
