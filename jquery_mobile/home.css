@@ -1,0 +1,25 @@
+.destaque {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	display: block;
+}
+.destaque_imagem {
+	width: 90%;
+	height: 90% ;
+	max-width:90%;
+	max-height: 90%;
+}
+
+.atualidades {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8px;
+	display: block;
+}
+
+.atualidades_titulo {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #2F3E46;
+	font-weight: bold;
+	display: inline-block;
+}

@@ -44,7 +44,7 @@ class Single extends CI_Controller {
 
 		$data["texto_extra"] = nl2br($data["texto_extra"]);
 
-		$this -> parser -> parse('mobile/single', $this -> data + $data);
+		$this -> parser -> parse('mobile/single2', $this -> data + $data);
 	}
 
 }

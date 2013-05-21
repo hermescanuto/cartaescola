@@ -48,13 +48,15 @@ class Home extends CI_Controller {
 			$this -> data["titulo$i"] = $r[$i]['titulo'];
 			$this -> data["destaque_id$i"] = $r[$i]['id'];
 		}
+		
+		
 
 		$recordset = $this -> Model_util -> getatualizades($this -> data["destaque_id0"], $this -> data["destaque_id1"], $this -> data["destaque_id2"]);
 
 		$this -> data['lista_materias'] = $recordset ;
 
 
-		$this -> parser -> parse('mobile/home', $this -> data);
+		$this -> parser -> parse('mobile/home2', $this -> data);
 	
 	}
 
