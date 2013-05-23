@@ -104,7 +104,7 @@ class Home extends CI_Controller {
 
 		}
 
-		$this->data["lista_Tweeter"] = $this->twitter->getTwitter('cartacapital',3);
+		//$this->data["lista_Tweeter"] = $this->twitter->getTwitter('cartacapital',3);
 
 		$this->data["alvo_home"] ='current-menu-item"';
 

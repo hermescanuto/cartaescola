@@ -8,9 +8,8 @@ class Tw extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this -> load -> library('util');
+	
 		$this -> load -> library('twitter');
-		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
 	}
 

@@ -36,7 +36,7 @@ class Contato extends CI_Controller {
 		$msg += "<br/> Website:$$web ";
 		$msg += "<br/> Comentario:<br/>$name ";
 
-		echo $msg;
+		//echo $msg;
 
 		$this -> load -> library('email');
 
@@ -48,14 +48,14 @@ class Contato extends CI_Controller {
 		$this -> email -> initialize($config);
 
 		$this -> email -> from('cartanaescola@cartanaescola.com.br', 'contato');
-		$this -> email -> to('escola@cartacapital.com.br');
+		$this -> email -> to('hermes@cartacapital.com.br');
 
 		$this -> email -> subject('Contato');
 		$this -> email -> message($msg);
 
 		$this -> email -> send();
 
-		echo $this -> email -> print_debugger();
+	    $this -> parser -> parse('front/resposta_contato', $this -> data);
 
 	}
 

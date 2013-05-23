@@ -228,7 +228,10 @@ class CI_Pagination {
 		if  ($this->first_link !== FALSE AND $this->cur_page > ($this->num_links + 1))
 		{
 			$first_url = ($this->first_url == '') ? $this->base_url : $this->first_url;
-			$output .= $this->first_tag_open.'<a '.$this->anchor_class.'href="'.$first_url.'/0/'.$search.'">'.$this->first_link.'</a>'.$this->first_tag_close;
+            
+            $first_url ='0';
+            
+			$output .= $this->first_tag_open.'<a '.$this->anchor_class.'href="'.$first_url.'/'.$search.'">'.$this->first_link.'</a>'.$this->first_tag_close;
 		}
 
 		// Render the "previous" link
@@ -245,11 +248,15 @@ class CI_Pagination {
 
 			if ($i == 0 && $this->first_url != '')
 			{
+			    
 				$output .= $this->prev_tag_open.'<a '.$this->anchor_class.'href="'.$this->first_url.'/'.$search.'">'.$this->prev_link.'</a>'.$this->prev_tag_close;
 			}
 			else
 			{
 				$i = ($i == 0) ? '' : $this->prefix.$i.$this->suffix;
+                
+                if( $i ==0  ){ $i="0" ;}
+                
 				$output .= $this->prev_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$i.'/'.$search.'">'.$this->prev_link.'</a>'.$this->prev_tag_close;
 			}
 
@@ -287,6 +294,8 @@ class CI_Pagination {
 						else
 						{
 							$n = ($n == '') ? '' : $this->prefix.$n.$this->suffix;
+                            
+                            if ( $n == '' ){ $n = 0;}
 
 							$output .= $this->num_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$n.'/'.$search.'">'.$loop.'</a>'.$this->num_tag_close;
 						}

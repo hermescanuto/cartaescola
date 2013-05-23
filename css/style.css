@@ -334,10 +334,11 @@ nav a {
 	position: relative;
 	overflow: hidden;
 	line-height: 1.2em;
+	/*
 	-webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
 	-moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
 	-o-box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
-	box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, .2); */
 }
 
 .home-block figure .thumb {
@@ -512,6 +513,7 @@ h1.heading,h2.heading,h3.heading,h4.heading,h5.heading,h6.heading {
 .portfolio-thumbs figure a:hover img {
 	opacity: 0.1;
 	line-height: 0em;
+	
 }
 
 .portfolio-thumbs figcaption {
@@ -736,6 +738,7 @@ h1.heading,h2.heading,h3.heading,h4.heading,h5.heading,h6.heading {
 	width: 700px;
 	float: left;
 	margin-right: 20px;
+
 }
 
 #floated-content,strong {

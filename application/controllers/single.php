@@ -23,7 +23,7 @@ class Single extends CI_Controller {
 	}
 
 	function show($idx) {
-		$data = $this -> Model_util -> ByIDtoTemplate("tb_conteudo", $idx);
+		$data = $this -> Model_util -> ByIDtoTemplate("vw_conteudo", $idx);
 
 		setlocale(LC_ALL, NULL);
 		setlocale(LC_ALL, 'pt_br');

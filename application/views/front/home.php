@@ -83,7 +83,7 @@ include 'script_css.php';
 				<div class="one-third-thumbs clearfix">
 					<figure>
 
-						<div style="height: 300px">
+						<div style="height: 301px; border:1px solid #EBEBE8">
 								<a href="{base_url}single/show/{id0}"><img src="{base_url}upload/{imagem0}" alt="Alt text" /> </a> 
 							<strong>{sub0}</strong>
 							<em>{data_criacao0}</em><br /> <span>{olho0}</span> <a
@@ -95,7 +95,7 @@ include 'script_css.php';
 
 					<figure>
 
-						<div style="height: 300px">
+						<div style="height: 301px; border:1px solid  #EBEBE8">
 								<a href="{base_url}single/show/{id1}"><img src="{base_url}upload/{imagem1}" alt="Alt text" /> </a> 
 							<strong>{sub1}</strong>
 							<em>{data_criacao1}</em><br /> <span>{olho1}</span> <a
@@ -104,7 +104,7 @@ include 'script_css.php';
 
 					</figure>
 					<figure class="last">
-							<div style="height: 300px">
+							<div style="height: 301px ; border:1px solid  #EBEBE8">
 								<a href="{base_url}single/show/{id2}"><img src="{base_url}upload/{imagem2}" alt="Alt text" /> </a> 
 							<strong>{sub2}</strong>
 							<em>{data_criacao2}</em><br /> <span>{olho2}</span> <a
@@ -112,7 +112,7 @@ include 'script_css.php';
 						</div>
 					</figure>
 					<figure>
-						<div style="height: 300px">
+						<div style="height: 301px; border:1px solid  #EBEBE8">
 								<a href="{base_url}single/show/{id3}"><img src="{base_url}upload/{imagem3}" alt="Alt text" /> </a> 
 							<strong>{sub3}</strong>
 							<em>{data_criacao3}</em><br /> <span>{olho3}</span> <a
@@ -122,7 +122,7 @@ include 'script_css.php';
 					</figure>
 
 					<figure>
-						<div style="height: 300px">
+						<div style="height: 301px; border:1px solid  #EBEBE8">
 								<a href="{base_url}single/show/{id4}"><img src="{base_url}upload/{imagem4}" alt="Alt text" /> </a> 
 							<strong>{sub4}</strong>
 							<em>{data_criacao4}</em><br /> <span>{olho4}</span> <a
@@ -132,7 +132,7 @@ include 'script_css.php';
 
 					<figure class="last">
 
-						<div style="height: 300px">
+						<div style="height: 301px; border:1px solid  #EBEBE8">
 								<a href="{base_url}single/show/{id5}"><img src="{base_url}upload/{imagem5}" alt="Alt text" /> </a> 
 							<strong>{sub5}</strong>
 							<em>{data_criacao5}</em><br /> <span>{olho5}</span> <a
