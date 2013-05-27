@@ -8,3 +8,5 @@ $files = array(
 );
 
 require_once('../../../combine.html');
+
+?>
