@@ -5,18 +5,14 @@
 <meta charset="utf-8" />
 <title>Carta na Escola</title>
 
+<?php
+include 'script_css.php';
+?>
 
 <script src="{base_url}js/bootstrap.js" type="text/javascript"></script>
 <link href="{base_url}css/bootstrap.css" rel="stylesheet"
 	type="text/css" />
 <link href="{base_url}/css/bootstrap-responsive.css" rel="stylesheet">
-
-
-<?php
-include 'script_css.php';
-?>
-
-
 
 </head>
 
@@ -30,16 +26,16 @@ include 'script_css.php';
 				<div id="top-widget">
 					<div class="padding"></div>
 				</div>
-			</div>
-		</div>
-		<!-- ENDS top-widget -->
 
-		<div class="wrapper clearfix">
+				<!-- ENDS top-widget -->
 
-			<?php
-			include 'menu.php';
-			?>
-		</div>
+				<div class="wrapper clearfix">
+
+					<?php
+					include 'menu.php';
+					?>
+				</div>
+	
 	</header>
 
 	<!-- MAIN -->
@@ -47,28 +43,27 @@ include 'script_css.php';
 		<div class="wrapper">
 
 			<div class="container-fluid">
-            <h2 class="page-heading">
-						<span>{lista_legenda}</span>
-					</h2>
-				
-			
-                {recordset}
+				<img src="{base_url}/upload/capa/{edicao_capa}"
+					alt="Capa {edicao_numero} abril Carta na Escola revista mensal"
+					width="165" height="211" />
+				<h4 class="post-heading">Edição: {edicao}</h4>
+				{recordset}
 				<div class="row">
 
 					<div class="span10">
 						<div class="span2" style="padding: 5px">
 
-							<a href="{base_url}single/show/{id}"><img src="{base_url}/upload/{imagem_fundo}" alt="{titulo}"
-								title="{titulo}"  /></a>
+							<img src="{base_url}/upload/{imagem_fundo}" alt="{titulo}"
+								title="{titulo}" />
 						</div>
 
 						<div class="span7">
 
-							<span style="font-size: 12px">Edição: {edicao} </span>
+							<span style="font-size: 10px">{tipo_conteudo}</span>
 							<h4 class="post-heading">{titulo}</h4>
-                            <br>
-							{descricao} <a href="{base_url}single/show/{id}"> leia mais...</a>
-                      
+							<span>{descricao} <a href="{base_url}single/show/{id}/{titulo}">leia
+									mais...</a>
+							</span>
 
 						</div>
 					</div>

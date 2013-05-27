@@ -55,8 +55,8 @@ include 'script_css.php'
 			<div id="posts-list" class="single-post">
 
 				<h2 class="page-heading">
-					<span>Teste</span>
-				</h2>
+						<span>{tipo_conteudo}</span>
+					</h2>
 
 				<article class="format-standard">
 					<div class="entry-date">
@@ -71,6 +71,7 @@ include 'script_css.php'
 					<br />
 
 					<h2 class="post-heading">{titulo}</h2>
+                    <h5 class="post-heading">{autor}</h5>
 					<div class="post-content">{texto} {pdf_free}</div>
 
 					<div class="meta" style="display: none">
@@ -91,7 +92,12 @@ include 'script_css.php'
 			<!-- ENDS posts list -->
 
 			<!-- sidebar -->
-			<aside id="sidebar">{texto_extra}</aside>
+			
+            <aside id="sidebar">{texto_extra}
+            <em id="corner"></em>
+                
+            </aside>
+            
 			<!-- ENDS sidebar -->
 
 		</div>
@@ -103,32 +109,33 @@ include 'script_css.php'
 
 			<ul class="widget-cols clearfix">
 				<li class="first-col"><?php
-				include 'primeira_coluna.php';
-				?>
+				include 'primeira_coluna.php'
+		?>
 				</li>
 
 				<li class="second-col"><?php
-				include 'segunda_coluna.php';
-				?>
+				include 'segunda_coluna.php'
+		?>
 				</li>
 
 				<li class="third-col"><?php
-				include 'terceira_coluna.php';
-				?>
+				include 'terceira_coluna.php'
+		?>
 				</li>
 
 				<li class="fourth-col"><?php
-				include 'quarta_coluna.php';
-				?>
+				include 'quarta_coluna.php'
+		?>
 				</li>
 			</ul>
 
 			<?php
-			include 'footer_bottom.php';
-			?>
+			include 'footer_bottom.php'
+		?>
 
 		</div>
 	</footer>
+
 
 </body>
 
