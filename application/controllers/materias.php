@@ -46,18 +46,12 @@ class Materias extends CI_Controller {
 		$orderby = 'id desc';
 
 		$busca = $this -> uri -> segment("4");
-        
-   
-       
-      
-        
 		if (is_numeric($busca)) {
 			$campo_busca = 'edicao';
 		} else {
 
 			$campo_busca = 'titulo';
 		}
-        
 
 		if ($busca != null) {
 
@@ -68,7 +62,7 @@ class Materias extends CI_Controller {
 
 
 
-		$result = $this -> util -> PaginationOn($table, 5, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4");
+		$result = $this -> util -> PaginationOn($table, 20, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4");
 		// cria a paginação
 		$data = $result;
 

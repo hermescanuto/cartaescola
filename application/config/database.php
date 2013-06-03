@@ -65,8 +65,8 @@ $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
 
-/*
 
+/*
 $active_group = 'default';
 $active_record = TRUE;
 

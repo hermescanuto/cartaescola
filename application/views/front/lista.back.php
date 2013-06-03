@@ -26,16 +26,16 @@ include 'script_css.php';
 				<div id="top-widget">
 					<div class="padding"></div>
 				</div>
+			</div>
+		</div>
+		<!-- ENDS top-widget -->
 
-				<!-- ENDS top-widget -->
+		<div class="wrapper clearfix">
 
-				<div class="wrapper clearfix">
-
-					<?php
-					include 'menu.php';
-					?>
-				</div>
-	
+			<?php
+			include 'menu.php';
+			?>
+		</div>
 	</header>
 
 	<!-- MAIN -->
@@ -43,10 +43,7 @@ include 'script_css.php';
 		<div class="wrapper">
 
 			<div class="container-fluid">
-				<img src="{base_url}/upload/capa/{edicao_capa}"
-					alt="Capa {edicao_numero} abril Carta na Escola revista mensal"
-					width="165" height="211" />
-				<h4 class="post-heading">Edição: {edicao}</h4>
+				<h4 class="post-heading">{lista_legenda}</h4>
 				{recordset}
 				<div class="row">
 
@@ -59,9 +56,9 @@ include 'script_css.php';
 
 						<div class="span7">
 
-							<span style="font-size: 10px">{tipo_conteudo}</span>
+							<span style="font-size: 10px">Edição : {edicao} </span>
 							<h4 class="post-heading">{titulo}</h4>
-							<span>{descricao} <a href="{base_url}single/show/{id}/{titulo}">leia
+							<span>{descricao} <a href="{base_url}single/show/{id}"> leia
 									mais...</a>
 							</span>
 

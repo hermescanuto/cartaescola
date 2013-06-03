@@ -239,9 +239,7 @@ class Conteudo extends CI_Controller {
 
 		//print_r ($where);
 
-		$result=$this->util->PaginationOn($table,5,base_url().'admin/'.$this->data['local'].'/paging',$fields,$where,$orderby); // cria a paginação
-		
-	
+		$result=$this->util->PaginationOn($table,20,base_url().'admin/'.$this->data['local'].'/paging',$fields,$where,$orderby); // cria a paginação
 		$data = $result;
 
 		$data['base_url']=base_url();

@@ -29,7 +29,7 @@
 					<div class="ui-block-a"></div>
 					<div class="ui-block-b">
 						<a href="{base_url}mobile" data-transition="none" data-inline="true" ><img src="{base_url}img/lonovo.png"
-						alt="Carta Capital" style="width: 100%; height: 100%; max-width:100%;  max-height: 100%;"> </a>
+						alt="Carta Capital" style="width: 100%; height: 100%"> </a>
 					</div>
 					<div class="ui-block-c"></div>
 				</div>

@@ -32,9 +32,55 @@ include 'script_css.php'
 	</header>
 
 	<!-- MAIN -->
-	<div>
-    Sua mensagem foi enviada com sucesso.
-    </div>
+	<div id="main">
+		<div class="wrapper clearfix">
+
+			<div id="posts-list" class="single-post">
+
+				<!-- floated content -->
+				<div class="floated-content">
+
+					<h2 class="page-heading">
+						<span>Contato</span>
+					</h2>
+
+					<form id="contactForm" action="{base_url}contato/enviar"
+						method="post">
+
+						<fieldset>
+							<div>
+								<input name="name" id="name" type="text" class="form-poshytip"
+									title="Entre com o seu nome completo" /> <label>Nome</label>
+							</div>
+							<div>
+								<input name="email" id="email" type="text" class="form-poshytip"
+									title="Entre com o seu e-mail" /> <label>Email</label>
+							</div>
+
+							<div>
+								<textarea name="comments" id="comments" rows="5" cols="20"
+									class="form-poshytip" title="Poste seus comentário"></textarea>
+							</div>
+
+							<!-- send mail configuration -->
+							<input type="hidden" value="email@yourserver.com" name="to"
+								id="to" /> <input type="hidden" value="Enter the subject here"
+								name="subject" id="subject" /> <input type="hidden"
+								value="send-mail.php" name="sendMailUrl" id="sendMailUrl" />
+							<!-- ENDS send mail configuration -->
+
+							<p>
+								<input type="submit" value="Enviar" name="submit" id="submit" />
+								<span id="error" class="warning">Sua mensagem foi enviada com sucesso.</span>
+							</p>
+						</fieldset>
+
+					</form>
+
+
+				</div>
+
+			</div>
 			<!-- ENDS posts list -->
 
 			<!-- sidebar -->

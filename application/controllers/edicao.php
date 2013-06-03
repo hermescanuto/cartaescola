@@ -14,6 +14,7 @@ class Edicao extends CI_Controller {
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
 		$this -> data['local'] = $this -> uri -> segment("1");
+
 		$this -> data['lista_legenda'] = "Edicao";
 	}
 
@@ -37,7 +38,9 @@ class Edicao extends CI_Controller {
 
 		$table = $this -> view;
 		$fields = "*";
-		$orderby = 'id desc'; 
+		$orderby = 'id desc';
+
+		 
 
 		$where = array('edicao' => $busca);
 

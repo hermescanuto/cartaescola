@@ -51,7 +51,7 @@
 						<strong>Carta na Escola</strong><br> <strong>ISSN 1808–6012</strong>
 					</p>
 					<p>
-						<strong style="color: black">Diretor de Redação:</strong> Mino
+						<strong>Diretor de Redação:</strong> Mino
 						Carta<br> <strong>Redatora-chefe:</strong> Lívia Perozim<br> <strong>Consultor
 							editorial: </strong>Luiz Gonzaga Belluzzo<br> <strong>Editor
 							responsável:</strong> Sergio Lirio
