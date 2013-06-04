@@ -159,25 +159,24 @@ class Conteudo extends CI_Controller {
 	function save()
 	{
 
-		/*		$this->pag_conf();
-		 $this->util->ShowADMTopPage($this->data); // carrega o topo do adm
-		$this->util->ShowADMMenu(0) ; // carrega o menu adm	 */
 
 		$id = $this->input->post('id');
-		$campos = Array
-		(
-				'titulo' 				=> $this->input->post('titulo'),
-				'descricao' 			=> $this->input->post('descricao'),
-				'texto' 				=> $this->input->post('texto_ckeditor'),
-				'tb_tipo_conteudo_id'	=> $this->input->post('tb_usuario_area_id')
-					
-		);
-
+        
 		$campos = $_POST;
 
 		$campos['texto'] = $this->input->post('texto_ckeditor');
 		$campos['texto_extra'] = $this->input->post('texto_extra_ckeditor');
 		$campos['tb_tipo_conteudo_id'] = $this->input->post('tb_usuario_area_id');
+		
+        
+       if ($id){
+            
+            $campos['alterador'] = $this->session->userdata('user_id');
+            $campos['\'] = date("Y-m-d H:i:s");
+        }else{
+            
+            $campos['criador'] = $this->session->userdata('user_id');
+        }
 
 		$this->Model_util->setTableData($this->tabela);
 		$this->Model_util->setID($id);
@@ -186,7 +185,6 @@ class Conteudo extends CI_Controller {
 
 		$this->paging();
 
-		$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
 	}
 
 	/*
