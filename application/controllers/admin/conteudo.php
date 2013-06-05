@@ -172,7 +172,7 @@ class Conteudo extends CI_Controller {
        if ($id){
             
             $campos['alterador'] = $this->session->userdata('user_id');
-            $campos['\'] = date("Y-m-d H:i:s");
+            $campos['data_alteracao'] = date("Y-m-d H:i:s");
         }else{
             
             $campos['criador'] = $this->session->userdata('user_id');
