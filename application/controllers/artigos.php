@@ -6,7 +6,7 @@ class artigos extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
-	protected $view = 'vw_conteudo';
+	protected $view = 'vw_conteudo_publicado';
 
 	function __construct() {
 		parent::__construct();

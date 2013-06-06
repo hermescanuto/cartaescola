@@ -5,6 +5,7 @@
 
 		<thead>
 			<tr>
+				<td bgcolor='#D4D4D4' style='text-align: center'>Publicar(1/0)</td>
 				<td bgcolor='#D4D4D4'>id</td>
 				<td bgcolor='#D4D4D4'>Data de Criação</td>
 				<td bgcolor='#D4D4D4'>Edição</td>
@@ -17,6 +18,7 @@
 		<tbody>
 			{recordset}
 			<tr style='border: 1px solid black'>
+			    <td style='text-align: center'>{publicar}</td>
 				<td>{id}</td>
 				<td><strong>{data_criacao}</strong>
 				</td>
@@ -40,7 +42,15 @@
 				</a> <a href='{base_url}admin/upload_pdf/prepara/{id}/1'
 					title='Upload de PDF' data-toggle="tooltip" data-placement="top"
 					rel="tooltip"><i class="icon-book"></i>
-				</a> <a href='{base_url}single/show/{id}'
+				</a> 
+				
+				</a> <a href='{base_url}admin/{local}/publish/{id}/{publicar}'
+					title='Publica está matéria' data-toggle="tooltip" data-placement="top"
+					rel="tooltip"><i class="icon-certificate"></i>
+				</a>
+				
+				
+				<a href='{base_url}single/show/{id}'
 					title='preview do conteúdo' target="preview" data-toggle="tooltip"
 					data-placement="right" rel="tooltip"><i class="icon-eye-open"></i>
 				</a></td>

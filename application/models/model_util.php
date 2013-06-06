@@ -25,9 +25,12 @@ class Model_util extends MY_Model {
         $r = $r -> result_array();
 
         $campo = array('id' => $r[0]['id1'], 'id' => $r[0]['id2'], 'id' => $r[0]['id3']);
+        
         $id = array($r[0]['id1'], $r[0]['id2'], $r[0]['id3']);
+        
         $this -> db -> where_in('id', $id);
-        $recordset = $this -> db -> get_where('tb_conteudo', array('imagem_home !=' => ""));
+        
+        $recordset = $this -> db -> get_where('vw_conteudo', array('imagem_home !=' => "", 'publicar' => 1));
 
         return $recordset -> result_array();
     }
@@ -200,7 +203,7 @@ class Model_util extends MY_Model {
         $this -> db -> where_not_in('id', $ids);
         $this -> db -> order_by("title", "RANDOM");
         $this -> db -> limit(6);
-        $query = $this -> db -> get_where('vw_conteudo', array("visivel" => 1, "imagem_fundo !=" => ""));
+        $query = $this -> db -> get_where('vw_conteudo', array("visivel" => 1, "publicar" => 1, "imagem_fundo !=" => ""));
         $recorset = $query -> result_array();
         return $recorset;
 
@@ -228,6 +231,7 @@ class Model_util extends MY_Model {
      */
 
     function getCapa($id = null) {
+    	
         if ($id === null) {
 
             $query = $this -> db -> get_where('vw_edicao', array('atual' => "sim"));
@@ -235,10 +239,21 @@ class Model_util extends MY_Model {
         } else {
             $query = $this -> db -> get_where('vw_edicao', array('edicao' => $id));
         }
+        
 
-        $recordset = $query -> result_array();
+        if ($query->num_rows() > 0)
+        {
+        	 $recordset = $query -> result_array();
+        	 return $recordset[0];
+        }else{
+        	
+        	return array('imagem_capa' => 'capa_nula.gif', 'edicao' => 0);
+        }
 
-        return $recordset[0];
+        
+        
+
+        
 
     }
 

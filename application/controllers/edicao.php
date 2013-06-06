@@ -42,7 +42,7 @@ class Edicao extends CI_Controller {
 
 		 
 
-		$where = array('edicao' => $busca);
+		$where = array('edicao' => $busca, 'publicar'=>1);
 
 		$result = $this -> util -> PaginationOn($table, 100, base_url() . $this -> data['local'] . '/paging', $fields, $where, $orderby, "3", "4");
 

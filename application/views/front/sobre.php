@@ -47,27 +47,15 @@ include 'script_css.php'
 					<h3>Carta na Escola</h3>
 					<br>
 
-					<p>
-						"Carta na Escola" traz mensalmente temas da atualidade para
-						discussão, debate e estudo em sala de aula, com o objetivo de
-						aprofundar a reflexão e compreensão de fenômenos geopolíticos,
-						ambientais, tecnológicos, sociais e culturais, além de melhorar
-						a capacidade de argumentação dos alunos. <br> <br> A
-						publicação abrange uma criteriosa seleção de matérias
-						publicadas na revista "Carta Capital" no mês anterior,
-						acompanhada de sugestões para atividades pedagógicas elaboradas
-						por especialistas para uso do professor em sala de aula ou no
-						planejamento das atividades. <br> <br> Dicas de leitura, filmes,
-						sites, peças e livros relacionados ao tema abordado na matéria
-						publicada em Carta Capital estimulam estudantes e professores
-						buscar novas fontes de conhecimento. Ao mesmo tempo, o aluno
-						aprendende a se relacionar criticamente com os veículos de
-						comunicação.
-					</p>
-					O site reproduz o conteúdo da revista e torna-se mais um canal de
-					acesso entre o leitor, o aluno, os professores e a Revista. <br />
-					Boa leitura!
-
+				<p>
+	<strong>Carta na Escola</strong> traz mensalmente temas da atualidade para discuss&atilde;o, debate e estudo em sala de aula, com o objetivo de aprofundar a reflex&atilde;o e compreens&atilde;o de fen&ocirc;menos geopol&iacute;ticos, ambientais, tecnol&oacute;gicos, sociais e culturais, al&eacute;m de melhorar a capacidade de argumenta&ccedil;&atilde;o dos alunos.<br />
+	<br />
+	A publica&ccedil;&atilde;o, lan&ccedil;ada em novembro de 2006, abrange uma criteriosa sele&ccedil;&atilde;o de mat&eacute;rias publicadas na revista <strong>CartaCapital</strong>, acompanhada de sugest&otilde;es para atividades pedag&oacute;gicas elaboradas por especialistas para uso do professor em sala de aula ou no planejamento das atividades.<br />
+	<br />
+	Dicas de leitura, filmes, sites, pe&ccedil;as e livros relacionados ao tema abordado na mat&eacute;ria publicada em<strong> CartaCapital</strong> estimulam estudantes e professores buscar novas fontes de conhecimento. Ao mesmo tempo, o aluno aprende a se relacionar criticamente com os ve&iacute;culos de comunica&ccedil;&atilde;o.</p>
+<p>
+	O site reproduz o conte&uacute;do da revista e torna-se mais um canal de acesso entre o leitor, o aluno, os professores e a revista.<br />
+	Boa leitura!&nbsp;</p>
 				</div>
 
 			</div>

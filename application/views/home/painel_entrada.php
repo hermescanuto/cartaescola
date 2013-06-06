@@ -20,14 +20,14 @@
 
 		</div>
 
-		<a href='<?php echo base_url(); ?>home' title='preview do conteudo'
-			target="preview">Preview</a>
-
+	
+  <input
+	type="submit" value="Salvar" id="salvar" class="btn btn-mini" />
 	</form>
+	
 </div>
 
-<input
-	type="button" value="Salvar" id="salvar" class="btn btn-mini" />
+
 
 
 

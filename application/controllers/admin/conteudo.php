@@ -269,6 +269,30 @@ class Conteudo extends CI_Controller {
 		redirect(base_url().'admin/'.$this->data['local'].'/paging/'.$page); // retorna para pagina que foi chamado
 
 	}
+	
+	
+	/*
+	 *
+	* @autor	Hermes Canuto de Souza
+	* publica ou nao a materia no site
+	* idx = id do relatorio
+	* $status = status atual da mateira
+	*/
+	
+	function publish($idx,$status){
+		
+		$this->data['local']=$this->uri->segment("2");
+		
+		$new_status = ($status == 1) ? 0 : 1;	
+		
+		$this->Model_util->setTableData($this->tabela);
+		$this->Model_util->setID($idx);
+		$this->Model_util->setData(Array('publicar'=> $new_status));
+		$this->Model_util->save();
+		
+		redirect( base_url().'admin/'.$this->data['local'] );
+		
+	}
 
 }
 ?>

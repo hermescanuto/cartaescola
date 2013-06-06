@@ -6,7 +6,7 @@ class Materias extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
-	protected $view = 'vw_conteudo';
+	protected $view = 'vw_conteudo_publicado';
 
 	function __construct() {
 		parent::__construct();
@@ -55,9 +55,9 @@ class Materias extends CI_Controller {
 
 		if ($busca != null) {
 
-			$where = array($campo_busca => urldecode($busca) , 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] );
+			$where = array($campo_busca => urldecode($busca) , 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] , 'publicar'=>1 );
 		} else {
-			$where = array( 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] );
+			$where = array( 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] , 'publicar'=>1);
 		}
 
 
