@@ -62,6 +62,7 @@ class Home extends CI_Controller {
 
 			$this -> data["titulo$i"] = $r[$i]['titulo'];
 			$this -> data["destaque_id$i"] = $r[$i]['id'];
+			
 		}
 
 		// busca as restantes ,por nao busca as que estao em destaque

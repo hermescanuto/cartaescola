@@ -52,9 +52,9 @@ class Home extends CI_Controller {
 
 		$data = $this->Model_util->ByIDtoTemplate($this->tabela,1);
 
-		$data['area3']=$this->Model_util->tipo('tb_conteudo','id as id , titulo as descricao',$data['id3']);
-		$data['area1']=$this->Model_util->tipo('tb_conteudo','id as id , titulo as descricao',$data['id1']);
-		$data['area2']=$this->Model_util->tipo('tb_conteudo','id as id , titulo as descricao',$data['id2']);
+		$data['area3']=$this->Model_util->tipo('vw_conteudo_publicado','id as id , titulo as descricao',$data['id3']);
+		$data['area1']=$this->Model_util->tipo('vw_conteudo_publicado','id as id , titulo as descricao',$data['id1']);
+		$data['area2']=$this->Model_util->tipo('vw_conteudo_publicado','id as id , titulo as descricao',$data['id2']);
 
 
 		$data['save']		= base_url().'admin/'.$this->data['local'].'/save';

@@ -43,16 +43,19 @@
 							<li><img src="{base_url}upload/{imagem_home0}" alt="{titulo0}" />
 								<p class="flex-caption">
 									<a href="{base_url}single/show/{destaque_id0}">{titulo0}</a>
+									<br><span style='font-size: 10px'>{desc0}</span>
 								</p>
 							</li>
 							<li><img src="{base_url}upload/{imagem_home1}" alt="{titulo1}" />
 								<p class="flex-caption">
 									<a href="{base_url}single/show/{destaque_id1}">{titulo1}</a>
+									<br><span style='font-size: 10px'>{desc1}</span>
 								</p>
 							</li>
 							<li><img src="{base_url}upload/{imagem_home2}" alt="{titulo2}" />
 								<p class="flex-caption">
 									<a href="{base_url}single/show/{destaque_id2}">{titulo2}</a>
+									<br><span style='font-size: 10px'>{desc2}</span>
 								</p>
 							</li>
 						</ul>

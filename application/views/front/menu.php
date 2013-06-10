@@ -13,17 +13,32 @@ alt="Carta Capital" width="265" height="73"> </a>
 				<li>
 					<a href="{base_url}secoes">Seções</a>
 				</li>
-				<li>
-					<a href="{base_url}artigos">Artigos</a>
-				</li>
+		
 				<li>
 					<a href="{base_url}aulas">Aulas</a>
 				</li>
 				<li>
 					<a href="{base_url}entrevistas">Entrevista</a>
 				</li>
+		
+				
 				<li>
 					<a href="{base_url}reportagens">Reportagens</a>
+				</li>
+				<li>
+					<a href="{base_url}editorial">Editorial</a>
+				</li>
+				
+				<li>
+					<a href="{base_url}cartaaoprofessor">Carta ao Professor</a>
+				</li>
+				
+				<li>
+					<a href="{base_url}saladoprofessor">Sala do Professor</a>
+				</li>
+				
+				<li>
+					<a href="{base_url}tecnologias">Tecnologia</a>
 				</li>
 
 			</ul>

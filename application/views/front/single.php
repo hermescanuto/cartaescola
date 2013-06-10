@@ -64,14 +64,15 @@ include 'script_css.php'
 						<div class="year" style="font-size: 18px">{ano}</div>
 					</div>
 					<div>
-						<img src="{base_url}upload/{imagem_home}" alt="{titulo}"
+						<img src="{base_url}upload/{imagem_fundo}" alt="{titulo}"
 							style="max-width: 550px" />
 						<div class="credito_foto">{credito_foto}</div>
 					</div>
 					<br />
 
 					<h2 class="post-heading">{titulo}</h2>
-                    <h5 class="post-heading">{autor}</h5>
+					<h6 class="post-heading">{descricao}</h6>
+                    <h5 class="post-heading">por {autor} Edição {edicao} — publicado na edição {edicao}, mês {edicao_mes} </h5>
 					<div class="post-content">{texto} {pdf_free}</div>
 
 					<div class="meta" style="display: none">

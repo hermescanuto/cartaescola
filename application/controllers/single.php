@@ -42,7 +42,7 @@ class Single extends CI_Controller {
 		}
 
 
-
+		$data['edicao_mes'] = strtolower($this->util->mostrames( $data['edicao_mes'] ));
 
 
 		$data["texto_extra"] = nl2br($data["texto_extra"]);
