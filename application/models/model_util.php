@@ -197,13 +197,18 @@ class Model_util extends MY_Model {
 
     // Retorna lista de 6 materias para atualidades, porem despresa os ids abaixo,
     // retorna somente os conteudo que tem a imagem nenor
-    function getatualizades($id0, $id1, $id2) {
+    function getatualizades($id0, $id1, $id2, $edicao) {
 
         $ids = array($id0, $id1, $id2);
         $this -> db -> where_not_in('id', $ids);
+        
+        $edicoes = array ($edicao,($edicao-1) );
+        $this->db->where_in('edicao', $edicoes);
+        
         $this -> db -> order_by("title", "RANDOM");
         $this -> db -> limit(6);
-        $query = $this -> db -> get_where('vw_conteudo', array("visivel" => 1, "publicar" => 1, "imagem_fundo !=" => ""));
+       
+        $query = $this -> db -> get_where('vw_conteudo', array("visivel" => 1, "publicar" => 1, "imagem_fundo !=" => "" ));
         $recorset = $query -> result_array();
         return $recorset;
 

@@ -59,7 +59,7 @@ include 'script_css.php'
 					</h2>
 
 				<article class="format-standard">
-					<div class="entry-date">
+					<div class="entry-date" style="display:none">
 						<div class="number">{mes}</div>
 						<div class="year" style="font-size: 18px">{ano}</div>
 					</div>

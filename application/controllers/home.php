@@ -65,7 +65,7 @@ class Home extends CI_Controller {
 		}
 
 		// busca as restantes ,por nao busca as que estao em destaque
-		$recordset = $this -> Model_util -> getatualizades($this -> data["destaque_id0"], $this -> data["destaque_id1"], $this -> data["destaque_id2"]);
+		$recordset = $this -> Model_util -> getatualizades($this -> data["destaque_id0"], $this -> data["destaque_id1"], $this -> data["destaque_id2"], $this->data['edicao_numero']);
 
 		for ($i = 0; $i <= 5; $i++) {
 
