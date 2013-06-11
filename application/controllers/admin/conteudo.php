@@ -259,14 +259,41 @@ class Conteudo extends CI_Controller {
 	function DeleteReport($idx,$page)
 	{
 
+
 		$this->data['local']=$this->uri->segment("2");
+
+		$r = $this -> Model_util -> showHome();
+
+		for ($i = 0; $i <= 2; $i++) {
+			$this -> data["id_$i"] = $r[$i]['id'];
+		}
+
+
+
+
+		if ( 	$idx == $this -> data["id_0"] or
+		$idx == $this -> data["id_1"] or
+		$idx == $this -> data["id_0"] ){
+				
+			$this->pag_conf();
+			$this->util->ShowADMTopPage($this->data); // carrega o topo do adm
+			$this->util->ShowADMMenu(0) ; // carrega o menu adm
 			
-		$this->Model_util->setTableData($this->tabela);
-		$this->Model_util->setID($idx);
-		$this->Model_util->setData(Array('visivel'=> 0));
-		//$this->Model_util->delete();
-		$this->Model_util->save();
-		redirect(base_url().'admin/'.$this->data['local'].'/paging/'.$page); // retorna para pagina que foi chamado
+			$data['msg']= "Este ID não pode ser deletado, pois está marcado no carrosel da HOME";
+			
+			$this -> parser -> parse('util/msg', $data);
+
+			$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
+				
+		}else{
+			
+			$this->Model_util->setTableData($this->tabela);
+			$this->Model_util->setID($idx);
+			$this->Model_util->setData(Array('visivel'=> 0));
+			//$this->Model_util->delete();
+			$this->Model_util->save();
+			redirect(base_url().'admin/'.$this->data['local'].'/paging/'.$page); // retorna para pagina que foi chamado
+		}
 
 	}
 	
