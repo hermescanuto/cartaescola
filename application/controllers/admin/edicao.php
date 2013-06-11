@@ -210,13 +210,34 @@ class Edicao extends CI_Controller {
 	{
 
 		$this->data['local']=$this->uri->segment("2");
+		
+		
+		$data = $this -> Model_util -> ByIDtoTemplate($this -> tabela, $idx);
+		if ( $data['atual']=='sim'){
 			
-		$this->Model_util->setTableData($this->tabela);
-		$this->Model_util->setID($idx);
-		$this->Model_util->setData(Array('visivel'=> 0));
-		//$this->Model_util->delete();
-		$this->Model_util->save();
-		redirect(base_url().'admin/'.$this->data['local'].'/paging/'.$page); // retorna para pagina que foi chamado
+			$this->pag_conf();
+			$this->util->ShowADMTopPage($this->data); // carrega o topo do adm
+			$this->util->ShowADMMenu(0) ; // carrega o menu adm
+				
+			$data['msg']= "Este ID não pode ser deletado, pois está marcado como Capa Atual";
+				
+			$this -> parser -> parse('util/msg', $data);
+			
+			$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
+			
+		}else{
+			
+			$this->Model_util->setTableData($this->tabela);
+			$this->Model_util->setID($idx);
+			$this->Model_util->setData(Array('visivel'=> 0));
+			//$this->Model_util->delete();
+			$this->Model_util->save();
+			redirect(base_url().'admin/'.$this->data['local'].'/paging/'.$page); // retorna para pagina que foi chamado
+				
+		}
+		
+			
+
 
 	}
 

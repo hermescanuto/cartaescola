@@ -16,8 +16,8 @@
 		<tbody>
 			{recordset}
 			<tr style='border: 1px solid black'>
-				<td>{id}</td>
-				<td>{atual}</td>
+				<td >{id}</td>
+				<td id='atual'>{atual}</td>
 				<td>{data_criacao}</td>
 				<td>N.:{edicao} - Mês : {mes} - Ano: {ano}</td>
 				<td><img src="{base_url}upload/capa/{imagem_capa}"
