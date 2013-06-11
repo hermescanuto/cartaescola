@@ -14,7 +14,7 @@ class saladoprofessor extends CI_Controller {
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
 		$this -> data['local'] = $this -> uri -> segment("2");
-		$this -> data['tipo_busca'] = 7;
+		$this -> data['tipo_busca'] = 10;
 		$this -> data['lista_legenda'] = "Sala do Professor";
 	}
 
@@ -49,17 +49,14 @@ class saladoprofessor extends CI_Controller {
 		if (is_numeric($busca)) {
 			$campo_busca = 'edicao';
 		} else {
-
 			$campo_busca = 'titulo';
 		}
 
 		if ($busca != null) {
-
 			$where = array($campo_busca => urldecode($busca) , 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] ,'publicar'=>1);
 		} else {
 			$where = array( 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] ,'publicar'=>1);
 		}
-
 
 
 		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4");

@@ -30,13 +30,10 @@ class Conteudo extends CI_Controller {
 		$this->data['js']= 	array(
 				array('js_url' => 'http://code.jquery.com/jquery-latest.min.js'),
 				array('js_url' => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'),
-				array('js_url' =>  base_url().'js/bootstrap.js'),
-				 
-					
+				array('js_url' =>  base_url().'js/bootstrap.js'),				
 				array('js_url' =>  base_url().'js2/ckeditor/ckeditor.js'),
 				array('js_url' =>  base_url().'js2/ckeditor/adapters/jquery.js'),
-				array('js_url' =>  base_url().'js2/util.js'),
-					
+				array('js_url' =>  base_url().'js2/util.js'),					
 				array('js_url' =>  base_url().'js2/lista_confirma_delete.js'),
 		);
 		$this->data['css']= array(

@@ -72,7 +72,7 @@ include 'script_css.php'
 
 					<h2 class="post-heading">{titulo}</h2>
 					<h6 class="post-heading">{descricao}</h6>
-                    <h5 class="post-heading">por {autor} Edição {edicao} — publicado na edição {edicao}, mês {edicao_mes} </h5>
+                    <h5 class="post-heading">por {autor} — publicado na edição {edicao}, mês {edicao_mes} </h5>
 					<div class="post-content">{texto} {pdf_free}</div>
 
 					<div class="meta" style="display: none">
