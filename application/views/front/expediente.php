@@ -10,6 +10,9 @@
 </head>
 
 <body lang="en">
+	<?php
+        include 'barra_simples.php';
+		?>
 
 	<header class="clearfix">
 
