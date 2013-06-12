@@ -208,7 +208,7 @@ class Model_util extends MY_Model {
         $this -> db -> order_by("title", "RANDOM");
         $this -> db -> limit(6);
        
-        $query = $this -> db -> get_where('vw_conteudo', array("visivel" => 1, "publicar" => 1, "imagem_fundo !=" => "" ));
+        $query = $this -> db -> get_where('vw_conteudo', array("visivel" => 1, "publicar" => 1, "imagem_fundo !=" => "","tb_tipo_conteudo_id !=" => 11 ));
         $recorset = $query -> result_array();
         return $recorset;
 
