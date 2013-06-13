@@ -53,7 +53,7 @@ include 'script_css.php';
 					</h2>
 				<img src="{base_url}/upload/capa/{edicao_capa}"
 					alt="Capa {edicao_numero} abril Carta na Escola revista mensal"
-					width="165" height="211" />
+					width="205px" height="261px" style="max-width:205px; max-height:261px"/>
                 <br>
 				{recordset}
                 <div class="row">

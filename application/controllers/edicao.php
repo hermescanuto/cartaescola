@@ -6,7 +6,7 @@ class Edicao extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
-	protected $view = 'vw_conteudo';
+	protected $view = 'vw_conteudo_publicado';
 
 	function __construct() {
 		parent::__construct();
@@ -38,7 +38,7 @@ class Edicao extends CI_Controller {
 
 		$table = $this -> view;
 		$fields = "*";
-		$orderby = 'id desc';
+		$orderby = 'edicao desc, ordem asc ';
 
 		 
 

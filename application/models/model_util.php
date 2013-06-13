@@ -78,7 +78,7 @@ class Model_util extends MY_Model {
      * executa uma clausula sql.
      */
 
-    function ExecSql($table, $fields, $where = '', $page_size = 10, $start = 0, $orderby = '') {
+    function ExecSql($table, $fields, $where = '', $page_size = 10, $start = 0, $orderby = '' , $tipo_conteudo = '' ) {
         // para vericar quanto registro tem no banco
         $this -> db -> select($fields);
         //$this->db->where($where);
@@ -86,16 +86,28 @@ class Model_util extends MY_Model {
             //;$this->db->where($where);
             $this -> db -> like($where);
         }
+        
+        if( $tipo_conteudo != ''){
+        	$this -> db ->where('tb_tipo_conteudo_id', $tipo_conteudo);
+        }
+        
         $query = $this -> db -> get($table);
         $total = $query -> num_rows();
 
         //echo '<br/>'.$total;
+        
+        
+        if( $tipo_conteudo != ''){
+        	$this -> db ->where('tb_tipo_conteudo_id', $tipo_conteudo);
+        }
 
         // para vericar quanto registro tem no banco com limite de paginacao
         $this -> db -> select($fields);
         if ($where != '') {
             $this -> db -> like($where);
         }
+        
+     
 
         if ($orderby != '') {
             $this -> db -> order_by($orderby);

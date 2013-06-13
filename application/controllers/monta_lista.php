@@ -2,25 +2,35 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class Editorial extends CI_Controller {
+class monta_lista extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
 	protected $view = 'vw_conteudo_publicado';
+	protected $tipo_busca;
 
 	function __construct() {
 		parent::__construct();
 		$this -> load -> library('util');
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
-		$this -> data['local'] = $this -> uri -> segment("2");
-		$this -> data['tipo_busca'] = 7;
-		$this -> data['lista_legenda'] = "Editorial";
+		$this -> data['local'] = $this -> uri -> segment("1");
+
 	}
 
 	public function index() {
 		$this -> paging();
 		// paginacao
+	}
+	
+	
+	public function tipo($id) {
+		
+		$recordset = $this -> Model_util -> ByIDtoTemplate('tipo_conteudo', $id);			
+		$this -> tipo_busca = $id;
+		$this -> data['lista_legenda'] = $recordset['tipo_conteudo'];	
+		$this -> paging();
+		
 	}
 
 	/*
@@ -53,16 +63,21 @@ class Editorial extends CI_Controller {
 			$campo_busca = 'titulo';
 		}
 
+		echo $this -> tipo_busca;
+		
 		if ($busca != null) {
 
 			$where = array($campo_busca => urldecode($busca) );
 		} else {
-			$where = null;
+			$where = '';
 		}
 
 
 
-		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4",$this -> data['tipo_busca']);
+		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"4","5", $this -> tipo_busca);
+		
+		echo $this->db->last_query();
+		
 		// cria a paginação
 		$data = $result;
 

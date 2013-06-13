@@ -7,6 +7,7 @@
 			<tr>
 				<td bgcolor='#D4D4D4' style='text-align: center'>Publicar(1/0)</td>
 				<td bgcolor='#D4D4D4'>id</td>
+				<td bgcolor='#D4D4D4'>Ordem</td>
 				<td bgcolor='#D4D4D4'>Data de Criação</td>
 				<td bgcolor='#D4D4D4'>Edição</td>
 				<td bgcolor='#D4D4D4'>Tipo do Conteúdo</td>
@@ -20,6 +21,7 @@
 			<tr style='border: 1px solid black'>
 			    <td style='text-align: center'>{publicar}</td>
 				<td>{id}</td>
+				<td>{ordem}</td>
 				<td><strong>{data_criacao}</strong>
 				</td>
 				<td>{edicao}</td>

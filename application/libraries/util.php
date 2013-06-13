@@ -110,7 +110,7 @@ class util {
 	*/
 
 
-	function PaginationOn($table,$page_size = 10,$page_local,$fields = '',$where= '',$orderby = '',$uri = 4,$ur_busca = 5)
+	function PaginationOn($table,$page_size = 10,$page_local,$fields = '',$where= '',$orderby = '',$uri = 4,$ur_busca = 5,$tipo_conteudo='')
 	{
 		$CI=& get_instance();
 		$CI->load->library('pagination');
@@ -125,7 +125,7 @@ class util {
 
 		//echo $start;
 
-		$recordset = $CI->model_util->ExecSql($table,$fields,$where,$page_size,$start,$orderby); // chamada da model
+		$recordset = $CI->model_util->ExecSql($table,$fields,$where,$page_size,$start,$orderby,$tipo_conteudo); // chamada da model
 
 
 			

@@ -43,7 +43,7 @@ class cartaaoprofessor extends CI_Controller {
 
 		$table = $this -> view;
 		$fields = "*";
-		$orderby = 'id desc';
+		$orderby = '';
 
 		$busca = $this -> uri -> segment("4");
 		if (is_numeric($busca)) {
@@ -55,14 +55,14 @@ class cartaaoprofessor extends CI_Controller {
 
 		if ($busca != null) {
 
-			$where = array($campo_busca => urldecode($busca) , 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] ,'publicar'=>1);
+			$where = array($campo_busca => urldecode($busca) );
 		} else {
-			$where = array( 'tb_tipo_conteudo_id' => $this -> data['tipo_busca'] ,'publicar'=>1);
+			$where = null;
 		}
 
 
 
-		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4");
+		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4", $this -> data['tipo_busca'] );
 		// cria a paginação
 		$data = $result;
 

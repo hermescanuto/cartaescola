@@ -31,6 +31,10 @@
 							name="sub_classificacao" id="sub_classificacao" size="100"
 							maxlength="100" value="{sub_classificacao}"
 							placeholder="Sub Classificação" style="width: 400px"/>
+							
+							<label class="control-label">Ordem:</label> <input type="text"
+							name="ordem" id="ordem" size="200" maxlength="200"
+							value="{ordem}" placeholder="ordem" style="width: 400px" />
 
 					</div>
 

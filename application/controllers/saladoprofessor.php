@@ -43,7 +43,7 @@ class saladoprofessor extends CI_Controller {
 
 		$table = $this -> view;
 		$fields = "*";
-		$orderby = 'id desc';
+		$orderby = '';
 
 		$busca = $this -> uri -> segment("4");
 		if (is_numeric($busca)) {

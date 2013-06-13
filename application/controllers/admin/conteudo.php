@@ -216,6 +216,7 @@ class Conteudo extends CI_Controller {
 		$busca = $this->uri->segment("5") ;
 		if ( is_numeric($busca) )  {
 			$campo_busca = 'edicao' ;
+			$orderby = 'edicao asc';
 		}else{
 
 			$campo_busca = 'titulo';
