@@ -8,11 +8,11 @@
 *
 */
 
-class Conteudo extends CI_Controller {
+class trancado extends CI_Controller {
 
 	protected $data 	= array();
 	protected $tabela 	= 'tb_conteudo';
-	protected $view 	= 'vw_conteudo';
+	protected $view 	= 'vw_conteudo_trancado';
 
 	function __construct()
 	{
@@ -26,7 +26,7 @@ class Conteudo extends CI_Controller {
 
 	private function pag_conf()
 	{
-		$this->data['title']='Conteúdo';
+		$this->data['title']='Conteúdo Trancado';
 		$this->data['js']= 	array(
 				array('js_url' => 'http://code.jquery.com/jquery-latest.min.js'),
 				array('js_url' => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'),
@@ -244,10 +244,6 @@ class Conteudo extends CI_Controller {
 		$this->paging();
 
 	}
-	
-
-
-	
 
 	/*
 	 *
@@ -291,11 +287,11 @@ class Conteudo extends CI_Controller {
 		if ( $busca != null ) {
 
 
-			$where = array ($campo_busca => urldecode($busca) );
+			$where = array ($campo_busca => urldecode($busca), 'tb_usuario_id' => $this->session->userdata('user_id') );
 		}
 		else
 		{
-			$where = '';
+			$where = array ('tb_usuario_id' => $this->session->userdata('user_id') );
 		}
 
 		//print_r ($where);
@@ -382,6 +378,28 @@ class Conteudo extends CI_Controller {
 		
 		redirect( base_url().'admin/'.$this->data['local'] );
 		
+	}
+	
+	/*
+	 *
+	* @autor	Hermes Canuto de Souza
+	* destranca a materia para ediçao
+	*
+	*/
+	
+	function unlock($id)
+	{
+		$this->data['local']=$this->uri->segment("2");
+		$data = $this -> Model_util -> ByIDtoTemplate('vw_lock', $id, 'tb_conteudo_id');
+			
+		$id=$data['id'];
+		$this->Model_util->setTableData('tb_lock');
+		$this->Model_util->setID($id);
+		$this->Model_util->setData(Array('visivel'=> 0,'data_checkout' => date("Y-m-d H:i:s") ));
+		$this->Model_util->save();
+	
+		redirect( base_url().'admin/'.$this->data['local'] );
+	
 	}
 
 }
