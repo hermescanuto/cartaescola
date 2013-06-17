@@ -92,6 +92,29 @@ class Conteudo extends CI_Controller {
 	* idx = id da materia
 	*/
 	function ShowReport($idx) {
+		
+		
+		$data = $this -> Model_util -> ByIDtoTemplate('vw_lock', $idx, 'tb_conteudo_id');
+		
+		// verifica se o registro esta livre
+		if ( $data['id'] == null or $data['tb_usuario_id'] == $this->session->userdata('user_id') ){
+			
+			
+          // registro sava no banco 
+				
+			if ( $data['tb_usuario_id'] != $this->session->userdata('user_id') ){
+				$campos= array(
+						'tb_conteudo_id' => $idx,
+						'tb_usuario_id'  => $this->session->userdata('user_id')
+				);
+				$this->Model_util->setTableData('tb_lock');
+				$this->Model_util->setID(NULL);
+				$this->Model_util->setData($campos);
+				$this->Model_util->save();
+			}	
+			
+			
+		
 		$this -> pag_conf();
 		$this -> util -> ShowADMTopPage($this -> data);
 		// carrega o topo do adm
@@ -144,6 +167,27 @@ class Conteudo extends CI_Controller {
 		$this -> parser -> parse($this -> data['local'] . '/painel_entrada', $data);
 		$this -> util -> ShowADMBottomPage();
 		// Carrega o rodape do adm
+		
+		}else{
+				
+			
+			$recordset = $this -> Model_util -> ByIDtoTemplate('tb_usuario', $data['tb_usuario_id'] );
+			
+			$data['msg']= 'Conteúdo Trancado por '.$recordset['nome'].' em '. $data['data_criacao']. ' ID: '.$idx; ;
+			
+			
+			$this->pag_conf();
+			$this->util->ShowADMTopPage($this->data); // carrega o topo do adm
+			$this->util->ShowADMMenu(0) ; // carrega o menu adm
+				
+			
+				
+			$this -> parser -> parse('util/msg', $data);
+			
+			$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
+				
+		}
+				
 	}
 	/*
 	 *
@@ -179,6 +223,23 @@ class Conteudo extends CI_Controller {
 		$this->Model_util->setID($id);
 		$this->Model_util->setData($campos);
 		$this->Model_util->save();
+		
+		// se existe id entao checkou na materia
+		
+		if ( $id ){
+			
+			$data = $this -> Model_util -> ByIDtoTemplate('vw_lock', $id, 'tb_conteudo_id');
+			
+			$id=$data['id'];	
+			$this->Model_util->setTableData('tb_lock');
+			$this->Model_util->setID($id);
+			$this->Model_util->setData(Array('visivel'=> 0,'data_checkout' => date("Y-m-d H:i:s") ));
+			$this->Model_util->save();
+						
+		}
+		
+		
+		
 
 		$this->paging();
 

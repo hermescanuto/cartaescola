@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class monta_lista extends CI_Controller {
+class entrevistas extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';

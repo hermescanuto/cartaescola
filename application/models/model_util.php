@@ -129,17 +129,24 @@ class Model_util extends MY_Model {
      * e ja traz o valores para o template
      */
 
-    function ByIDtoTemplate($tabela, $id) {
-        $data = array();
-        $query = $this -> db -> get_where($tabela, array('id' => $id));
+    function ByIDtoTemplate($tabela, $id, $field = 'id') {
+    	$data = array();
+    	$query = $this -> db -> get_where($tabela, array( $field  => $id));
 
-        //echo $this->db->last_query();
+    	//echo $this->db->last_query();
 
-        $x = $query -> result_array();
-        foreach ($x[0] as $i => $v) {
-            $data[$i] = $v;
-        }
-        return $data;
+
+    	if ($query->num_rows() > 0)
+    	{
+    		$x = $query -> result_array();
+    		foreach ($x[0] as $i => $v) {
+    			$data[$i] = $v;
+    		}
+    		return $data;
+    	}else {
+    		
+    		return $this->FieldTemplateNull($tabela);
+    	}
     }
 
     function FieldTemplateNull($tabela) {
