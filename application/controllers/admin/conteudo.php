@@ -204,6 +204,7 @@ class Conteudo extends CI_Controller {
 		$id = $this->input->post('id');
         
 		$campos = $_POST;
+		
 
 		$campos['texto'] = $this->input->post('texto_ckeditor');
 		$campos['texto_extra'] = $this->input->post('texto_extra_ckeditor');

@@ -21,6 +21,10 @@ include 'script_css.php'
 	margin-left: 10 px;
 	padding: 9px;
 }
+
+p {
+	margin-bottom: 5px;
+}
 </style>
 
 </head>
@@ -62,10 +66,7 @@ include 'script_css.php'
 					</h2>
 
 				<article class="format-standard">
-					<div class="entry-date" style="display:none">
-						<div class="number">{mes}</div>
-						<div class="year" style="font-size: 18px">{ano}</div>
-					</div>
+					
 					<div>
 						<img src="{base_url}upload/{imagem_fundo}" alt="{titulo}"
 							style="max-width: 550px" />

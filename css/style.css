@@ -36,7 +36,7 @@ body {
 	font-size: 13px;
 }
 
-body p {
+body {
 	margin-bottom: 21px;
 }
 
@@ -773,7 +773,7 @@ h1.heading,h2.heading,h3.heading,h4.heading,h5.heading,h6.heading {
 
 #posts-list article {
 	position: relative;
-	padding-left: 160px;
+	padding-left: 10px;
 	margin-bottom: 40px;
 }
 
@@ -1006,3 +1006,15 @@ footer .wrapper,.footer-bottom {
 .text-posts .heading:hover {
 	color: #fe8300;
 }
+
+aside{
+	line-height: normal;
+}
+
+aside div {
+	padding: none;
+}
+
+
+
+

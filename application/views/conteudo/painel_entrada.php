@@ -87,7 +87,11 @@
 				<input type="text" name="credito_foto" id="credito_foto" size="100"
 					maxlength="100" value="{credito_foto}" style="width: 400px"
 					placeholder="Foto de:" />
-
+					
+				<label class="control-label" for="legenda_foto">Legenda Foto :</label>
+				<input type="text" name="legenda_foto" id="legenda_foto" size="100"
+					maxlength="100" value="{legenda_foto}" style="width: 400px"
+					placeholder="Legenda" />
 			</div>
 			<div class="control-group">
 				<label class="control-label">PDF free: <a

@@ -62,7 +62,7 @@ class Home extends CI_Controller {
 
 			$this -> data["titulo$i"] = $r[$i]['titulo'];
 			$this -> data["destaque_id$i"] = $r[$i]['id'];
-			
+
 		}
 
 		// busca as restantes ,por nao busca as que estao em destaque
@@ -71,18 +71,19 @@ class Home extends CI_Controller {
 		for ($i = 0; $i <= 5; $i++) {
 
 			$this -> data["id$i"] = $recordset[$i]["id"];
+			$this -> data["titulo$i"] = $recordset[$i]["titulo"];
 			$this -> data["data_criacao$i"] = date("d-m-Y", strtotime($recordset[$i]["data_criacao"]));
 
-			if ( strlen ( $recordset[$i]["descricao"] ) < 100 ){
+			if ( strlen ( $recordset[$i]["descricao"] ) < 140 ){
 				$this -> data["olho$i"] = $recordset[$i]["descricao"];
 			}else{
-				
-				$this -> data["olho$i"] =  substr($recordset[$i]["descricao"],0 , 100 ) . "..."; 
+
+				$this -> data["olho$i"] =  substr($recordset[$i]["descricao"],0 , 100 ) . "...";
 			}
-		
-			
-			
-			
+
+
+
+
 			if ( $recordset[$i]["imagem_fundo"] == null ){
 
 				$this -> data["imagem$i"] = "446x283.jpg";
@@ -111,6 +112,6 @@ class Home extends CI_Controller {
 
 		$this -> parser -> parse('front/home', $this -> data);
 	}
-
 }
+
 
