@@ -29,7 +29,13 @@ class Home extends CI_Controller {
 
 	public function index() {
 
+		$recordset = $this->Model_util->getCapa();
+		
+		$this->data['edicao_capa'] = $recordset['imagem_capa'];
+		$this->data['edicao_numero'] = $recordset['edicao'];
+		
 		$r = $this -> Model_util -> showHome();
+		
 
 		for ($i = 0; $i <= 2; $i++) {
 			$this -> data["desc$i"] = $r[$i]['descricao'];
@@ -47,11 +53,23 @@ class Home extends CI_Controller {
 			$this -> data["descricao$i"] = $r[$i]['descricao'];
 			$this -> data["titulo$i"] = $r[$i]['titulo'];
 			$this -> data["destaque_id$i"] = $r[$i]['id'];
+			
+			
+			if ( $r[$i]["sub_classificacao"].'' == ''   ){
+			
+				$this -> data["sub$i"] = $r[$i]["tipo_conteudo"];
+			
+			}else{
+			
+				$this -> data["sub$i"] = $r[$i]["sub_classificacao"];
+			}
+			
+			
 		}
 		
 		
 
-		$recordset = $this -> Model_util -> getatualizades($this -> data["destaque_id0"], $this -> data["destaque_id1"], $this -> data["destaque_id2"]);
+		$recordset = $this -> Model_util -> getatualizades($this -> data["destaque_id0"], $this -> data["destaque_id1"], $this -> data["destaque_id2"], $this->data['edicao_numero']);
 
 		$this -> data['lista_materias'] = $recordset ;
 

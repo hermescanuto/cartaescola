@@ -13,7 +13,7 @@ class Reportagens extends CI_Controller {
 		$this -> load -> library('util');
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
-		$this -> data['local'] = $this -> uri -> segment("2");
+		$this -> data['local'] = 'mobile/'. $this -> uri -> segment("2");
 		$this -> data['tipo_busca'] = 4;
 		$this -> data['lista_legenda'] = "Reportagens";
 	}
@@ -45,7 +45,7 @@ class Reportagens extends CI_Controller {
 		$fields = "*";
 		$orderby = '';
 
-		$busca = $this -> uri -> segment("4");
+		$busca = $this -> uri -> segment("5");
 		if (is_numeric($busca)) {
 			$campo_busca = 'edicao';
 		} else {
@@ -61,7 +61,7 @@ class Reportagens extends CI_Controller {
 		}
 
 
-		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4",$this -> data['tipo_busca']);
+		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"4","5",$this -> data['tipo_busca']);
 		// cria a paginação
 		$data = $result;
 

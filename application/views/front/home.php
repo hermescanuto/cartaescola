@@ -46,19 +46,19 @@
 							<li><img src="{base_url}upload/{imagem_home0}" alt="{titulo0}" />
 								<p class="flex-caption">
 									<a href="{base_url}single/show/{destaque_id0}">{titulo0}</a>
-									<br><span style='font-size: 10px'>{desc0}</span>
+									<br><span style='font-size: 13px'>{desc0}</span>
 								</p>
 							</li>
 							<li><img src="{base_url}upload/{imagem_home1}" alt="{titulo1}" />
 								<p class="flex-caption">
 									<a href="{base_url}single/show/{destaque_id1}">{titulo1}</a>
-									<br><span style='font-size: 10px'>{desc1}</span>
+									<br><span style='font-size: 13px'>{desc1}</span>
 								</p>
 							</li>
 							<li><img src="{base_url}upload/{imagem_home2}" alt="{titulo2}" />
 								<p class="flex-caption">
 									<a href="{base_url}single/show/{destaque_id2}">{titulo2}</a>
-									<br><span style='font-size: 10px'>{desc2}</span>
+									<br><span style='font-size: 13px'>{desc2}</span>
 								</p>
 							</li>
 						</ul>
@@ -101,6 +101,8 @@
 								<br>
 								<h5 class="post-heading"><strong>{sub0}</strong></h5>
 								<br>
+                                <h4 class="post-heading">{titulo0}</h4>
+								<br>
 								<span>{olho0}</span>
 
 								<a href="{base_url}single/show/{id0}" class="opener"></a>
@@ -116,6 +118,8 @@
 								<br>
 								<h5 class="post-heading"><strong>{sub1}</strong></h5>
 								<br>
+                                 <h4 class="post-heading">{titulo1}</h4>
+								<br>
 								<span>{olho1}</span>
 								<a href="{base_url}single/show/{id1}" class="opener"></a>
 							</div>
@@ -128,6 +132,8 @@
 								<br>
 								<h5 class="post-heading"><strong>{sub2}</strong></h5>
 								<br>
+                                 <h4 class="post-heading">{titulo2}</h4>
+								<br>
 								<span>{olho2}</span>
 							</div>
 						</figure>
@@ -137,6 +143,8 @@
 								src="{base_url}upload/{imagem3}" alt="Alt text" /> </a>
 								<br>
 								<h5 class="post-heading"><strong>{sub3}</strong></h5>
+								<br>
+                                 <h4 class="post-heading">{titulo3}</h4>
 								<br>
 								<span>{olho3}</span>
 							</div>
@@ -150,6 +158,8 @@
 								<br>
 								<h5 class="post-heading"><strong>{sub4}</strong></h5>
 								<br>
+                                 <h4 class="post-heading">{titulo4}</h4>
+								<br>
 								<span>{olho4}</span>
 							</div>
 						</figure>
@@ -161,6 +171,9 @@
 								src="{base_url}upload/{imagem5}" alt="Alt text" /> </a>
 								<br>
 								<h5 class="post-heading"><strong>{sub5}</strong></h5>
+                                <br>
+                                <h4 class="post-heading">{titulo5}</h4>
+								<br>
 								<span>{olho5}</span>
 
 							</div>

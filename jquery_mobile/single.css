@@ -1,17 +1,28 @@
 .destaque_imagem {
 	width: 90%;
-	height: 90% margin : 5px;
+	height: 90% ;
+	margin : 5px;
 }
 
 .titulo {
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: bold;
 	color: #2F3E46;
 }
 
 .texto {
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 11px;
+	font-size: 12px;
 	
+}
+
+.descricao{
+	font-size: 12px;
+	display: block;
+}
+
+.por {
+	font-size: 10px;
+	display: block;
 }

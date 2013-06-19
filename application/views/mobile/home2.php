@@ -18,24 +18,20 @@
 
 		<div data-role='page'>
 
+		<!-- menu -->
 			<?php
             include 'menu2.php';
 			?>
-
+		<!-- menu -->	
+		
+			<!-- header -->
+			<?php
+            	include 'header.php';
+			?>
+			<!-- header -->
+			
+			
 			<!-- destaques -->
-
-			<div data-role="header" data-position="fixed">
-
-				<div class="ui-grid-b">
-					<div class="ui-block-a"></div>
-					<div class="ui-block-b">
-						<a href="{base_url}mobile" data-transition="none"><img src="{base_url}img/lonovo.png"
-						alt="Carta Capital" style="width: 100%; height: 100%"> </a>
-					</div>
-					<div class="ui-block-c"></div>
-				</div>
-
-			</div>
 
 			<div data-role="content">
 
@@ -43,11 +39,13 @@
 					<div class="ui-block-a">
 						<a href="{base_url}mobile/single/{id0}" data-transition="none"><img
 						src="{base_url}upload/{imagem_home0}" alt="{titulo0}"
-						style="height: 97%; width: 97%" /> </a>
-						<h5>{titulo0}</h5>
-						<p class="destaque">
-							{descricao0}
-						</p>
+						class="imagem_destaque" /></a>
+						</div>
+						<div class="ui-block-a">
+						<h5 class='sub_destaque' >{sub0}</h5>
+						<h5 class='titulo_destaque' >{titulo0}</h5>
+						<span class="descricao_destaque">{descricao0}</span>
+						
 					</div>
 				</div>
 
@@ -55,12 +53,10 @@
 					<div class="ui-block-a">
 						<a href="{base_url}mobile/single/{id1}" data-transition="none"><img
 						src="{base_url}upload/{imagem_home1}" alt="{titulo1}"
-						style="height: 97%; width: 97%" /> </a>
-						<h5>{titulo1}</h5>
-						<p  class="destaque">
-
-							{descricao1}
-						</p>
+						class="imagem_destaque" /> </a>
+						<h5 class='sub_destaque' >{sub1}</h5>
+						<h5 class='titulo_destaque' >{titulo1}</h5>
+						<span class="descricao_destaque">{descricao1}</span>
 					</div>
 				</div>
 
@@ -68,11 +64,10 @@
 					<div class="ui-block-a">
 						<a href="{base_url}mobile/single/{id2}" data-transition="none"><img
 						src="{base_url}upload/{imagem_home2}" alt="{titulo2}"
-						style="height: 97%; width: 97%" /> </a>
-						<h5>{titulo2}</h5>
-						<p  class="destaque">
-							{descricao2}
-						</p>
+						class="imagem_destaque" /> </a>
+						<h5 class='sub_destaque' >{sub2}</h5>
+						<h5 class='titulo_destaque' >{titulo2}</h5>
+						<span class="descricao_destaque">{descricao2}</span>
 					</div>
 				</div>
 
@@ -82,20 +77,20 @@
 				<hr>
 
 				{lista_materias}
-				<div class="ui-grid-a">
+				<div class="ui-grid-a" style="border-bottom: 1px dotted rgb(180, 177, 177)" >
 
 					<div class="ui-block-a">
 						<a href="{base_url}mobile/single/{id}" data-transition="none" ><img src="{base_url}upload/{imagem_fundo}" alt="{titulo}" class="destaque_imagem"/></a>
 					</div>
 
 					<div class="ui-block-b">
-						<span class="atualidades_titulo">{titulo}</span>
-						<br/>
+						<h5 class="atualidades_titulo">{titulo}</h5>
 						<span class="atualidades">{descricao}</span>
 
 					</div>
 
 				</div>
+				<br/>
 
 				{/lista_materias}
 
