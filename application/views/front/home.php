@@ -67,7 +67,7 @@
 					<!-- ENDS slider -->
 					<div class="home-slider-clearfix "></div>
 					<!-- Headline -->
-					<div id="headline" style="text-align:center;">
+					<div id="headline" style="text-align:center;  "margin-bottom: 22px;">
 
 						<p>
 							<a href="{base_url}edicao/{edicao_numero}" class="opener"><img
@@ -75,9 +75,11 @@
 							alt="Capa {edicao_numero} abril Carta na Escola revista mensal"
 							width="205" height="261" /> </a>
 							<br>
+                            
 							Edição
 							N&deg;{edicao_numero}
 						</p>
+                        
 
 						<em id="corner"></em>
 					</div>

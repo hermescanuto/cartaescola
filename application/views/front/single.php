@@ -12,7 +12,7 @@ include 'script_css.php'
 .credito_foto {
 	text-align: right;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
+	font-size: 13px;
 	color: white;
 	opacity: .7;
 	background-color: #000;
@@ -62,7 +62,7 @@ p {
 			<div id="posts-list" class="single-post">
 
 				<h2 class="page-heading">
-						<span>{tipo_conteudo}</span>
+						<span>{tipo_conteudo}</span> <span>{sub_classificacao}</span>
 					</h2>
 
 				<article class="format-standard">
@@ -70,14 +70,17 @@ p {
 					<div>
 						<img src="{base_url}upload/{imagem_fundo}" alt="{titulo}"
 							style="max-width: 550px" />
-						<div class="credito_foto">{credito_foto}</div>
+						<div class="credito_foto">{legenda_foto}</div>
 					</div>
 					<br />
 
 					<h2 class="post-heading">{titulo}</h2>
-					<h6 class="post-heading">{descricao}</h6>
-                    <h5 class="post-heading">por {autor} — publicado na edição {edicao}, mês {edicao_mes} </h5>
+					<h4 class="post-heading">{descricao}</h4>
+                    <h6 class="post-heading">Por {autor} — publicado na edição {edicao}, mês {edicao_mes} </h6>
 					<div class="post-content">{texto} {pdf_free}</div>
+                    <br>
+                    <br>
+                    <div class="credito_foto">{credito_foto}</div>
 
 					<div class="meta" style="display: none">
 						<div class="categories">
@@ -100,8 +103,11 @@ p {
 			
             <aside id="sidebar">{texto_extra}
             <em id="corner"></em>
+            
+            
                 
             </aside>
+            
             
 			<!-- ENDS sidebar -->
 

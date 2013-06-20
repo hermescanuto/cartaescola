@@ -3,15 +3,18 @@ body {
 	color: #888;
 }
 
-body,.home-block-heading span,.page-heading span {
-	background: #ebebe8;
+body,.home-block-heading span,
+.page-heading span {
+	background: #ffffff;
 }
 
 body a {
 	color: #444;
 }
 
-body a:hover,#top-widget-holder a:hover,#nav>li>a:hover,.project-heading .launch:hover
+body a:hover,
+#top-widget-holder a:hover,
+#nav>li>a:hover,.project-heading .launch:hover
 	{
 	color: #d2232a;
 }
@@ -100,12 +103,12 @@ nav a {
 
 /* CONTACT CONTENT ------------------------------------------------------------*/
 #contact-sidebar {
-	background: #e2e0d7;
+	background: #f0f0f0;
 }
 
 /* SIDEBAR ------------------------------------------------------------*/
 #sidebar {
-	background: #e2e0d7;
+	background: #f0f0f0;
 }
 
 #sidebar .block {
@@ -114,13 +117,13 @@ nav a {
 
 /* HOME ------------------------------------------------------------*/
 .home-block figcaption {
-	background: #d2232a;
+	background: #f0f0f0;
 	color: #f1f1f1;
 }
 
 /* PORTFOLIO ------------------------------------------------------------*/
 .portfolio-thumbs figcaption {
-	background: #d2232a;
+	background: #f0f0f0;
 	color: #f1f1f1;
 }
 
@@ -193,7 +196,8 @@ article .meta {
 
 /* SLIDER ------------------------------------------------------------*/
 #slider-holder #headline {
-	background: #e2e0d7;
+	background: #f0f0f0;
+	margin-bottom: 12px;
 }
 
 /* FOOTER ------------------------------------------------------------*/

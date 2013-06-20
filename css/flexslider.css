@@ -104,15 +104,15 @@ html[xmlns] .slides {
 }
 
 .flex-caption {
-	width: 50%;
-	padding: 2%;
+	width: 95%;
+	padding: 1%;
 	position: absolute;
 	left: 10px;
 	bottom: 10px;
 	background: rgba(0, 0, 0, .8);
 	color: #fff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-	font-size: 14px;
+	font-size: 17px;
 	line-height: 18px;
 }
 

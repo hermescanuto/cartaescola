@@ -1,9 +1,9 @@
 <div class="widget-block">
-	<h4>Anuncie</h4>
+	<h4>Assinatura</h4>
 	<p>
-		<a href="http://www.cartacapital.com.br/anuncie/equipe-comercial">Equipe
-			Comercial</a>
+		<a href="http://mercadocapital.com.br/" target="_blank">Assine</a>
       <br />
-      <a href="http://www.cartacapital.com.br/anuncie/media-kit">Mídia Kit</a>
+      <a href="http://www.assinantecartacapital.com.br/" target="_blank">Central de
+			Atendimento</a>
 	</p>
-</div>
+	</div>

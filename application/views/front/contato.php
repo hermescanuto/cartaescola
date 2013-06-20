@@ -59,6 +59,10 @@ include 'script_css.php'
 								<input name="email" id="email" type="text" class="form-poshytip"
 									title="Entre com o seu e-mail" /> <label>Email</label>
 							</div>
+                            <div>
+								<input name="assunto" id="assunto" type="text" class="form-poshytip"
+									title="Entre com o assunto" /> <label>Assunto</label>
+							</div>
 
 							<div>
 								<textarea name="comments" id="comments" rows="5" cols="20"

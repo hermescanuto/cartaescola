@@ -10,12 +10,10 @@ alt="Carta Capital" width="265" height="73"> </a>
 		<li class="{alvo_portifolio}">
 			<a href="{base_url}materias">MATÉRIAS</a>
 			<ul>
-				<li>
-					<a href="{base_url}secoes">Seções</a>
-				</li>
+				
 		
 				<li>
-					<a href="{base_url}aulas">Aulas</a>
+					<a href="{base_url}aulas">Aula</a>
 				</li>
 				<li>
 					<a href="{base_url}entrevistas">Entrevista</a>
@@ -23,7 +21,7 @@ alt="Carta Capital" width="265" height="73"> </a>
 		
 				
 				<li>
-					<a href="{base_url}reportagens">Reportagens</a>
+					<a href="{base_url}reportagens">Reportagem</a>
 				</li>
 				<li>
 					<a href="{base_url}editorial">Editorial</a>
@@ -53,7 +51,14 @@ alt="Carta Capital" width="265" height="73"> </a>
 		</li>
 		<li class="{alvo_contato}">
 			<a href="{base_url}contato">CONTATO</a>
-
-	</ul>
+            </li>
+            <li>
+            <a href="http://www.mercadocapital.com.br/" target="_blank">ASSINE</a>
+            </li>
+	
+    <li class="{alvo_tablet}">
+			<a href="{base_url}tablet">TABLETS</a>
+            </li>
+            </ul>
 
 </nav>
