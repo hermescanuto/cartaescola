@@ -76,7 +76,7 @@ function AjustaImagem() {
     
     largura= ($(window).width() ) - 40;
 
-   alert( largura);
+  // alert( largura);
 
 
     $('.texto img').each(function() {
