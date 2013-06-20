@@ -59,6 +59,12 @@ include 'script_css.php'
 								<input name="email" id="email" type="text" class="form-poshytip"
 									title="Entre com o seu e-mail" /> <label>Email</label>
 							</div>
+								<div> <label>Área:</label>
+								<select id='to' name='to'>
+									 <option  value='escola@cartacapital.com.br'>Redação</option>
+									 <option  value='comercial@cartacapital.com.br'>Comercial</option>
+								</select>
+							</div>
                             <div>
 								<input name="assunto" id="assunto" type="text" class="form-poshytip"
 									title="Entre com o assunto" /> <label>Assunto</label>

@@ -78,6 +78,7 @@
 
 <script type="text/javascript">
 
+
 $("#bt_buscar").click(function() {
 
 	  busca = $("#search").val();

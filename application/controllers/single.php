@@ -41,12 +41,15 @@ class Single extends CI_Controller {
 			$data["pdf_free"] =  "<a href='" .  $this -> data['base_url']. "upload/pdf_free/" . $data["pdf_free"]."' >Click para fazer o download do pdf</a>";;
 		}
 
-
 		$data['edicao_mes'] = strtolower($this->util->mostrames( $data['edicao_mes'] ));
 
 
 		$data["texto_extra"] = nl2br($data["texto_extra"]);
 
+		if ( $data['tipo_conteudo'] > 1) {
+			$data['sub_classificacao'] = null;
+		}
+		
 		$this -> parser -> parse('front/single', $this -> data + $data);
 	}
 

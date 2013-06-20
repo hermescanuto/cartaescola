@@ -6,7 +6,7 @@ if (!defined('BASEPATH'))
  * Index Page for this controller.
 */
 
-class Expediente extends CI_Controller {
+class Sobre extends CI_Controller {
 
 	protected $data = array();
 
@@ -21,7 +21,7 @@ class Expediente extends CI_Controller {
 	public function index() {
 
 		$this->data["alvo_sobre"] ='current-menu-item';
-		$this -> parser -> parse('mobile/expediente', $this -> data);
+		$this -> parser -> parse('mobile/sobre', $this -> data);
 	}
 
 }

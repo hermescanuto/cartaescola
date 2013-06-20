@@ -20,7 +20,7 @@ class Contato extends CI_Controller {
 
 	public function index() {
 		$this -> data["alvo_contato"] = 'current-menu-item';
-		$this -> parser -> parse('front/contato', $this -> data);
+		$this -> parser -> parse('mobile/contato', $this -> data);
 	}
 
 	public function enviar() {
@@ -29,13 +29,16 @@ class Contato extends CI_Controller {
 		$email = $this -> input -> post('email');
 		$web = $this -> input -> post('web');
 		$comments = $this -> input -> post('comments');
+		$to = $this -> input -> post('to');
 
 		$msg = "";
 		$msg = $msg ."<br/> Nome:$name ";
 		$msg = $msg ."<br/> Email:$email ";
 		$msg = $msg ."<br/><br/>  Comentario:<br/>$comments ";
 
-		echo $msg;
+		//echo $msg;
+		
+		
 
 		$this -> load -> library('email');
 
@@ -49,13 +52,13 @@ class Contato extends CI_Controller {
 		$this -> email -> from('cartanaescola@cartanaescola.com.br', 'contato');
 		$this -> email -> to($to);
 
-		$this -> email -> subject('Contato - Carta a Escola');
+		$this -> email -> subject('Contato - Cartan a Escola');
 		$this -> email -> message($msg);
 
 		$this -> email -> send();
 
-	   $this -> parser -> parse('front/resposta_contato', $this -> data);
-
+	    $this -> parser -> parse('mobile/resposta_contato', $this -> data);
+	   
 
 	}
 
