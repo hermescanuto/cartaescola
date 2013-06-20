@@ -49,7 +49,7 @@ class Contato extends CI_Controller {
 		$this -> email -> from('cartanaescola@cartanaescola.com.br', 'contato');
 		$this -> email -> to($to);
 
-		$this -> email -> subject('Contato - Carta a Escola');
+		$this -> email -> subject('Contato - Carta na Escola');
 		$this -> email -> message($msg);
 
 		$this -> email -> send();
