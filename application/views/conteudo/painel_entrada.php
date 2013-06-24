@@ -7,6 +7,8 @@
 		</li>
 		<li><a href="#tabs-3">Imagens</a>
 		</li>
+		<li><a href="#tabs-4">Home</a>
+		</li>
 	</ul>
 
 	<form name="form1" id="form1" action="{save}" method="post"
@@ -112,6 +114,20 @@
 					class="img-polaroid" />
 			</p>
 		</div>
+		
+		
+		<div id="tabs-4">
+			<label class="control-label">Titulo Home:</label> <input type="text"
+							name="titulo_home" id="titulo" size="200" maxlength="200"
+							value="{titulo_home}" placeholder="Titulo" style="width: 400px" /> <label
+							class="control-label" for="descricao">Olho Home:</label>
+						<textarea name='descricao_home' id='descricao_home'
+							style="height: 80px; width: 400px"
+							placeholder="Uma breve descrição do texto principal">{descricao_home}</textarea>
+		
+		
+		</div>
+		
 	</form>
 </div>
 <hr />

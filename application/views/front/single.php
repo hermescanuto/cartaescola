@@ -75,10 +75,10 @@ p {
 				<article class="format-standard">
 					
 					<div>
-						<div class="credito_foto2">{legenda_foto}</div>
+						<div class="credito_foto2">{credito_foto}</div>
 						<img src="{base_url}upload/{imagem_fundo}" alt="{titulo}"
-							style="max-width: 550px" />
-						
+							style="max-width: 98%" />
+						<div class="credito_foto">{legenda_foto}</div>
 					</div>
 					<br />
 
@@ -88,7 +88,7 @@ p {
 					<div class="post-content">{texto} {pdf_free}</div>
                     <br>
                     <br>
-                    <div class="credito_foto">{credito_foto}</div>
+                    
 
 					<div class="meta" style="display: none">
 						<div class="categories">

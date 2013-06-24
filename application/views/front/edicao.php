@@ -47,28 +47,36 @@ include 'script_css.php';
 	<div id="main">
 		<div class="wrapper">
 
-			<div class="container-fluid">
-            <h2 class="page-heading">
+			<div class="container">
+			 <h2 class="page-heading">
 						<span>Edição: {edicao}</span>
 					</h2>
+			
+			  <div class="span2">
+			
+           
 				<img src="{base_url}/upload/capa/{edicao_capa}"
 					alt="Capa {edicao_numero} abril Carta na Escola revista mensal"
-					width="205px" height="261px" style="max-width:205px; max-height:261px"/>
-                <br>
+					/>
+
+                
+                </div>
+                
+                 <div class="span7">
+                
 				{recordset}
                 <div class="row">
 
                     <div class="span10">
-                        <div class="span2" style="padding: 5px">
+                    
+                        <div class="span2" style='margin-bottom: 10px'>
 
                             <a href="{base_url}single/show/{id}"><img src="{base_url}/upload/{imagem_fundo}" alt="{titulo}"
                                 title="{titulo}"  /></a>
                         </div>
 
-                        <div class="span7">
-
-                            <span style="font-size: 12px">Edição: {edicao} </span>
-                            <h4 class="post-heading">{titulo}</h4>
+                        <div class="span5" style='margin-bottom: 5px'>
+                            <h4 class="post-heading" style='margin-bottom: -15px;margin-top: 10px;'>{titulo}</h4>
                             <br>
                             {descricao} <a href="{base_url}single/show/{id}"> leia mais...</a>
                       
@@ -80,6 +88,10 @@ include 'script_css.php';
 				{/recordset}
 
 				<div class="row">{paginacao}</div>
+				
+				</div>
+				
+				
 
 			</div>
 

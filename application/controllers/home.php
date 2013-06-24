@@ -71,11 +71,11 @@ class Home extends CI_Controller {
 		for ($i = 0; $i <= 5; $i++) {
 
 			$this -> data["id$i"] = $recordset[$i]["id"];
-			$this -> data["titulo$i"] = $recordset[$i]["titulo"];
+			$this -> data["titulo$i"] = $recordset[$i]["titulo_home"];
 			$this -> data["data_criacao$i"] = date("d-m-Y", strtotime($recordset[$i]["data_criacao"]));
 
 			if ( strlen ( $recordset[$i]["descricao"] ) < 140 ){
-				$this -> data["olho$i"] = $recordset[$i]["descricao"];
+				$this -> data["olho$i"] = $recordset[$i]["descricao_home"];
 			}else{
 
 				$this -> data["olho$i"] =  substr($recordset[$i]["descricao"],0 , 100 ) . "...";
