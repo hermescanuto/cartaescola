@@ -1,5 +1,5 @@
 /* Import other css */
-@import url('reset.css');
+
 
 @import url('social.css');
 
@@ -346,8 +346,8 @@ nav a {
 }
 
 .home-block figure img {
-	max-width: 100%;
-	opacity: .999;
+	max-width: 98%;
+	
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -355,7 +355,7 @@ nav a {
 }
 
 .home-block figure a:hover img {
-	opacity: 0.1;
+	opacity: 0.5;
 	line-height: 0em;
 }
 
@@ -742,7 +742,9 @@ h1.heading,h2.heading,h3.heading,h4.heading,h5.heading,h6.heading {
 }
 
 #floated-content,strong {
-	color: #000000
+	color: #D1282F;
+	font-weight: bold;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 #posts-list .page-heading,.fullwidth-content .page-heading,.floated-content .page-heading

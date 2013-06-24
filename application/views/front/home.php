@@ -91,20 +91,18 @@
 				<div class="home-block">
 					<h2 class="page-heading"><span>Atualidades em sala de aula </span></h2>
 					<br>
-					<br>
 					<div class="one-third-thumbs clearfix">
 						<figure>
 
 							<div style="height: 300px">
+							
+							  <h5 class="post-heading"><strong>{sub0}</strong></h5>
 
 								<a href="{base_url}single/show/{id0}"><img
-								src="{base_url}upload/{imagem0}" alt="Alt text" /> </a>
-
-								<br>
-								<h5 class="post-heading"><strong>{sub0}</strong></h5>
-								<br>
+								src="{base_url}upload/{imagem0}" alt="Alt text" /> </a>	
+		
                                 <h4 class="post-heading">{titulo0}</h4>
-								<br>
+					
 								<span>{olho0}</span>
 
 								<a href="{base_url}single/show/{id0}" class="opener"></a>
@@ -114,14 +112,12 @@
 						<figure>
 
 							<div style="height: 300px">
-
+								<h5 class="post-heading"><strong>{sub1}</strong></h5>
 								<a href="{base_url}single/show/{id1}"><img
 								src="{base_url}upload/{imagem1}" alt="Alt text" /> </a>
-								<br>
-								<h5 class="post-heading"><strong>{sub1}</strong></h5>
-								<br>
+			
                                  <h4 class="post-heading">{titulo1}</h4>
-								<br>
+							
 								<span>{olho1}</span>
 								<a href="{base_url}single/show/{id1}" class="opener"></a>
 							</div>
@@ -129,25 +125,21 @@
 						</figure>
 						<figure class="last">
 							<div style="height: 300px">
+								<h5 class="post-heading"><strong>{sub2}</strong></h5>
 								<a href="{base_url}single/show/{id2}"><img
 								src="{base_url}upload/{imagem2}" alt="Alt text" /> </a>
-								<br>
-								<h5 class="post-heading"><strong>{sub2}</strong></h5>
-								<br>
                                  <h4 class="post-heading">{titulo2}</h4>
-								<br>
+						
 								<span>{olho2}</span>
 							</div>
 						</figure>
 						<figure>
 							<div style="height: 300px">
+							<h5 class="post-heading"><strong>{sub3}</strong></h5>
 								<a href="{base_url}single/show/{id3}"><img
 								src="{base_url}upload/{imagem3}" alt="Alt text" /> </a>
-								<br>
-								<h5 class="post-heading"><strong>{sub3}</strong></h5>
-								<br>
                                  <h4 class="post-heading">{titulo3}</h4>
-								<br>
+							
 								<span>{olho3}</span>
 							</div>
 
@@ -155,13 +147,11 @@
 
 						<figure>
 							<div style="height: 300px">
+							<h5 class="post-heading"><strong>{sub4}</strong></h5>
 								<a href="{base_url}single/show/{id4}"><img
 								src="{base_url}upload/{imagem4}" alt="Alt text" /> </a>
-								<br>
-								<h5 class="post-heading"><strong>{sub4}</strong></h5>
-								<br>
                                  <h4 class="post-heading">{titulo4}</h4>
-								<br>
+								
 								<span>{olho4}</span>
 							</div>
 						</figure>
@@ -169,13 +159,14 @@
 						<figure class="last">
 
 							<div style="height: 300px">
+							<h5 class="post-heading"><strong>{sub5}</strong></h5>
+
 								<a href="{base_url}single/show/{id5}"><img
 								src="{base_url}upload/{imagem5}" alt="Alt text" /> </a>
-								<br>
-								<h5 class="post-heading"><strong>{sub5}</strong></h5>
-                                <br>
+
+								
                                 <h4 class="post-heading">{titulo5}</h4>
-								<br>
+							
 								<span>{olho5}</span>
 
 							</div>

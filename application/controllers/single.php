@@ -50,6 +50,11 @@ class Single extends CI_Controller {
 			$data['sub_classificacao'] = null;
 		}
 		
+		if ( $data['tipo_conteudo'] == $data['sub_classificacao'] ) {
+			$data['sub_classificacao'] = null;
+		}
+		
+		
 		$this -> parser -> parse('front/single', $this -> data + $data);
 	}
 

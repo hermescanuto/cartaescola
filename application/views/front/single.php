@@ -25,6 +25,13 @@ include 'script_css.php'
 p {
 	margin-bottom: 5px;
 }
+.credito_foto2 {
+		text-align: right;
+		font-size: 0.8em;
+		text-transform: none;
+		padding-right: 40px;
+	}
+
 </style>
 
 </head>
@@ -68,9 +75,10 @@ p {
 				<article class="format-standard">
 					
 					<div>
+						<div class="credito_foto2">{legenda_foto}</div>
 						<img src="{base_url}upload/{imagem_fundo}" alt="{titulo}"
 							style="max-width: 550px" />
-						<div class="credito_foto">{legenda_foto}</div>
+						
 					</div>
 					<br />
 
