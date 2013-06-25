@@ -1,0 +1,123 @@
+Ajuste no banco de dados
+
+use use site_cartanaescola;
+
+UPDATE tb_conteudo 
+
+SET texto = REPLACE (texto, 'http://cn.cartacapital.com.br/upload2/', 'http://beta.cartanaescola.com.br/upload2/');
+
+UPDATE tb_conteudo 
+
+SET texto= REPLACE (texto, 'http://cn.cartacapital.com.br/single/show/', 'http://beta.cartanaescola.com.br/single/show/');
+
+
+
+
+UPDATE tb_conteudo 
+
+SET texto_extra= REPLACE (texto_extra, 'http://cn.cartacapital.com.br/upload2/', 'http://beta.cartanaescola.com.br/upload2/');
+
+UPDATE tb_conteudo 
+
+SET texto_extra= REPLACE (texto_extra, 'http://cn.cartacapital.com.br/single/show/', 'http://beta.cartanaescola.com.br/single/show/');
+
+
+
+
+
+
+views
+
+
+CREATE  VIEW vw_conteudo AS
+SELECT 
+		tb_conteudo.*,
+
+       tipo_conteudo.tipo_conteudo AS tipo_conteudo,
+       tb_edicao.ano AS edicao_ano,
+       tb_edicao.mes AS edicao_mes
+FROM ((tb_conteudo
+       JOIN tipo_conteudo on((tb_conteudo.tb_tipo_conteudo_id = tipo_conteudo.id)))
+      JOIN tb_edicao on((tb_edicao.edicao = tb_conteudo.edicao)))
+WHERE ((tb_conteudo.visivel = 1)
+       AND (tb_edicao.visivel = 1))
+ORDER BY tb_conteudo.edicao DESC,
+         tb_conteudo.ordem,
+         tb_conteudo.id DESC;
+         
+         
+CREATE  VIEW `vw_conteudo_publicado` AS
+SELECT `tb_conteudo`.`id` AS `id`,
+       `tb_conteudo`.`tb_tipo_conteudo_id` AS `tb_tipo_conteudo_id`,
+       `tb_conteudo`.`titulo` AS `titulo`,
+       `tb_conteudo`.`sub_classificacao` AS `sub_classificacao`,
+       `tb_conteudo`.`descricao` AS `descricao`,
+       `tb_conteudo`.`texto` AS `texto`,
+       `tb_conteudo`.`galeria` AS `galeria`,
+       `tb_conteudo`.`autor` AS `autor`,
+       `tb_conteudo`.`edicao` AS `edicao`,
+       `tb_conteudo`.`data_criacao` AS `data_criacao`,
+       `tb_conteudo`.`visivel` AS `visivel`,
+       `tb_conteudo`.`imagem_home` AS `imagem_home`,
+       `tb_conteudo`.`imagem_fundo` AS `imagem_fundo`,
+       `tb_conteudo`.`imagem_banner` AS `imagem_banner`,
+       `tb_conteudo`.`imagem_ilustrativa` AS `imagem_ilustrativa`,
+       `tb_conteudo`.`texto_extra` AS `texto_extra`,
+       `tb_conteudo`.`credito_foto` AS `credito_foto`,
+       `tb_conteudo`.`legenda_foto` AS `legenda_foto`,
+       `tb_conteudo`.`pdf_free` AS `pdf_free`,
+       `tb_conteudo`.`pdf` AS `pdf`,
+       `tb_conteudo`.`publicar` AS `publicar`,
+       `tb_conteudo`.`ordem` AS `ordem`,
+        `tb_conteudo`.`titulo_home`,
+       `tb_conteudo`.`descricao_home`,
+       `tipo_conteudo`.`tipo_conteudo` AS `tipo_conteudo`,
+       `tb_edicao`.`ano` AS `edicao_ano`,
+       `tb_edicao`.`mes` AS `edicao_mes`
+FROM ((`tb_conteudo`
+       JOIN `tipo_conteudo` on((`tb_conteudo`.`tb_tipo_conteudo_id` = `tipo_conteudo`.`id`)))
+      JOIN `tb_edicao` on((`tb_edicao`.`edicao` = `tb_conteudo`.`edicao`)))
+WHERE ((`tb_conteudo`.`visivel` = 1)
+       AND (`tb_conteudo`.`publicar` = 1)
+       AND (`tb_edicao`.`visivel` = 1))
+ORDER BY `tb_conteudo`.`edicao` DESC,
+         `tb_conteudo`.`ordem`,
+         `tb_conteudo`.`id` DESC;
+         
+ CREATE VIEW `vw_conteudo_trancado` AS
+SELECT `vw_conteudo`.`id` AS `id`,
+       `vw_conteudo`.`tb_tipo_conteudo_id` AS `tb_tipo_conteudo_id`,
+       `vw_conteudo`.`titulo` AS `titulo`,
+       `vw_conteudo`.`sub_classificacao` AS `sub_classificacao`,
+       `vw_conteudo`.`descricao` AS `descricao`,
+       `vw_conteudo`.`texto` AS `texto`,
+       `vw_conteudo`.`galeria` AS `galeria`,
+       `vw_conteudo`.`autor` AS `autor`,
+       `vw_conteudo`.`edicao` AS `edicao`,
+       `vw_conteudo`.`data_criacao` AS `data_criacao`,
+       `vw_conteudo`.`visivel` AS `visivel`,
+       `vw_conteudo`.`imagem_home` AS `imagem_home`,
+       `vw_conteudo`.`imagem_fundo` AS `imagem_fundo`,
+       `vw_conteudo`.`imagem_banner` AS `imagem_banner`,
+       `vw_conteudo`.`imagem_ilustrativa` AS `imagem_ilustrativa`,
+       `vw_conteudo`.`texto_extra` AS `texto_extra`,
+       `vw_conteudo`.`credito_foto` AS `credito_foto`,
+       `vw_conteudo`.`legenda_foto` AS `legenda_foto`,
+       `vw_conteudo`.`pdf_free` AS `pdf_free`,
+       `vw_conteudo`.`pdf` AS `pdf`,
+       `vw_conteudo`.`publicar` AS `publicar`,
+       `vw_conteudo`.`ordem` AS `ordem`,
+       `vw_conteudo`.`titulo_home`,
+       `vw_conteudo`.`descricao_home`,
+       `vw_conteudo`.`tipo_conteudo` AS `tipo_conteudo`,
+       `vw_conteudo`.`edicao_ano` AS `edicao_ano`,
+       `vw_conteudo`.`edicao_mes` AS `edicao_mes`,
+       `tb_lock`.`tb_usuario_id` AS `tb_usuario_id`
+FROM (`vw_conteudo`
+      JOIN `tb_lock` on((`tb_lock`.`tb_conteudo_id` = `vw_conteudo`.`id`)))
+WHERE (`tb_lock`.`visivel` = 1);        
+         
+                  
+
+
+

@@ -78,7 +78,7 @@ class Home extends CI_Controller {
 				$this -> data["olho$i"] = $recordset[$i]["descricao_home"];
 			}else{
 
-				$this -> data["olho$i"] =  substr($recordset[$i]["descricao"],0 , 100 ) . "...";
+				$this -> data["olho$i"] =  substr($recordset[$i]["descricao_home"],0 , 100 ) . "...";
 			}
 
 

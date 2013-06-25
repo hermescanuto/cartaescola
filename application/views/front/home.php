@@ -176,6 +176,9 @@
 
 			</div>
 
+			
+			
+
 			<!-- ENDS home-block -->
 	</div>
 		<footer>
@@ -214,6 +217,11 @@
 
 			</div>
 		</footer>
+		
+			<?php
+                        include 'vitrine_rodape.php';
+			?>
+			
 
 	</body>
 

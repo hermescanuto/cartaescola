@@ -67,10 +67,14 @@ p {
 
 			<!-- posts list -->
 			<div id="posts-list" class="single-post">
+			
+			<div class="wrapper" >
+			
+			<h2 class="page-heading" style='width: 560px'><span>{tipo_conteudo}</span> <span>{sub_classificacao}</span></h2>
+					
+			</div>
 
-				<h2 class="page-heading">
-						<span>{tipo_conteudo}</span> <span>{sub_classificacao}</span>
-					</h2>
+				
 
 				<article class="format-standard">
 					
