@@ -20,9 +20,11 @@ class Model_util extends MY_Model {
      *  Lista as 3 materias destaque da home, desde que contenham a imagem grande
      */
 
-    function showHome() {
-        $r = $this -> db -> get_where('tb_home', array('id' => 1));
+    function showHome( $id = 1 ) {
+        $r = $this -> db -> get_where('tb_home', array('id' => $id));
         $r = $r -> result_array();
+        
+      
 
         $campo = array('id' => $r[0]['id1'], 'id' => $r[0]['id2'], 'id' => $r[0]['id3']);
         
@@ -30,7 +32,10 @@ class Model_util extends MY_Model {
         
         $this -> db -> where_in('id', $id);
         
+        $this -> db -> order_by("id", "RANDOM");
+        
         $recordset = $this -> db -> get_where('vw_conteudo', array('imagem_home !=' => "", 'publicar' => 1));
+        
 
         return $recordset -> result_array();
     }
@@ -200,6 +205,32 @@ class Model_util extends MY_Model {
         }
         return $data;
     }
+    
+    
+    function tipo3($tabela, $fields, $selected = NULL) {
+    	$data = array();
+    	$this -> db -> select($fields);
+
+    	$query = $this -> db -> get_where($tabela, array("visivel" => 1, "publicar" => 1, "imagem_fundo !=" => "","tb_tipo_conteudo_id !=" => 11 ) );
+    
+    	$x = $query -> result_array();
+    
+    	if ($selected == NULL) {
+    		$data[] = array('valor' => -1, 'legenda' => 'Escolha:', 'selected' => 'selected="yes"');
+    	}
+    
+    	foreach ($x as $item) {
+    		if ($item['id'] == $selected) {
+    			$slc = 'selected="yes"';
+    		} else {
+    			$slc = '';
+    		}
+    
+    		$data[] = array('valor' => $item['id'], 'legenda' => $item['descricao'], 'selected' => $slc);
+    
+    	}
+    	return $data;
+    }
 
     function busca_categoria($id) {
         $this -> db -> order_by("id", "desc");
@@ -294,10 +325,26 @@ class Model_util extends MY_Model {
 
     }
 
+    /**
+     * @author hermes
+     *  retorna um lista de materias para um rss
+     */
+    
+    
     function getRss($edicao) {
-        $query = $this -> db -> get_where('vw_conteudo', array( "visivel" => 1 , "edicao" => $edicao ));
+        $query = $this -> db -> get_where('vw_conteudo_publicado', array( "visivel" => 1 , "edicao" => $edicao ));
         $recorset = $query -> result_array();
         return  $recorset;
     }
 
+    
+    function lista_bancas(){
+    	
+    	$this->db->order_by('Cidade , Bairro ');
+    	
+    	$query = $this -> db -> get('tb_banca');
+    	$recorset = $query -> result_array();
+    	return  $recorset;
+    	
+    }
 }

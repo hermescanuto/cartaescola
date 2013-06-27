@@ -50,16 +50,32 @@ class Home extends CI_Controller {
 		$this->util->ShowADMTopPage($this->data); // carrega o topo do adm
 		$this->util->ShowADMMenu(0) ; // carrega o menu adm
 
+		$string ="id as id , titulo as descricao";
+		
 		$data = $this->Model_util->ByIDtoTemplate($this->tabela,1);
 
-		$data['area3']=$this->Model_util->tipo('vw_conteudo_publicado','id as id , titulo as descricao',$data['id3']);
-		$data['area1']=$this->Model_util->tipo('vw_conteudo_publicado','id as id , titulo as descricao',$data['id1']);
-		$data['area2']=$this->Model_util->tipo('vw_conteudo_publicado','id as id , titulo as descricao',$data['id2']);
+		$recordset['area3']=$this->Model_util->tipo3('vw_conteudo_publicado',$string,$data['id3']);
+		$recordset['area1']=$this->Model_util->tipo3('vw_conteudo_publicado',$string,$data['id1']);
+		$recordset['area2']=$this->Model_util->tipo3('vw_conteudo_publicado',$string,$data['id2']);
+		
+		$data =  $this->Model_util->ByIDtoTemplate($this->tabela,2);
+		
+		$recordset['area4']=$this->Model_util->tipo3('vw_conteudo_publicado',$string,$data['id1']);
+		$recordset['area5']=$this->Model_util->tipo3('vw_conteudo_publicado',$string,$data['id2']);
+		$recordset['area6']=$this->Model_util->tipo3('vw_conteudo_publicado',$string,$data['id3']);
+		
+		$data = $this->Model_util->ByIDtoTemplate($this->tabela,3);
+		
+		
+		$recordset['area7']=$this->Model_util->tipo3('vw_conteudo_publicado', $string,$data['id1']);
+		$recordset['area8']=$this->Model_util->tipo3('vw_conteudo_publicado', $string,$data['id2']);
+		$recordset['area9']=$this->Model_util->tipo3('vw_conteudo_publicado', $string,$data['id3']);
 
 
 		$data['save']		= base_url().'admin/'.$this->data['local'].'/save';
+		
 
-		$this->parser->parse($this->data['local'].'/painel_entrada',$data);
+		$this->parser->parse($this->data['local'].'/painel_entrada',$data + $recordset);
 
 		$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
 	}

@@ -15,7 +15,7 @@ class Aulas extends CI_Controller {
 		$this -> data['base_url'] = base_url();
 		$this -> data['local'] = $this -> uri -> segment("1");
 		$this -> data['tipo_busca'] = 1;
-		$this -> data['lista_legenda'] = "Aulas";
+		$this -> data['lista_legenda'] = "Tema de Aula";
 	}
 
 	public function index() {

@@ -60,13 +60,27 @@ class Home extends CI_Controller {
 			}
 
 
-			$this -> data["titulo$i"] = $r[$i]['titulo'];
+			$this -> data["titulo_destaque$i"] = $r[$i]['titulo'];
 			$this -> data["destaque_id$i"] = $r[$i]['id'];
 
 		}
+		
 
 		// busca as restantes ,por nao busca as que estao em destaque
-		$recordset = $this -> Model_util -> getatualizades($this -> data["destaque_id0"], $this -> data["destaque_id1"], $this -> data["destaque_id2"], $this->data['edicao_numero']);
+		//$recordset = $this -> Model_util -> getatualizades($this -> data["destaque_id0"], $this -> data["destaque_id1"], $this -> data["destaque_id2"], $this->data['edicao_numero']);
+
+		$linha1 = $this -> Model_util -> showHome(2);
+		$linha2 = $this -> Model_util -> showHome(3);
+		
+		
+	
+		$recordset[0] =  $linha1[0] ;
+		$recordset[1] =  $linha1[1] ;
+		$recordset[2] =  $linha1[2] ;
+		
+		$recordset[3] =  $linha2[0] ;
+		$recordset[4] =  $linha2[1] ;
+		$recordset[5] =  $linha2[2] ;
 
 		for ($i = 0; $i <= 5; $i++) {
 
@@ -74,11 +88,11 @@ class Home extends CI_Controller {
 			$this -> data["titulo$i"] = $recordset[$i]["titulo_home"];
 			$this -> data["data_criacao$i"] = date("d-m-Y", strtotime($recordset[$i]["data_criacao"]));
 
-			if ( strlen ( $recordset[$i]["descricao"] ) < 140 ){
+			if ( strlen ( $recordset[$i]["descricao_home"] ) < 140 ){
 				$this -> data["olho$i"] = $recordset[$i]["descricao_home"];
 			}else{
 
-				$this -> data["olho$i"] =  substr($recordset[$i]["descricao_home"],0 , 100 ) . "...";
+				$this -> data["olho$i"] =  substr($recordset[$i]["descricao_home"],0 , 140 ) . "...";
 			}
 
 

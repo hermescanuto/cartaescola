@@ -15,7 +15,7 @@ class Tecnologias extends CI_Controller {
 		$this -> data['base_url'] = base_url();
 		$this -> data['local'] = $this -> uri -> segment("2");
 		$this -> data['tipo_busca'] = 9;
-		$this -> data['lista_legenda'] = "Tecnologias";
+		$this -> data['lista_legenda'] = "Tecnologia";
 	}
 
 	public function index() {

@@ -71,16 +71,12 @@ include 'script_css.php'
 							</div>
 
 							<div>
-								<textarea name="comments" id="comments" rows="5" cols="20"
+								<textarea name="comments" id="comments" rows="5" 
 									class="form-poshytip" title="Poste seus comentário"></textarea>
 							</div>
 
 							<!-- send mail configuration -->
-							<input type="hidden" value="email@yourserver.com" name="to"
-								id="to" /> <input type="hidden" value="Enter the subject here"
-								name="subject" id="subject" /> <input type="hidden"
-								value="send-mail.php" name="sendMailUrl" id="sendMailUrl" />
-							<!-- ENDS send mail configuration -->
+							
 
 							<p>
 								<input type="submit" value="Enviar" name="submit" id="submit" />

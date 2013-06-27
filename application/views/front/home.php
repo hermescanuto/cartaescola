@@ -8,6 +8,14 @@
 		<?php
         include 'script_css.php';
 		?>
+		
+		<style>
+		#floated-content, strong {
+			color : rgb(197, 35, 35);
+		}
+		
+		
+		</style>
 
 	</head>
 
@@ -43,21 +51,21 @@
 					<!-- slider -->
 					<div class="flexslider home-slider">
 						<ul class="slides">
-							<li><img src="{base_url}upload/{imagem_home0}" alt="{titulo0}" />
+							<li><a href="{base_url}single/show/{destaque_id0}"><img src="{base_url}upload/{imagem_home0}" alt="{titulo0}" /></a>
 								<p class="flex-caption">
-									<a href="{base_url}single/show/{destaque_id0}">{titulo0}</a>
+									<a href="{base_url}single/show/{destaque_id0}">{titulo_destaque0}</a>
 									<br><span style='font-size: 13px'>{desc0}</span>
 								</p>
 							</li>
-							<li><img src="{base_url}upload/{imagem_home1}" alt="{titulo1}" />
+							<li><a href="{base_url}single/show/{destaque_id1}"><img src="{base_url}upload/{imagem_home1}" alt="{titulo1}" /></a>
 								<p class="flex-caption">
-									<a href="{base_url}single/show/{destaque_id1}">{titulo1}</a>
+									<a href="{base_url}single/show/{destaque_id1}">{titulo_destaque1}</a>
 									<br><span style='font-size: 13px'>{desc1}</span>
 								</p>
 							</li>
-							<li><img src="{base_url}upload/{imagem_home2}" alt="{titulo2}" />
+							<li><a href="{base_url}single/show/{destaque_id2}"><img src="{base_url}upload/{imagem_home2}" alt="{titulo2}" /></a>
 								<p class="flex-caption">
-									<a href="{base_url}single/show/{destaque_id2}">{titulo2}</a>
+									<a href="{base_url}single/show/{destaque_id2}">{titulo_destaque2}</a>
 									<br><span style='font-size: 13px'>{desc2}</span>
 								</p>
 							</li>
