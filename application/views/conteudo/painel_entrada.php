@@ -125,6 +125,8 @@
 							style="height: 80px; width: 400px"
 							placeholder="Uma breve descrição do texto principal">{descricao_home}</textarea>
 		
+						<div id="chars">138</div>
+
 		
 		</div>
 		
@@ -133,10 +135,12 @@
 <hr />
 <input
 	type="button" value="Salvar" id="salvar" class="btn btn-mini" />
-
+<script src="{base_url}/js/limiter.js"></script>
 <script>
 	$(document).ready(function() {
 
+		var elem = $("#chars");
+		$("#descricao_home").limiter(138, elem);
 		
 
 

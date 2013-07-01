@@ -336,7 +336,11 @@ class Model_util extends MY_Model {
         $recorset = $query -> result_array();
         return  $recorset;
     }
-
+    
+    /**
+     * @author hermes
+     *  retorna um lista das bancas que tem a revista
+     */
     
     function lista_bancas(){
     	
@@ -346,5 +350,19 @@ class Model_util extends MY_Model {
     	$recorset = $query -> result_array();
     	return  $recorset;
     	
+    }
+    
+    /**
+     * @author hermes
+     *  retorna um lista das capas do acervo
+     */
+    
+    function lista_acervo(){
+    	
+    	 
+    	$query = $this -> db -> get('vw_edicao');
+    	$recorset = $query -> result_array();
+    	return  $recorset;
+    	 
     }
 }

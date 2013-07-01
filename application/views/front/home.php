@@ -85,7 +85,7 @@
 							<br>
                             
 							Edição
-							N&deg;{edicao_numero}
+							N&deg;{edicao_numero} | <a href="{base_url}acervo">Edições Anteriores</a>
 						</p>
                         
 
