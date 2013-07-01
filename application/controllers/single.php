@@ -55,6 +55,8 @@ class Single extends CI_Controller {
 		}
 		
 		
+		$this->data['url'] = base_url().'single/show/'.$idx.'/'.$this->util->slugify(  $data["titulo"] );
+		
 		$this -> parser -> parse('front/single', $this -> data + $data);
 	}
 

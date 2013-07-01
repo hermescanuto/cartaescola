@@ -1,9 +1,25 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" lang="pt-br" dir="ltr" xml:lang="pt-br" >
 
 <head>
-<meta charset="utf-8" />
-<title>Carta na Escola</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Carta na Escola | {titulo}"</title>
+
+
+
+<link rel="image_src" href="{base_url}upload/{imagem_fundo}" / >
+<meta name="description" content="{descricao}" />
+<base href="{url}" />
+
+<meta property="og:site_name" content="Carta na Escola" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{titulo}" />
+<meta property="og:description" content="{descricao}" />
+<meta property="og:image" content="{base_url}upload/{imagem_fundo}" />
+<meta property="og:image:height" content="133" />
+<meta property="og:image:width" content="200" />
+<meta property="og:url"	content="{url}" />
+
 
 <?php
 include 'script_css.php'

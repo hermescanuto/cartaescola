@@ -223,6 +223,31 @@ class util {
 		}
 		return $mes;
 	}
+	
+	/*
+	 * Slugify um texto
+	 */
+	
+	public function slugify($text)
+	{
+		// Trim, utf8_decode
+		$title = trim(($text));
+
+		// Remove stress
+		$title = strtr(utf8_decode($title), utf8_decode('àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'),
+				'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
+		// Switch to lowercase
+		$title = strtolower($title);
+		// Remove spaces
+		$title = preg_replace('`\s`', '-', $title);
+		// Remove other characters
+		// challet : I modified the replacement to follow former rules used to generate slugs in SFR JT
+		// it was [^0-9a-z-_] , replacing by ''
+		$title = preg_replace('`[^0-9a-z-]`', '-', $title);
+		// Remove double
+		$title = preg_replace('`(-)+`', '-', $title);
+		return $title;
+	}
 
 }
 

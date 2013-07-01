@@ -19,7 +19,7 @@
 				enctype="multipart/form-data" class="form-vertical">
 				<b>->HOME</b> <br />
 				<p>
-					ID: {id} <input type="hidden" name='id' id='id' value="{id}" />
+					ID: 1 <input type="hidden" name='id' id='id' value="1" />
 				</p>
 
 				<div class="control-group">
