@@ -71,7 +71,7 @@ class Home extends CI_Controller {
 
 		$linha1 = $this -> Model_util -> showHome(2);
 		$linha2 = $this -> Model_util -> showHome(3);
-		
+		$linha3 = $this -> Model_util -> showHome(4);
 		
 	
 		$recordset[0] =  $linha1[0] ;
@@ -81,8 +81,13 @@ class Home extends CI_Controller {
 		$recordset[3] =  $linha2[0] ;
 		$recordset[4] =  $linha2[1] ;
 		$recordset[5] =  $linha2[2] ;
+		
+		$recordset[6] =  $linha3[0] ;
+		$recordset[7] =  $linha3[1] ;
+		$recordset[8] =  $linha3[2] ;
+		
 
-		for ($i = 0; $i <= 5; $i++) {
+		for ($i = 0; $i <= 8; $i++) {
 
 			$this -> data["id$i"] = $recordset[$i]["id"].'/'.$this->util->slugify(  $recordset[$i]["titulo"] );
 			$this -> data["titulo$i"] = $recordset[$i]["titulo_home"];

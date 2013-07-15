@@ -7,6 +7,8 @@
 		</li>
 		<li><a href="#tabs-3">HOME Destaque Linha 2</a>
 		</li>
+		<li><a href="#tabs-4">HOME Destaque Linha 3</a>
+		</li>
 	</ul>
 
 
@@ -87,6 +89,34 @@
 					</select> <label class="control-label">Home 3:</label> <select
 						name="id_3" id="id_3"> {area9}
 						<option value="{valor}"{selected} >{legenda}</option> {/area9}
+					</select>
+
+				</div>
+
+
+				<input type="submit" value="Salvar" id="salvar" class="btn btn-mini" />
+			</form>
+
+		</div>
+		
+		<div id="tabs-4">
+			<form name="form2" id="form1" action="{save}" method="post"
+				enctype="multipart/form-data" class="form-vertical">
+				<b>->HOME Destaque Linha 3</b> <br />
+				<p>
+					ID: 4 <input type="hidden" name='id' id='id' value="4" />
+				</p>
+
+				<div class="control-group">
+					<label class="control-label">Home 1:</label> <select name="id_1"
+						id="id_1" style="˜width: 300px"""> {area10}
+						<option value="{valor}"{selected} >{legenda}</option> {/area10}
+					</select> <label class="control-label">Home 2:</label> <select
+						name="id_2" id="id_2"> {area11}
+						<option value="{valor}"{selected} >{legenda}</option> {/area11}
+					</select> <label class="control-label">Home 3:</label> <select
+						name="id_3" id="id_3"> {area12}
+						<option value="{valor}"{selected} >{legenda}</option> {/area12}
 					</select>
 
 				</div>
