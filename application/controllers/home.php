@@ -90,14 +90,15 @@ class Home extends CI_Controller {
 		for ($i = 0; $i <= 8; $i++) {
 
 			$this -> data["id$i"] = $recordset[$i]["id"].'/'.$this->util->slugify(  $recordset[$i]["titulo"] );
-			$this -> data["titulo$i"] = $recordset[$i]["titulo_home"];
+			
+			$this -> data["titulo$i"] = $recordset[$i]["titulo_home"]."";
 			$this -> data["data_criacao$i"] = date("d-m-Y", strtotime($recordset[$i]["data_criacao"]));
 
-			if ( strlen ( $recordset[$i]["descricao_home"] ) < 140 ){
-				$this -> data["olho$i"] = $recordset[$i]["descricao_home"];
+			if ( strlen ( $recordset[$i]["descricao_home"]."" ) < 140 ){
+				$this -> data["olho$i"] = $recordset[$i]["descricao_home"]."";
 			}else{
 
-				$this -> data["olho$i"] =  substr($recordset[$i]["descricao_home"],0 , 140 ) . "...";
+				$this -> data["olho$i"] =  substr($recordset[$i]["descricao_home"]."",0 , 140 ) . "...";
 			}
 
 

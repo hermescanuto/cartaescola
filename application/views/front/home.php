@@ -197,7 +197,7 @@
 							</div>
 						</figure>
 						
-						
+						<!--  -->
 						<figure>
 							<div style="height: 300px">
 							<h5 class="post-heading"><strong>{sub6}</strong></h5>
@@ -237,7 +237,7 @@
 							</div>
 						</figure>
 						
-						
+						<!--  -->
 					</div>
 				</div>
 
