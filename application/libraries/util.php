@@ -249,6 +249,25 @@ class util {
 		return $title;
 	}
 
+	
+	
+	/*
+	 * Contabiliza as visitas das materias 
+	 */
+	
+	function visita(){
+		
+		$CI=& get_instance();
+		$CI->load->model('model_util');	
+		$id=$CI->uri->segment(3);
+		
+		$CI->Model_util->setTableData('tb_visita');
+		$CI->Model_util->setID(null);
+		$CI->Model_util->setData(array('tb_conteudo_id' => $id , 'ip' => $CI->input->ip_address() ));
+		$CI->Model_util->save();
+		
+				
+	}
 }
 
 

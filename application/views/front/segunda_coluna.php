@@ -13,9 +13,9 @@
 		<br />
 		<a href="http://www.cartacapital.com.br/editora/carta-fundamental" target="_blank">Carta Fundamental
 		<br />
-		</a><a href="http://www.cartacapital.com.br/editora/expediente/" target="_blank">Expediente</a>
+		</a><a href="{base_url}expediente/" >Expediente</a>
 		<br />
-		<a href="http://www.cartacapital.com.br/editora/fale-com-a-redacao" target="_blank">Fale com a Redação</a>
+		<a href="{base_url}contato" >Fale com a Redação</a>
 	</p>
 
 </div>

@@ -79,9 +79,11 @@ class Conteudo extends CI_Controller {
 		$data["imagem_fundo"] = "http://placehold.it/446x283";
 		$data["up_imagem_home"]=null;
 		$data["up_imagem_fundo"]=null;
-
+		
+		$data['base_url'] = base_url();
 		$data['save']		= base_url().'admin/'.$this->data['local'].'/save';
 		$this->parser->parse( $this->data['local'].'/painel_entrada',$data);
+		
 		 
 		$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
 	}

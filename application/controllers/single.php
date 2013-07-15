@@ -16,6 +16,7 @@ class Single extends CI_Controller {
 		$this -> load -> library('util');
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
+		$this->util->visita();
 	}
 
 	public function index() {

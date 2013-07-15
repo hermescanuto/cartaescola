@@ -103,7 +103,7 @@ include 'script_css.php'
 					<ul class="address-block">
 						<!-- <li class="address">Address line, city, state ZIP</li> -->
 						<li class="phone">São Paulo</li>
-						<li>(11) 3512-9486 <br> <br>
+						<li>(11) 3512-9486 <br>
 						</li>
 						<li class="phone">Rio de Janeiro</li>
 						<li>(21) 4062-7183 <br> <br>
@@ -112,7 +112,12 @@ include 'script_css.php'
 						<li>(31) 4062-7183 <br> <br>
 						</li>
 						<li class="phone">Distrito Federal</li>
-						<li>(61) 4063-7183</li>
+						<li>(61) 4063-7183<br></li>
+						
+						<li class="phone">Demais Localidades</li>
+						<li> 0800-721-3020 <br>
+						</li>
+						
 						<li><br /> De segunda a sexta, das 9 <br> às 18 horas exceto
 							feriados</li>
 						<li><br /> Números atrasados:</li>

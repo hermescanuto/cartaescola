@@ -56,7 +56,7 @@ include 'script_css.php'
                            
              			<div style='float: left;margin-left: 5px;margin-right: 5px;'>
              			<a href="{base_url}edicao/{edicao}">
-							<img src="{base_url}upload/capa/{imagem_capa}" alt="Parem de subestimar o povo" title="Ediço {edicao}" height="128" width="103">
+							<img src="{base_url}upload/capa/{imagem_capa}" alt="Parem de subestimar o povo" title="Edição {edicao}" height="128" width="103">
 						</a>
 						</div>
 						 

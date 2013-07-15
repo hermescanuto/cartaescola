@@ -87,5 +87,47 @@ $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
 
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'cnescolauser';
+$db['default']['password'] = 'GhW3vSUjBJXLbLEH';
+$db['default']['database'] = 'site_cartanaescola';
+
+Banco de dados
+
+base de dados: eduardonun3
+senha : ldsfjlksdjf342
+usuario: eduardonun3
+
+
+Wordpress
+user :admin
+senha: dshjfisd87
+
+
+Ftp: ftp.whl0053.whservidor.com
+usuario : eduardonun3
+senha : sdf097dfh4ds
+
+
+
+-----------------------------------------------------------------------
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+# add a trailing slash to /wp-admin
+RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) $2 [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
+RewriteRule . index.php [L]
+
+-----------------------------------------------------------------------
+
+
 /* End of file database.php */
 /* Location: ./application/config/database.php */

@@ -64,6 +64,35 @@
 
 		<li class="{alvo_tablet}"><a href="{base_url}tablet">TABLETS</a>
 		</li>
+		
+		<li> 
+			<input type="text" name="busca" id="busca" size="20" maxlength="150" placeholder='busca' style='height: 15px;'/>
+			<input type="button" value="ok" id="bt_buscar"  style='height: 20px;margin-bottom: 7px;'>	
+
+		</li>
 	</ul>
 
 </nav>
+<script>
+	$(function() {
+
+
+		$("#bt_buscar").click(function() {
+			
+			var busca=$('#busca').val();
+
+			if ( busca+"" != "") {
+
+				window.location = '{base_url}materias/paging/0/' + busca;
+
+			}
+			
+			
+		});
+
+		
+
+	}); 
+</script>
+
+

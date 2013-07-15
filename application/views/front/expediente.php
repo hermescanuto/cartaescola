@@ -53,13 +53,12 @@
 					<p> <strong>Carta na Escola</strong><br>
                     <strong>ISSN 1808–6012</strong></p>
                     <p> <strong>Diretor de Redação:</strong> Mino Carta<br>
-                      <strong>Redatora-chefe:</strong> Lívia Perozim<br>
+                      <strong>Redatora-chefe:</strong> <a href="mailto:livia@cartacapital.com.br">Lívia Perozim</a><br>
                       <strong>Consultor editorial: </strong>Luiz Gonzaga Belluzzo<br>
                       <strong>Editor responsável:</strong> Sergio Lirio </p>
                   <p> <strong>Consultora pedagógica:</strong> Maria José Nóbrega<br>
-                      <strong>Editora-assistente:</strong> Clarice Cardoso<br>
-                      <strong>Repórter: </strong>Tory Oliveira<br>
-                      <strong>Estagiária: </strong>Thais Paiva<br>
+                      <strong>Repórter: </strong><a href="mailto:tory@cartacapital.com.br">Tory Oliveira</a><br>
+                      <strong>Estagiária: </strong><a href="mailto:thais@cartacapital.com.br">Thais Paiva</a><br>
                       <strong>Revisores:</strong> Áli Onaissi (coordenação), Hassan Ayoub e Rita     Leite</p>
                   <p><strong>Projeto gráfico: </strong>Equipe CartaCapital<strong><br>
                   Diretora de arte:</strong> Pilar Velloso <br>

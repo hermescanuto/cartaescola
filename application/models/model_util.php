@@ -89,7 +89,7 @@ class Model_util extends MY_Model {
         //$this->db->where($where);
         if ($where != '') {
             //;$this->db->where($where);
-            $this -> db -> like($where);
+            $this -> db ->where($where);
         }
         
         if( $tipo_conteudo != ''){
@@ -109,7 +109,7 @@ class Model_util extends MY_Model {
         // para vericar quanto registro tem no banco com limite de paginacao
         $this -> db -> select($fields);
         if ($where != '') {
-            $this -> db -> like($where);
+            $this -> db -> where($where);
         }
         
      

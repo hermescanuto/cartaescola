@@ -1,25 +1,31 @@
 Ajuste no banco de dados
 
+
+use site_cartanaescola;
+
+truncate tb_lock;
+truncate tb_conteudo;
+
 use use site_cartanaescola;
 
 UPDATE tb_conteudo 
 
-SET texto = REPLACE (texto, 'http://cn.cartacapital.com.br/upload2/', 'http://beta.cartanaescola.com.br/upload2/');
+SET texto = REPLACE (texto, 'http://cn.cartacapital.com.br/upload2/', 'http://www.cartanaescola.com.br/upload2/');
 
 UPDATE tb_conteudo 
 
-SET texto= REPLACE (texto, 'http://cn.cartacapital.com.br/single/show/', 'http://beta.cartanaescola.com.br/single/show/');
+SET texto= REPLACE (texto, 'http://cn.cartacapital.com.br/single/show/', 'http://www.cartanaescola.com.br/single/show/');
 
 
 
 
 UPDATE tb_conteudo 
 
-SET texto_extra= REPLACE (texto_extra, 'http://cn.cartacapital.com.br/upload2/', 'http://beta.cartanaescola.com.br/upload2/');
+SET texto_extra= REPLACE (texto_extra, 'http://cn.cartacapital.com.br/upload2/', 'http://www.cartanaescola.com.br/upload2/');
 
 UPDATE tb_conteudo 
 
-SET texto_extra= REPLACE (texto_extra, 'http://cn.cartacapital.com.br/single/show/', 'http://beta.cartanaescola.com.br/single/show/');
+SET texto_extra= REPLACE (texto_extra, 'http://cn.cartacapital.com.br/single/show/', 'http://www.cartanaescola.com.br/single/show/');
 
 
 
@@ -28,24 +34,27 @@ SET texto_extra= REPLACE (texto_extra, 'http://cn.cartacapital.com.br/single/sho
 
 views
 
-
+drop view vw_conteudo;
 CREATE  VIEW vw_conteudo AS
 SELECT 
-		tb_conteudo.*,
-
+	tb_conteudo.*,
        tipo_conteudo.tipo_conteudo AS tipo_conteudo,
        tb_edicao.ano AS edicao_ano,
        tb_edicao.mes AS edicao_mes
-FROM ((tb_conteudo
-       JOIN tipo_conteudo on((tb_conteudo.tb_tipo_conteudo_id = tipo_conteudo.id)))
-      JOIN tb_edicao on((tb_edicao.edicao = tb_conteudo.edicao)))
+FROM tb_conteudo
+       JOIN tipo_conteudo on tb_conteudo.tb_tipo_conteudo_id = tipo_conteudo.id
+      JOIN tb_edicao on tb_edicao.edicao = tb_conteudo.edicao
 WHERE ((tb_conteudo.visivel = 1)
-       AND (tb_edicao.visivel = 1))
+       AND (tb_edicao.visivel = 1)) and  tb_conteudo.id = 109
 ORDER BY tb_conteudo.edicao DESC,
          tb_conteudo.ordem,
          tb_conteudo.id DESC;
          
          
+         
+         
+         
+drop view vw_conteudo_publicado;         
 CREATE  VIEW `vw_conteudo_publicado` AS
 SELECT `tb_conteudo`.`id` AS `id`,
        `tb_conteudo`.`tb_tipo_conteudo_id` AS `tb_tipo_conteudo_id`,
@@ -84,6 +93,27 @@ ORDER BY `tb_conteudo`.`edicao` DESC,
          `tb_conteudo`.`ordem`,
          `tb_conteudo`.`id` DESC;
          
+         
+ou 
+
+drop view vw_conteudo_publicado;         
+CREATE  VIEW `vw_conteudo_publicado` AS
+
+SELECT tb_conteudo.*,
+       tipo_conteudo.tipo_conteudo AS tipo_conteudo,
+       tb_edicao.ano AS edicao_ano,
+       tb_edicao.mes AS edicao_mes
+FROM  tb_conteudo
+      JOIN tipo_conteudo on tb_conteudo.tb_tipo_conteudo_id = tipo_conteudo.id 
+      JOIN tb_edicao on tb_edicao.edicao = tb_conteudo.edicao 
+WHERE  
+     tb_conteudo.visivel = 1  AND tb_conteudo.publicar = 1  AND tb_edicao.visivel = 1
+	
+ORDER BY tb_conteudo.edicao DESC,
+         tb_conteudo.ordem,
+         tb_conteudo.id DESC;
+         
+         
  CREATE VIEW `vw_conteudo_trancado` AS
 SELECT `vw_conteudo`.`id` AS `id`,
        `vw_conteudo`.`tb_tipo_conteudo_id` AS `tb_tipo_conteudo_id`,
@@ -118,6 +148,43 @@ FROM (`vw_conteudo`
 WHERE (`tb_lock`.`visivel` = 1);        
          
                   
+                  
+                  
+                  blog
+                  user admin
+                  senha huskerdu30
+                  
+                  
+                  
+                  
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+# add a trailing slash to /wp-admin
+RewriteRule ^wp-admin$ wp-admin/ [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^(wp-(content|admin|includes).*) $1 [L]
+RewriteRule ^(.*\.php)$ $1 [L]
+RewriteRule . index.php [L]
 
 
+
+
+http://lighthouse.adobe.com/dps/magazines/api/SignInWithCredentials.php?emailAdress=adriana@cartacapital.com.br&password=123&appId=468573252&uuid=12345
+
+https://yourhostname.com/path_to_your_service/SignInWithCredentals?emailAdress=joe@doe.com&password=foo&uuid=12345&appId=com.adobe.dpsapp&appVersion=1.1.1
+
+
+
+adobe : https://srv07.cartacapital.com.br:19887/
+
+
+[02/07/13 16:11:23] slack-junior: adobeuser01
+[02/07/13 16:11:26] slack-junior: XQLFaZeCrz4nebHJ
+
+https://srv07.cartacapital.com.br:19887
 

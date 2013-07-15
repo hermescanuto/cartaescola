@@ -15,6 +15,21 @@
 		}
 		
 		
+		.link-assine {
+		display: block;
+		margin: 10px;
+		background: #D1282F;
+		
+		font-size: 1.0em;
+		color: #fff !important; }
+		
+
+		.footer-bottom {
+			padding-top: 0px;
+			margin-bottom: 0px;
+			overflow: hidden;
+		}
+		
 		</style>
 
 	</head>
@@ -76,8 +91,9 @@
 					<div class="home-slider-clearfix "></div>
 					<!-- Headline -->
 					<div id="headline" style="text-align:center;  "margin-bottom: 22px;">
-
+						<a href="http://www.mercadocapital.com.br/CartaEscola.asp?Site_txt=MERCADOCAPITAL&Origem_txt=&Formato_txt=LINKDIRETO&Banner_txt=&Versao_txt=" class="link-assine" target="_blank">Assine Carta na Escola</a>
 						<p>
+							
 							<a href="{base_url}edicao/{edicao_numero}" class="opener"><img
 							src="{base_url}/upload/capa/{edicao_capa}"
 							alt="Capa {edicao_numero} abril Carta na Escola revista mensal"
