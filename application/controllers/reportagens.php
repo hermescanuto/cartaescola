@@ -68,7 +68,7 @@ class Reportagens extends CI_Controller {
 		$data['base_url'] = base_url();
 		$data['local'] = $this -> data['local'];
 		$data['lista_legenda'] = $this -> data['lista_legenda'] ;
-		$this -> parser -> parse('mobile/lista', $data);
+		$this -> parser -> parse('front/lista', $data);
 		// Carrega o view de listagem de materia
 
 	}

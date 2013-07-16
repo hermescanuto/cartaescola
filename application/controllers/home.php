@@ -48,7 +48,7 @@ class Home extends CI_Controller {
 		$r = $this -> Model_util -> showHome();
 
 		for ($i = 0; $i <= 2; $i++) {
-			$this -> data["desc$i"] = $r[$i]['descricao'] ;
+			$this -> data["desc$i"] = $r[$i]['descricao_home'] ;
 
 
 			if ( $r[$i]['imagem_home'] == null ){
@@ -60,7 +60,7 @@ class Home extends CI_Controller {
 			}
 
 
-			$this -> data["titulo_destaque$i"] = $r[$i]['titulo'];
+			$this -> data["titulo_destaque$i"] = $r[$i]['titulo_home'];
 			$this -> data["destaque_id$i"] = $r[$i]['id'] .'/'.$this->util->slugify(  $r[$i]["titulo"] );
 
 		}
