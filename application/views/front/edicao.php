@@ -41,6 +41,9 @@ include 'script_css.php';
             include 'menu.php';
             ?>
         </div>
+        <?php
+        include 'googleanalytics.php';
+		?>
     </header>
 
 	<!-- MAIN -->

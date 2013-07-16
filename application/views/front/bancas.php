@@ -22,7 +22,10 @@ include 'script_css.php'
 
 
 
-</style
+</style>
+<?php
+        include 'googleanalytics.php';
+		?>
 </head>
 
 <body lang="en">

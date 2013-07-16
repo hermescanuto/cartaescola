@@ -49,7 +49,9 @@ p {
 	}
 
 </style>
-
+<?php
+        include 'googleanalytics.php';
+		?>
 </head>
 
 <body lang="en">

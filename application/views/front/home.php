@@ -32,6 +32,9 @@
 		
 		</style>
 
+		<?php
+        include 'googleanalytics.php';
+		?>
 	</head>
 
 	<body lang="en">
@@ -205,7 +208,7 @@
 								src="{base_url}upload/{imagem6}" alt="{titulo6}" /> </a>
                                  <h4 class="post-heading">{titulo6}</h4>
 							
-								<span>{olho7}</span>
+								<span>{olho6}</span>
 							</div>
 
 						</figure>

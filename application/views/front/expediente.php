@@ -30,6 +30,9 @@
 
 			<?php include  'menu.php'; ?>
 		</div>
+		<?php
+        include 'googleanalytics.php';
+		?>
 	</header>
 
 
