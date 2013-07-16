@@ -30,11 +30,7 @@ $(document).ready(
 						erro += valid_field('texto', '',
 								'Favor inserir o texto');
 						
-						erro += valid_field('titulo_home', '',
-						'Favor inserir o Titulo HOME');
-						
-						erro += valid_field('descricao_home', '',
-						'Favor inserir o DESCRIÇÃO HOME');
+					
 						
 						valid_error('form1', erro);
 					});
