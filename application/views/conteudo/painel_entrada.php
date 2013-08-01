@@ -164,7 +164,7 @@
 			
 			language : 'pt_br',
 			toolbar : 'Full',
-			filebrowserUploadUrl : '{base_url}extra/upload.php',
+			filebrowserUploadUrl : '{base_url}uploadf/do_upload',
 			// filebrowserImageBrowseUrl : 'http://192.168.1.147/sites/cartaescola/extra/browser/index.php?editor=ckeditor&filter=image',
 
 		};
@@ -175,7 +175,7 @@
 			height : '300px',
 			language : 'pt_br',
 			toolbar : 'Full',
-			filebrowserUploadUrl : '{base_url}extra/upload.php',
+			filebrowserUploadUrl : '{base_url}uploadf/do_upload',
 			// filebrowserImageBrowseUrl : 'http://192.168.1.147/sites/cartaescola/extra/browser/index.php?editor=ckeditor&filter=image',
 
 		};
