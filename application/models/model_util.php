@@ -359,7 +359,7 @@ class Model_util extends MY_Model {
     
     function lista_acervo(){
     	
-    	$this->db->where('edicao >=', 65 ) ;
+    	$this->db->where('edicao >=', 62 ) ;
     	$query = $this -> db -> get('vw_edicao');
     	$recorset = $query -> result_array();
     	return  $recorset;
