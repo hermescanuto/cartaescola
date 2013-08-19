@@ -46,5 +46,16 @@ class Rss extends CI_Controller {
         $rss_datetime = date(DATE_RFC2822, $timestamp);
         return $rss_datetime;
     }
+    
+    function json(){
+    	
+    		$recordset = $this -> Model_util -> getCapa();
+    		$edicao = $recordset['edicao'];
+    		$data = $recordset['data_criacao'];
+    	
+    		$return = $this -> Model_util -> getRss($edicao);
+    		
+    		echo json_encode($return );
+    }
 
 }

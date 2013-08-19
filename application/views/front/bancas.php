@@ -9,7 +9,7 @@
 include 'script_css.php'
 		?>
 
-<style type="text/css">
+<style>
 .img1{
 	margin-top: 0px;
 	margin-bottom: 0px
@@ -19,9 +19,6 @@ include 'script_css.php'
 	padding-bottom: 5px;
 	border-bottom: 1px solid rgb(201, 195, 192);
 }
-
-
-
 </style>
 <?php
         include 'googleanalytics.php';
