@@ -358,6 +358,7 @@ class Model_util extends MY_Model {
      */
     
     function lista_acervo(){
+
     	
     	$this->db->where('edicao >=', 62 ) ;
         $this->db->order_by('edicao desc') ;
@@ -365,16 +366,5 @@ class Model_util extends MY_Model {
     	$recorset = $query -> result_array();
     	return  $recorset;
     	 
-    }
-
-    function validaedicao($edicao){
-         $query = $this -> db -> get_where('tb_edicao', array( "visivel" => 1 , "edicao" => $edicao ));
-
-        if ($query -> num_rows() > 0) {
-            return true;
-        } else {
-            return false;
-        }
-
     }
 }

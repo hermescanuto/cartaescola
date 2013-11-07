@@ -1,4 +1,4 @@
-
+<!-- 
 <script type='text/javascript'>
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -26,7 +26,7 @@ googletag.enableServices();
 });
 </script>
 <!-- Parceiros-Cabecalho -->
-<div id='div-gpt-ad-1370011663251-0' style='width:728px; height:90px;
+<!-- <div id='div-gpt-ad-1370011663251-0' style='width:728px; height:90px;
 margin: 1em auto;'>
 <script type='text/javascript'>
 googletag.cmd.push(function() {
@@ -34,4 +34,4 @@ googletag.display('div-gpt-ad-1370011663251-0'); });
 </script>
 </div>
 <script id="barracartacapitaljs" type="text/javascript"
-src="http://js.cartacapital.com.br/barra.js"></script>
+src="http://js.cartacapital.com.br/barra.js"></script> --> 

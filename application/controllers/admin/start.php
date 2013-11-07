@@ -1,10 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /*
- * Hermes hermes@hermes-Vostro-3500
+* Hermes hermes
 * 1.0
-* 2011-06-09
-* VoleiSP
 *
 */
 

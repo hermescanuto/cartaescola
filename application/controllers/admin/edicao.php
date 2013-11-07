@@ -132,8 +132,16 @@ class Edicao extends CI_Controller {
 
 		/*		$this->pag_conf();
 		 $this->util->ShowADMTopPage($this->data); // carrega o topo do adm
-		$this->util->ShowADMMenu(0) ; // carrega o menu adm	 */
+		 $this->util->ShowADMMenu(0) ; // carrega o menu adm	 */
 
+		 if ( $this->Model_util->validaedicao( $this->input->post('edicao') ) ){
+
+		 	Echo 'Edicao com erro';		
+		 	$this->paging();
+
+		$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
+
+	}else{
 		$id = $this->input->post('id');
 		$campos = $_POST;
 
@@ -145,6 +153,10 @@ class Edicao extends CI_Controller {
 		$this->paging();
 
 		$this->util->ShowADMBottomPage(); // Carrega o rodape do adm
+
+	}
+
+	
 	}
 
 	/*
