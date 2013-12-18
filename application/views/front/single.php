@@ -106,9 +106,10 @@ p {
 
 					<h2 class="post-heading">{titulo}</h2>
 					<h4 class="post-heading">{descricao}</h4>
-                    <h6 class="post-heading"><i>Por {autor} — publicado na edição {edicao}, de {edicao_mes} de {ano} </i></h6>
+                    <h6 class="post-heading"><i>Por {autor}  </i></h6>
 					<div class="post-content">{texto} {pdf_free}</div>
                     <br>
+                    Publicado na edição {edicao}, de {edicao_mes} de {ano} </i>
                     <br>
                     
 

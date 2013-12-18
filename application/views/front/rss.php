@@ -30,10 +30,12 @@ header("Content-type: application/xml;charset=utf-8");
     {recordset}
     <item>
      <category>{tipo_conteudo}</category>
+     <link>{base_url}single/show/{id}</link>
      <title><![CDATA[ {titulo} ]]></title>    
      <guid isPermaLink="false">{base_url}single/show/{id}</guid>             
      <description>{descricao}</description>      
      <content:encoded><![CDATA[ {texto} ]]></content:encoded>
+    
    </item>        
    {/recordset}
 

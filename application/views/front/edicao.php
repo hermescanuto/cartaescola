@@ -79,9 +79,9 @@ include 'script_css.php';
                         </div>
 
                         <div class="span5" style='margin-bottom: 5px'>
-                            <h4 class="post-heading" style='margin-bottom: -15px;margin-top: 10px;'>{titulo}</h4>
+                            <a href="{base_url}single/show/{id}"><h4 class="post-heading" style='margin-bottom: -15px;margin-top: 10px;'>{titulo}</h4></a>
                             <br>
-                            {descricao} <a href="{base_url}single/show/{id}"> leia mais...</a>
+                            {descricao} 
                       
 
                         </div>

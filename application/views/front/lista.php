@@ -69,10 +69,10 @@ include 'script_css.php';
 
 						<div class="span7">
 
-							<span style="font-size: 12px">Edição: {edicao} </span>
+							 <a href="{base_url}single/show/{id}"><span style="font-size: 12px">Edição: {edicao} </span></a>
 							<h4 class="post-heading">{titulo}</h4>
                             <br>
-							{descricao} <a href="{base_url}single/show/{id}"> leia mais...</a>
+							{descricao} 
                       
 
 						</div>
