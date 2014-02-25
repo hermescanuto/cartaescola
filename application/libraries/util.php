@@ -151,7 +151,7 @@ class util {
 			
 			
 			
-			$config['full_tag_open'] = '<div class="pagination pagination-mini pagination-centered"><ul>';
+			$config['full_tag_open'] = '<div ><ul class="pagination pagination-mini pagination-centered">';
 			$config['full_tag_close'] = '</ul></div>';
 			
 			$config['num_tag_open'] = '<li>';

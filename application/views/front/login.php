@@ -54,13 +54,13 @@ include 'script_css.php'
             <div align="left">Login</div>
             </label>
           <div align="left">
-            <input type="text" id="nome" name='nome' size='20' placeholder='Digite seu usuário' value='AppEditoraConfianca' >
+            <input type="text" id="nome" name='nome' size='20' placeholder='Digite seu usuário' value='' >
             </div>
           <label for="nome">
             <div align="left">Senha</div>
             </label>
           <div align="left">
-            <input type="password" id="senha" name='senha'  size='20' placeholder='Digite sua senha' value='GDfr1rsf313#'>
+            <input type="password" id="senha" name='senha'  size='20' placeholder='Digite sua senha' value=''>
             
             <input type="submit" id="bt_enviar" value='Enviar'>
             

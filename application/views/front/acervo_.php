@@ -9,23 +9,6 @@
 include 'script_css.php'
 		?>
 
-<style type="text/css">
-.img1{
-	margin-top: 0px;
-	margin-bottom: 0px
-}
-
-.t2{
-	padding-bottom: 5px;
-	border-bottom: 1px solid rgb(201, 195, 192);
-}
-
-
-
-</style>
-<?php
-        include 'googleanalytics.php';
-		?>
 </head>
 
 <body lang="en">
@@ -61,30 +44,34 @@ include 'script_css.php'
 				<div class="floated-content">
 
 					<h2 class="page-heading">
-						<span>Bancas</span>
+						<span>Acervo</span>
 					</h2>
-					<a name="topo"> </a>
-					<div id="map_canvas" style="width: 600px; height: 400px"></div>
 
-						<div id='lista_bancas' style='text-transform: capitalize' >
-					{lista_bancas}
-					    <h6 class="t2" >
-					    
-					    
-					    <a href='#topo' onclick="showAddress('{endereco}, {cidade}')">
-					    <img alt="endereço" src='{base_url}img/icon-address.png' class='img1'/> 
-					    </a>
-					    
-					    <b>{cidade}</b> - {bairro} - <strong>{nome}</strong> - {endereco}</h6>
-					    
+					<div style='width: 98%;'>
 					
-					{/lista_bancas}
+					{lista_acervo}
+					<div class="float: left;margin: 0.5em 1em 0.5em 0;">
 
+          			  
+                           
+             			<div style='float: left;margin-left: 5px;margin-right: 5px;'>
+             			<a href="{base_url}edicao/{edicao}">
+							<img src="{base_url}upload/capa/{imagem_capa}" alt="Parem de subestimar o povo" title="Edição {edicao}" height="128" width="103">
+						</a>
+						</div>
+						 
+						<div style=''> </div>
+         		  
+       				 </div>
+					{/lista_acervo}
+					
+					
+					
 					</div>
 
 
 				</div>
-			
+
 			</div>
 			<!-- ENDS posts list -->
 
@@ -163,52 +150,6 @@ include 'script_css.php'
 		</div>
 	</footer>
 
-	<script type="text/javascript"
-     	 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrmXk_SkdO6iHcaEWpTM0jn1fvubzzOrg&sensor=true">
-    </script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-   <script type="text/javascript" src="{base_url}/js/gmap3v5.1.1/gmap3.min.js"></script>
-   
-   
-    <script type="text/javascript">
-
-
-     $("#map_canvas").gmap3();
-
-    
-
-
- 		  function showAddress(endereco) {
-
- 			 $('#map_canvas').gmap3('destroy');
-
-				
- 			 $('#map_canvas').gmap3({
-			
- 	 			 
- 				 map: {
- 				    options: {
- 				      maxZoom: 14 
- 				    }  
- 				 },
- 				 marker:{
- 				    address: " " + endereco +  " ",
- 				    
- 				    options: {
- 				     icon: new google.maps.MarkerImage(
- 				       "http://gmap3.net/skin/gmap/magicshow.png",
- 				       new google.maps.Size(32, 37, "px", "px")
- 				     )
- 				    }
- 				 }
- 				},
- 				"autofit" );
-
- 	 		  
-		
- 		  }
-    </script>
-  </head>
 </body>
 
 </html>

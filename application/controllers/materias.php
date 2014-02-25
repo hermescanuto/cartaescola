@@ -46,17 +46,20 @@ class Materias extends CI_Controller {
 		$orderby = '';
 
 		$busca = $this -> uri -> segment("4");
-		if (is_numeric($busca)) {
-			$campo_busca = 'edicao';
-			
-			$busca = array($campo_busca => urldecode($busca) );
-			
-		} else {
+		
+		if ( is_numeric($busca) )  {
+			$campo_busca = 'edicao' ;
+			$orderby = 'edicao asc';
 
-			$search = urldecode($busca);
+			$busca = array($campo_busca => urldecode($busca) );
+		}else{
+
+	        $search = urldecode($busca);
 			
-			$busca = "( titulo like '%$search%' or descricao like '%$search%'  or descricao_home like '%$search%')";
+			$busca = "( titulo like '%$search%' or descricao like '%$search%'  or descricao_home like '%$search%' or autor like '%$search%' )";
+		
 		}
+
 
 		if ($busca != null) {
 

@@ -36,7 +36,7 @@ include 'script_css.php'
 
 	<!-- MAIN -->
 	<div id="main">
-		<div class="wrapper clearfix">
+		<div >
 
 			
 
