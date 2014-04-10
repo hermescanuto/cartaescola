@@ -26,7 +26,7 @@
 
 				<div class="control-group">
 					<label class="control-label">Home 1:</label> <select name="id_1"
-						id="id_1" style="˜width: 300px"""> {area1}
+						id="id_1" style="width: 300px"> {area1}
 						<option value="{valor}"{selected} >{legenda}</option> {/area1}
 					</select> <label class="control-label">Home 2:</label> <select
 						name="id_2" id="id_2"> {area2}
@@ -54,7 +54,7 @@
 
 				<div class="control-group">
 					<label class="control-label">Home 1:</label> <select name="id_1"
-						id="id_1" style="˜width: 300px"""> {area4}
+						id="id_1" style=="width: 300px"> {area4}
 						<option value="{valor}"{selected} >{legenda}</option> {/area4}
 					</select> <label class="control-label">Home 2:</label> <select
 						name="id_2" id="id_2"> {area5}
@@ -81,7 +81,7 @@
 
 				<div class="control-group">
 					<label class="control-label">Home 1:</label> <select name="id_1"
-						id="id_1" style="˜width: 300px"""> {area7}
+						id="id_1" style=="width: 300px"> {area7}
 						<option value="{valor}"{selected} >{legenda}</option> {/area7}
 					</select> <label class="control-label">Home 2:</label> <select
 						name="id_2" id="id_2"> {area8}
@@ -124,6 +124,9 @@
 
 				<input type="submit" value="Salvar" id="salvar" class="btn btn-mini" />
 			</form>
+
+
+			<iframe src="{base_url}admin/conteudo" frameborder="0" ></iframe>
 
 		</div>
 	</div>

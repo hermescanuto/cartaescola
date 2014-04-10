@@ -5,8 +5,7 @@
 	<title>Lista de Edições</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-    
-  <style type="text/css">
+   <style type="text/css">
     body {
 	margin-left: 0px;
 }
@@ -63,7 +62,7 @@ include 'script_css.php'
           <div align="left">{lista_edicao}
 
 
-            Edição {edicao}. <a href="{base_url}login/showdpf/{edicao}/{user}/{senha}" > Download PDF</a>    -     <a href="{base_url}login/showpdfhtml/{edicao}/{user}/{senha}" target='edicao_html5'> Visualizar PDF </a> <br>
+            Edição {edicao}.  <a href="{base_url}login/showpdfhtml/{edicao}/{user}/{senha}" target='edicao_html5' onclick="ga('send', 'event', 'Leitura_on_line', 'Edicao', '{edicao}');" target='edicao_html5'> Ler Online </a> <br>
             {/lista_edicao}
             
             

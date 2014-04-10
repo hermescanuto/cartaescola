@@ -61,7 +61,7 @@ class Home extends CI_Controller {
 
 
 			$this -> data["titulo_destaque$i"] = $r[$i]['titulo_home'];
-			$this -> data["destaque_id$i"] = $r[$i]['id'] .'/'.$this->util->slugify(  $r[$i]["titulo"] );
+			$this -> data["destaque_id$i"] = $r[$i]['id'] ; //.'/'.$this->util->slugify(  $r[$i]["titulo"] );
 
 		}
 		
@@ -89,7 +89,7 @@ class Home extends CI_Controller {
 
 		for ($i = 0; $i <= 8; $i++) {
 
-			$this -> data["id$i"] = $recordset[$i]["id"].'/'.$this->util->slugify(  $recordset[$i]["titulo"] );
+			$this -> data["id$i"] = $recordset[$i]["id"] ; // .'/'.$this->util->slugify(  $recordset[$i]["titulo"] );
 			
 			$this -> data["titulo$i"] = $recordset[$i]["titulo_home"]."";
 			$this -> data["data_criacao$i"] = date("d-m-Y", strtotime($recordset[$i]["data_criacao"]));

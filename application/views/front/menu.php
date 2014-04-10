@@ -65,13 +65,7 @@
 				</ul>
 			</li>
 			<li class="{alvo_contato}"><a href="{base_url}contato">CONTATO</a>
-				<ul>
-					<li>
-						<a href="{base_url}bancas">Bancas</a>
-					</li>
-
-				</ul>
-
+				
 			</li>
 			<li><a href="http://www.mercadocapital.com.br/" target="_blank">ASSINANTE</a>
 				<ul>
