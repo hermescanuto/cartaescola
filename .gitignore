@@ -2,6 +2,8 @@
 upload/*.*
 upload/*.JPG
 upload/*.png
+upload/*.jpg
+upload/*.PNG
 capa/*.jpg
 capa/*.JPG
 acervo/*
