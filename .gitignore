@@ -1,5 +1,7 @@
 .DS_Store
-upload/*.jpg
-capa/*.jpg
+upload/*.*
+upload/*.JPG
 upload/*.png
+capa/*.jpg
+capa/*.JPG
 acervo/*

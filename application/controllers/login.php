@@ -29,18 +29,6 @@ class login extends CI_Controller {
 	}
 
 
-	function cadastrase() {
-
-
-		$recordset = $this->Model_util->getCapa();
-		$this->data['edicao_capa'] = $recordset['imagem_capa'];
-		$this->data['edicao_numero'] = $recordset['edicao'];
-
-
-		$this -> parser -> parse('front/cadastrase', $this -> data);
-
-	}
-
 
 	function on(){
 
@@ -80,45 +68,61 @@ class login extends CI_Controller {
 			);
 		
 
+		$result = $client->CSWF_TabletLoginExternoBoolean( $dados );
 		
-		$AppId='br.com.cartanaescola.imp';
-
-		$dados2 =Array(
-			"UUID" 				=> $UUID,
-			"Device_txt" 		=> $Device_txt,
-			"AppId"				=> $AppId,
-			"WSUserName"		=> $WSUserName,
-			"WSUserPassW"		=> $WSUserPassW,
-			"MetodoValidacao_id"=> $MetodoValidacao_id,
-			"CodCliente"		=> $CodCliente,
-			"Email_txt"			=> $Email_txt,
-			"Senha_txt"			=> $Senha_txt,
-			"CPFCNPJ_txt" 		=> $CPFCNPJ_txt,
-			"CEP_txt"			=> $CEP_txt
-			);
-		
-
-		// verifica se é usuario do impresso
-
-		$result = $client->CSWF_TabletLoginExternoBoolean( $dados2 );		
-		$this->savelog( $Email_txt=$user,'Usuario autenticado Contentstuff Impresso',json_encode($dados) , json_encode($result->CSWF_TabletLoginExternoBooleanResult)  );
+		$this->savelog( $Email_txt=$user,'Usuario autenticado Contentstuff',json_encode($dados) , json_encode($result->CSWF_TabletLoginExternoBooleanResult)  );
 		
 		if ( $result->CSWF_TabletLoginExternoBooleanResult ){
 			
 			//echo "Logado<br />\n";
-			$result = $client->CSWF_TabletEdicoesExterno ( $dados2 );
+			$result = $client->CSWF_TabletEdicoesExterno ( $dados );
 			
 			$result_arr = $this->objectToArray($result) ;
 			
 			$lista = $this->objectToArray($result->CSWF_TabletEdicoesExternoResult);
+
 			
-			
-			foreach ($lista['anyType'] as $value) {
-				 //echo "Edicao: $value<br />\n";
-				$edicao[] = array('edicao' => $value );
+
+			//print_r( $lista['anyType'] ) ;
+
+			if ( is_numeric ( $lista['anyType'] ) )
+			{
+				
+				for ( $i=1; $i < $lista['anyType']+1 ; $i++) { 
+					$edicao[] = array( 'edicao' => $i ) ;
+				}
+
 			}
 
-			$this->savelog( $Email_txt=$user ,'Importando titulos Contentstuff Impresso',json_encode($dados),json_encode($edicao) );
+			else
+
+			{
+
+				$arx = $lista['anyType'];
+
+				rsort ($arx);
+
+				$primeiro = $arx[0]; //$lista['anyType'][0];
+
+				for ( $i=1; $i < $primeiro+1 ; $i++) { 
+					$edicao[] = array( 'edicao' => $i ) ;
+				}
+
+			
+
+		}
+		
+
+
+			
+			
+			
+			//foreach ($lista['anyType'] as $value) {
+				 //echo "Edicao: $value<br />\n";
+			//	$edicao[] = array('edicao' => $value );
+			//}
+
+			$this->savelog( $Email_txt=$user ,'Importando titulos Contentstuff',json_encode($dados),json_encode($edicao) );
 
 			$this->data['lista_edicao'] = $edicao;
 			$this->data['user'] = $Email_txt ;
@@ -129,43 +133,9 @@ class login extends CI_Controller {
 
 			
 		}else{
-
-			// verifica se é usuario do digital 
-
-			$result = $client->CSWF_TabletLoginExternoBoolean( $dados );
-			$this->savelog( $Email_txt=$user,'Usuario autenticado Contentstuff Digital',json_encode($dados) , json_encode($result->CSWF_TabletLoginExternoBooleanResult)  );
-
-
-			if ( $result->CSWF_TabletLoginExternoBooleanResult ){
-
-				$result = $client->CSWF_TabletEdicoesExterno ( $dados );
-
-				$result_arr = $this->objectToArray($result) ;
-
-				$lista = $this->objectToArray($result->CSWF_TabletEdicoesExternoResult);
-
-
-				foreach ($lista['anyType'] as $value) {
-				 //echo "Edicao: $value<br />\n";
-					$edicao[] = array('edicao' => $value );
-				}
-
-				$this->savelog( $Email_txt=$user ,'Importando titulos Contentstuff digital',json_encode($dados),json_encode($edicao) );
-
-				$this->data['lista_edicao'] = $edicao;
-				$this->data['user'] = $Email_txt ;
-				$this->data['senha']=  urlencode(  $this->encrypt($Senha_txt,'10101972') );
-
-				$this->data['msg'] = '' ;
-				$this -> parser -> parse('front/edicao_download', $this->data);	
-
-
-			}else{
-
-				$this->data['msg'] = 'Usuário ou senha invalido' ;
-				$this->savelog( $Email_txt=$user,'Falha na autenticação',json_encode($dados) , NULL  );
-				$this -> parser -> parse('front/login', $this->data);	
-			}
+			
+			$this->data['msg'] = 'Usuário ou senha invalido' ;
+			$this -> parser -> parse('front/login', $this->data);	
 		}
 
 
