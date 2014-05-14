@@ -5,7 +5,8 @@
 	<title>Lista de Edições</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-   <style type="text/css">
+    
+  <style type="text/css">
     body {
 	margin-left: 0px;
 }
@@ -62,7 +63,7 @@ include 'script_css.php'
           <div align="left">{lista_edicao}
 
 
-            Edição {edicao}.  <a href="{base_url}login/showpdfhtml/{edicao}/{user}/{senha}" target='edicao_html5' onclick="ga('send', 'event', 'Leitura_on_line', 'Edicao', '{edicao}');" target='edicao_html5'> Ler Online </a> <br>
+            Edição {edicao}.  <a href="{base_url}acervos/html5/{edicao}" target='edicao_html5' onclick="ga('send', 'event', 'Leitura_on_line', 'Edicao', '{edicao}');" target='edicao_html5'> Ler Online </a> <br>
             {/lista_edicao}
             
             
@@ -76,7 +77,7 @@ include 'script_css.php'
 	<div align="center">
 	  <table width="800" height="59" border="1">
 	    <tr>
-	      <th scope="col"><div align="left"><a href="http://get.adobe.com/br/reader/">Caso você não possua leitor de PDF acesse o link aqui para baixar</a></div></th>
+	      <th scope="col"><div align="left"></div></th>
         </tr>
   </table>
 	  </div>
