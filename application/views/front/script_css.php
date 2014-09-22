@@ -83,3 +83,6 @@
 	rel="stylesheet" media="all" href="{base_url}css/skin.css" />
 	
 <link rel="alternate" type="application/rss+xml" title="Title of the feed (RSS 2.0)" href="{base_url}rss" />
+
+<link rel="stylesheet" href="{base_url}css/jquery.share.css">
+

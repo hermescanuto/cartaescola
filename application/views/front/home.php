@@ -93,8 +93,10 @@
 					<!-- ENDS slider -->
 					<div class="home-slider-clearfix "></div>
 					<!-- Headline -->
-					<div id="headline" style="text-align:center;  "margin-bottom: 22px;">
-						<a href="http://www.mercadoconfianca.com.br/cartacapital.asp?Site_txt=EDITORIAL&Origem_txt=CARTANAESCOLA&Formato_txt=CAPA" class="link-assine" target="_blank">Assine Carta na Escola</a>
+					<div id="headline" style="text-align:center;margin-bottom: 22px;">
+						<a href="http://www.mercadoconfianca.com.br/cartacapital.asp?Site_txt=EDITORIAL&Origem_txt=CARTANAESCOLA&Formato_txt=CAPA"  target="_blank">
+							<img src="{base_url}pics/Botao_Assinar.jpg" alt="Assine Carta na escola">
+						</a>
 						<p>
 							
 							<a href="{base_url}edicao/{edicao_numero}" class="opener"><img

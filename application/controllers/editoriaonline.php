@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class Materias extends CI_Controller {
+class editoriaonline extends CI_Controller {
 
 	protected $data = array();
 	protected $tabela = 'tb_conteudo';
@@ -14,8 +14,8 @@ class Materias extends CI_Controller {
 		$this -> load -> model('Model_util');
 		$this -> data['base_url'] = base_url();
 		$this -> data['local'] = $this -> uri -> segment("1");
-		$this -> data['tipo_busca'] = NULL;
-		$this -> data['lista_legenda'] = "Matérias";
+		$this -> data['tipo_busca'] = 12;
+		$this -> data['lista_legenda'] = "Editoria online";
 	}
 
 	public function index() {
@@ -46,38 +46,22 @@ class Materias extends CI_Controller {
 		$orderby = '';
 
 		$busca = $this -> uri -> segment("4");
-		
-		if ( is_numeric($busca) )  {
-			$campo_busca = 'edicao' ;
-			$orderby = 'edicao asc';
+		if (is_numeric($busca)) {
+			$campo_busca = 'edicao';
+		} else {
 
-			$busca = array($campo_busca => urldecode($busca) );
-		}else{
-
-	        $search = urldecode($busca);
-			
-			$busca = "(		titulo 			like '%$search%' 
-						or 	descricao 		like '%$search%'  
-						or 	descricao_home 	like '%$search%' 
-						or 	autor 			like '%$search%' 
-						or  titulo_home 	like '%$search%' 
-						or 	descricao_home 	like '%$search%' 
-
-						)";
-		
+			$campo_busca = 'titulo';
 		}
-
 
 		if ($busca != null) {
 
-			$where = $busca;
+			$where = array($campo_busca => urldecode($busca) );
 		} else {
 			$where = null;
 		}
 
 
-
-		$result = $this -> util -> PaginationOn($table, 20, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4",$this -> data['tipo_busca']);
+		$result = $this -> util -> PaginationOn($table, 10, base_url() .  $this -> data['local'] . '/paging', $fields, $where, $orderby,"3","4",$this -> data['tipo_busca']);
 		// cria a paginação
 		$data = $result;
 

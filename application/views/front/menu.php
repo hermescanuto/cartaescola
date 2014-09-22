@@ -1,5 +1,5 @@
 
-<form action="{base_url}login/on" name="form1" id="form1" method="post" target='acervo_lista' style='padding-top: 5px;' class='form-inline'>
+<!-- <form action="{base_url}login/on" name="form1" id="form1" method="post" target='acervo_lista' style='padding-top: 5px;' class='form-inline'>
 	
 	
 	<label for="nome" style="color:white;font-family: 'Yanone Kaffeesatz', Arial, sans-serif;font-size: 16px;font-weight: bolder; padding-top: 5px;"	 >Login</label>
@@ -11,9 +11,14 @@
 	
 	<input type="submit" id="bt_enviar" value='Enviar'>
 
-</form>
-<a href="{base_url}" id="logo"><img src="{base_url}img/logo.png"
-	alt="Carta Capital" width="265" height="73" > </a>
+</form> -->
+
+<div style ='width:100%'> 
+
+<div style='float:left;width: 70%;'><a href="{base_url}" id="logo"><img src="{base_url}img/logo.png"	alt="Carta Capital" width="265" height="73" > </a></div>
+<div ><a href="http://editoraconfianca.com.br/acesso/cartanaescola" id="logo"><img src="{base_url}pics/Botao_RevistaDigital2.jpg"	alt="Carta Capital"  style="max-width:100%;height:auto;"> </a></div>
+
+</div>
 
 	<nav>
 		<ul id="nav" class="sf-menu">
@@ -51,7 +56,7 @@
 					</li>
 
 
-
+					<li><a href="http://www.cartanaescola.com.br/editoriaonline">Editoria online</a></li>
 
 
 				</ul>
@@ -78,8 +83,6 @@
 			</li>
 
 			
-			<li><a href="http://www.brasilmaisti.com.br/lms/" target="_blank">CURSOS</a></li>
-
 			<li> 
 				<input type="text" name="busca" id="busca" size="20" maxlength="150" placeholder='busca' style='height: 15px;'/>
 				<input type="button" value="ok" id="bt_buscar"  style='height: 20px;margin-bottom: 7px;'>	 

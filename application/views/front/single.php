@@ -106,7 +106,15 @@ p {
 
 					<h2 class="post-heading">{titulo}</h2>
 					<h4 class="post-heading">{descricao}</h4>
+
+
+						<div id="mysocial"></div>
+
+					<br>
+
+
                     <h6 class="post-heading"><i>Por {autor}  </i></h6>
+
 					<div class="post-content">{texto} {pdf_free}</div>
                     <br>
                     Publicado na edição {edicao}, de {edicao_mes} de {ano} </i>
@@ -149,7 +157,16 @@ p {
 
 			<!-- sidebar -->
 			
-            <aside id="sidebar">{texto_extra}
+            <aside id="sidebar">
+
+
+			<a href="http://www.mercadoconfianca.com.br/cartacapital.asp?Site_txt=EDITORIAL&Origem_txt=CARTANAESCOLA&Formato_txt=CAPA"  target="_blank">
+							<img src="{base_url}pics/Botao_Assinar.jpg" alt="Assine Carta na escola">
+						</a>
+
+			</br>
+
+            	{texto_extra}
             <em id="corner"></em>
             
             
@@ -194,6 +211,20 @@ p {
 
 		</div>
 	</footer>
+
+	script src="//code.jquery.com/jquery.js"></script>
+	
+	<script src="{base_url}js/jquery.share.js"></script>	
+
+	<script>
+
+	$('#mysocial').share({
+        networks: ['facebook','pinterest','googleplus','twitter','linkedin','tumblr','in1','email','stumbleupon','digg']
+    });
+
+
+	</script>
+
 
     <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

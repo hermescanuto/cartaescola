@@ -29,6 +29,9 @@
 				data-transition="none" data-inline="true" data-inline="true">Carta
 					ao Professor</a></li>
 
+				<li><a href="{base_url}mobile/editoriaonline"
+				data-transition="none" data-inline="true" data-inline="true">Editoria online</a></li>		
+
 			<li><a href="{base_url}mobile/saladoprofessor" data-transition="none"
 				data-inline="true" data-inline="true">Sala do Professor</a></li>
 
@@ -41,6 +44,13 @@
 				data-inline="true" data-inline="true">Expediente</a></li>
 			<li><a href="{base_url}mobile/contato" data-transition="none"
 				data-inline="true" data-inline="true">Contato</a></li>
+
+			<li><a href="http://editoraconfianca.com.br/acesso/cartanaescola" data-transition="none"
+				data-inline="true" data-inline="true">Revista Digial</a></li>
+			<li><a href="http://www.mercadoconfianca.com.br/cartacapital.asp?Site_txt=EDITORIAL&Origem_txt=CARTANAESCOLA&Formato_txt=CAPA" data-transition="none"
+				data-inline="true" data-inline="true">Assine</a></li>
+				
+
 		</ul>
 
 	</div>
